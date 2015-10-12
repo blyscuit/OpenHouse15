@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		685B0DE61BCBBB3F0062BC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */; };
+		685B0DE81BCBBB3F0062BC91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0DE71BCBBB3F0062BC91 /* ViewController.swift */; };
+		685B0DEB1BCBBB3F0062BC91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685B0DE91BCBBB3F0062BC91 /* Main.storyboard */; };
+		685B0DED1BCBBB400062BC91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685B0DEC1BCBBB400062BC91 /* Assets.xcassets */; };
+		685B0DF01BCBBB400062BC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685B0DEE1BCBBB400062BC91 /* LaunchScreen.storyboard */; };
+		685B0DFB1BCBBB400062BC91 /* OpenHouseOneFiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0DFA1BCBBB400062BC91 /* OpenHouseOneFiveTests.swift */; };
+		685B0E061BCBBB400062BC91 /* OpenHouseOneFiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0E051BCBBB400062BC91 /* OpenHouseOneFiveUITests.swift */; };
+		685B0E191BCBBB670062BC91 /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0E141BCBBB670062BC91 /* QRCodeReader.swift */; settings = {ASSET_TAGS = (); }; };
+		685B0E1A1BCBBB670062BC91 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0E151BCBBB670062BC91 /* QRCodeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		685B0E1B1BCBBB670062BC91 /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0E161BCBBB670062BC91 /* ReaderOverlayView.swift */; settings = {ASSET_TAGS = (); }; };
+		685B0E1C1BCBBB670062BC91 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0E171BCBBB670062BC91 /* SwitchCameraButton.swift */; settings = {ASSET_TAGS = (); }; };
+		685B0E1D1BCBBB670062BC91 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0E181BCBBB670062BC91 /* ToggleTorchButton.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		685B0DF71BCBBB400062BC91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 685B0DDA1BCBBB3F0062BC91 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 685B0DE11BCBBB3F0062BC91;
+			remoteInfo = OpenHouseOneFive;
+		};
+		685B0E021BCBBB400062BC91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 685B0DDA1BCBBB3F0062BC91 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 685B0DE11BCBBB3F0062BC91;
+			remoteInfo = OpenHouseOneFive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		685B0DE21BCBBB3F0062BC91 /* OpenHouseOneFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenHouseOneFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		685B0DE71BCBBB3F0062BC91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		685B0DEA1BCBBB3F0062BC91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		685B0DEC1BCBBB400062BC91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		685B0DEF1BCBBB400062BC91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		685B0DF11BCBBB400062BC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		685B0DF61BCBBB400062BC91 /* OpenHouseOneFiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenHouseOneFiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		685B0DFA1BCBBB400062BC91 /* OpenHouseOneFiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenHouseOneFiveTests.swift; sourceTree = "<group>"; };
+		685B0DFC1BCBBB400062BC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		685B0E011BCBBB400062BC91 /* OpenHouseOneFiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenHouseOneFiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		685B0E051BCBBB400062BC91 /* OpenHouseOneFiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenHouseOneFiveUITests.swift; sourceTree = "<group>"; };
+		685B0E071BCBBB400062BC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		685B0E141BCBBB670062BC91 /* QRCodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
+		685B0E151BCBBB670062BC91 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		685B0E161BCBBB670062BC91 /* ReaderOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderOverlayView.swift; sourceTree = "<group>"; };
+		685B0E171BCBBB670062BC91 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
+		685B0E181BCBBB670062BC91 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTorchButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		685B0DDF1BCBBB3F0062BC91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685B0DF31BCBBB400062BC91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685B0DFE1BCBBB400062BC91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		685B0DD91BCBBB3F0062BC91 = {
+			isa = PBXGroup;
+			children = (
+				685B0DE41BCBBB3F0062BC91 /* OpenHouseOneFive */,
+				685B0DF91BCBBB400062BC91 /* OpenHouseOneFiveTests */,
+				685B0E041BCBBB400062BC91 /* OpenHouseOneFiveUITests */,
+				685B0DE31BCBBB3F0062BC91 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		685B0DE31BCBBB3F0062BC91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				685B0DE21BCBBB3F0062BC91 /* OpenHouseOneFive.app */,
+				685B0DF61BCBBB400062BC91 /* OpenHouseOneFiveTests.xctest */,
+				685B0E011BCBBB400062BC91 /* OpenHouseOneFiveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		685B0DE41BCBBB3F0062BC91 /* OpenHouseOneFive */ = {
+			isa = PBXGroup;
+			children = (
+				685B0E131BCBBB670062BC91 /* QRCodeReader */,
+				685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */,
+				685B0DE71BCBBB3F0062BC91 /* ViewController.swift */,
+				685B0DE91BCBBB3F0062BC91 /* Main.storyboard */,
+				685B0DEC1BCBBB400062BC91 /* Assets.xcassets */,
+				685B0DEE1BCBBB400062BC91 /* LaunchScreen.storyboard */,
+				685B0DF11BCBBB400062BC91 /* Info.plist */,
+			);
+			path = OpenHouseOneFive;
+			sourceTree = "<group>";
+		};
+		685B0DF91BCBBB400062BC91 /* OpenHouseOneFiveTests */ = {
+			isa = PBXGroup;
+			children = (
+				685B0DFA1BCBBB400062BC91 /* OpenHouseOneFiveTests.swift */,
+				685B0DFC1BCBBB400062BC91 /* Info.plist */,
+			);
+			path = OpenHouseOneFiveTests;
+			sourceTree = "<group>";
+		};
+		685B0E041BCBBB400062BC91 /* OpenHouseOneFiveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				685B0E051BCBBB400062BC91 /* OpenHouseOneFiveUITests.swift */,
+				685B0E071BCBBB400062BC91 /* Info.plist */,
+			);
+			path = OpenHouseOneFiveUITests;
+			sourceTree = "<group>";
+		};
+		685B0E131BCBBB670062BC91 /* QRCodeReader */ = {
+			isa = PBXGroup;
+			children = (
+				685B0E141BCBBB670062BC91 /* QRCodeReader.swift */,
+				685B0E151BCBBB670062BC91 /* QRCodeViewController.swift */,
+				685B0E161BCBBB670062BC91 /* ReaderOverlayView.swift */,
+				685B0E171BCBBB670062BC91 /* SwitchCameraButton.swift */,
+				685B0E181BCBBB670062BC91 /* ToggleTorchButton.swift */,
+			);
+			path = QRCodeReader;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		685B0DE11BCBBB3F0062BC91 /* OpenHouseOneFive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 685B0E0A1BCBBB400062BC91 /* Build configuration list for PBXNativeTarget "OpenHouseOneFive" */;
+			buildPhases = (
+				685B0DDE1BCBBB3F0062BC91 /* Sources */,
+				685B0DDF1BCBBB3F0062BC91 /* Frameworks */,
+				685B0DE01BCBBB3F0062BC91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenHouseOneFive;
+			productName = OpenHouseOneFive;
+			productReference = 685B0DE21BCBBB3F0062BC91 /* OpenHouseOneFive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		685B0DF51BCBBB400062BC91 /* OpenHouseOneFiveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 685B0E0D1BCBBB400062BC91 /* Build configuration list for PBXNativeTarget "OpenHouseOneFiveTests" */;
+			buildPhases = (
+				685B0DF21BCBBB400062BC91 /* Sources */,
+				685B0DF31BCBBB400062BC91 /* Frameworks */,
+				685B0DF41BCBBB400062BC91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				685B0DF81BCBBB400062BC91 /* PBXTargetDependency */,
+			);
+			name = OpenHouseOneFiveTests;
+			productName = OpenHouseOneFiveTests;
+			productReference = 685B0DF61BCBBB400062BC91 /* OpenHouseOneFiveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		685B0E001BCBBB400062BC91 /* OpenHouseOneFiveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 685B0E101BCBBB400062BC91 /* Build configuration list for PBXNativeTarget "OpenHouseOneFiveUITests" */;
+			buildPhases = (
+				685B0DFD1BCBBB400062BC91 /* Sources */,
+				685B0DFE1BCBBB400062BC91 /* Frameworks */,
+				685B0DFF1BCBBB400062BC91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				685B0E031BCBBB400062BC91 /* PBXTargetDependency */,
+			);
+			name = OpenHouseOneFiveUITests;
+			productName = OpenHouseOneFiveUITests;
+			productReference = 685B0E011BCBBB400062BC91 /* OpenHouseOneFiveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		685B0DDA1BCBBB3F0062BC91 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Thinc;
+				TargetAttributes = {
+					685B0DE11BCBBB3F0062BC91 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					685B0DF51BCBBB400062BC91 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 685B0DE11BCBBB3F0062BC91;
+					};
+					685B0E001BCBBB400062BC91 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 685B0DE11BCBBB3F0062BC91;
+					};
+				};
+			};
+			buildConfigurationList = 685B0DDD1BCBBB3F0062BC91 /* Build configuration list for PBXProject "OpenHouseOneFive" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 685B0DD91BCBBB3F0062BC91;
+			productRefGroup = 685B0DE31BCBBB3F0062BC91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				685B0DE11BCBBB3F0062BC91 /* OpenHouseOneFive */,
+				685B0DF51BCBBB400062BC91 /* OpenHouseOneFiveTests */,
+				685B0E001BCBBB400062BC91 /* OpenHouseOneFiveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		685B0DE01BCBBB3F0062BC91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				685B0DF01BCBBB400062BC91 /* LaunchScreen.storyboard in Resources */,
+				685B0DED1BCBBB400062BC91 /* Assets.xcassets in Resources */,
+				685B0DEB1BCBBB3F0062BC91 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685B0DF41BCBBB400062BC91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685B0DFF1BCBBB400062BC91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		685B0DDE1BCBBB3F0062BC91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				685B0E1B1BCBBB670062BC91 /* ReaderOverlayView.swift in Sources */,
+				685B0DE81BCBBB3F0062BC91 /* ViewController.swift in Sources */,
+				685B0E191BCBBB670062BC91 /* QRCodeReader.swift in Sources */,
+				685B0E1A1BCBBB670062BC91 /* QRCodeViewController.swift in Sources */,
+				685B0E1C1BCBBB670062BC91 /* SwitchCameraButton.swift in Sources */,
+				685B0E1D1BCBBB670062BC91 /* ToggleTorchButton.swift in Sources */,
+				685B0DE61BCBBB3F0062BC91 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685B0DF21BCBBB400062BC91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				685B0DFB1BCBBB400062BC91 /* OpenHouseOneFiveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685B0DFD1BCBBB400062BC91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				685B0E061BCBBB400062BC91 /* OpenHouseOneFiveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		685B0DF81BCBBB400062BC91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 685B0DE11BCBBB3F0062BC91 /* OpenHouseOneFive */;
+			targetProxy = 685B0DF71BCBBB400062BC91 /* PBXContainerItemProxy */;
+		};
+		685B0E031BCBBB400062BC91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 685B0DE11BCBBB3F0062BC91 /* OpenHouseOneFive */;
+			targetProxy = 685B0E021BCBBB400062BC91 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		685B0DE91BCBBB3F0062BC91 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				685B0DEA1BCBBB3F0062BC91 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		685B0DEE1BCBBB400062BC91 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				685B0DEF1BCBBB400062BC91 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		685B0E081BCBBB400062BC91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		685B0E091BCBBB400062BC91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		685B0E0B1BCBBB400062BC91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OpenHouseOneFive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		685B0E0C1BCBBB400062BC91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OpenHouseOneFive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		685B0E0E1BCBBB400062BC91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OpenHouseOneFiveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenHouseOneFive.app/OpenHouseOneFive";
+			};
+			name = Debug;
+		};
+		685B0E0F1BCBBB400062BC91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OpenHouseOneFiveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenHouseOneFive.app/OpenHouseOneFive";
+			};
+			name = Release;
+		};
+		685B0E111BCBBB400062BC91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OpenHouseOneFiveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFiveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OpenHouseOneFive;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		685B0E121BCBBB400062BC91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OpenHouseOneFiveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFiveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OpenHouseOneFive;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		685B0DDD1BCBBB3F0062BC91 /* Build configuration list for PBXProject "OpenHouseOneFive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685B0E081BCBBB400062BC91 /* Debug */,
+				685B0E091BCBBB400062BC91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		685B0E0A1BCBBB400062BC91 /* Build configuration list for PBXNativeTarget "OpenHouseOneFive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685B0E0B1BCBBB400062BC91 /* Debug */,
+				685B0E0C1BCBBB400062BC91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		685B0E0D1BCBBB400062BC91 /* Build configuration list for PBXNativeTarget "OpenHouseOneFiveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685B0E0E1BCBBB400062BC91 /* Debug */,
+				685B0E0F1BCBBB400062BC91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		685B0E101BCBBB400062BC91 /* Build configuration list for PBXNativeTarget "OpenHouseOneFiveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685B0E111BCBBB400062BC91 /* Debug */,
+				685B0E121BCBBB400062BC91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 685B0DDA1BCBBB3F0062BC91 /* Project object */;
+}
