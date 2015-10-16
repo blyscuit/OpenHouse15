@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		682405551BD1623900B95C99 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682405541BD1623900B95C99 /* NavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 		685B0DE61BCBBB3F0062BC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */; };
 		685B0DE81BCBBB3F0062BC91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0DE71BCBBB3F0062BC91 /* ViewController.swift */; };
 		685B0DEB1BCBBB3F0062BC91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685B0DE91BCBBB3F0062BC91 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		682405541BD1623900B95C99 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		685B0DE21BCBBB3F0062BC91 /* OpenHouseOneFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenHouseOneFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		685B0DE71BCBBB3F0062BC91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */,
 				685B0DE71BCBBB3F0062BC91 /* ViewController.swift */,
 				685B0DE91BCBBB3F0062BC91 /* Main.storyboard */,
+				682405541BD1623900B95C99 /* NavigationController.swift */,
 				685B0DEC1BCBBB400062BC91 /* Assets.xcassets */,
 				685B0DEE1BCBBB400062BC91 /* LaunchScreen.storyboard */,
 				685B0DF11BCBBB400062BC91 /* Info.plist */,
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				685B0E1B1BCBBB670062BC91 /* ReaderOverlayView.swift in Sources */,
+				682405551BD1623900B95C99 /* NavigationController.swift in Sources */,
 				685B0DE81BCBBB3F0062BC91 /* ViewController.swift in Sources */,
 				685B0E191BCBBB670062BC91 /* QRCodeReader.swift in Sources */,
 				685B0E1A1BCBBB670062BC91 /* QRCodeViewController.swift in Sources */,
@@ -511,6 +515,7 @@
 				685B0E0C1BCBBB400062BC91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		685B0E0D1BCBBB400062BC91 /* Build configuration list for PBXNativeTarget "OpenHouseOneFiveTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +524,7 @@
 				685B0E0F1BCBBB400062BC91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		685B0E101BCBBB400062BC91 /* Build configuration list for PBXNativeTarget "OpenHouseOneFiveUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +533,7 @@
 				685B0E121BCBBB400062BC91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
