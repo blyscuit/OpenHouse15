@@ -9,11 +9,15 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
-
+class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITableViewDataSource,UITableViewDelegate {
+    
+    @IBOutlet weak var tableMain: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        tableMain.delegate = self
+        tableMain.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,8 +62,66 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     func readerDidCancel(reader: QRCodeReaderViewController) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    // MARK: - table view data source
+    
+    
+    func numberOfSectionsInTableView(tableView: UITableView)
+        -> Int {
+            return 2;
+    }
+    
+    func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int)
+        -> Int {
+            if(section == 0){
+                return 1
+            }
+            return 0
+    }
+    
+    func tableView(tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath)
+        -> UITableViewCell {
+            //            let user = self.sections[indexPath.section].users[indexPath.row]
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+            
+            cell.detailTextLabel?.text = "Tile"
+            cell.textLabel?.text = "Time am"
+            
+            return cell
+    }
+    
+    /* section headers
+    appear above each `UITableView` section */
+    //    func tableView(tableView: UITableView,
+    //        titleForHeaderInSection section: Int)
+    //        -> String {
+    //            // do not display empty `Section`s
+    ////            if !self.sections[section].users.isEmpty {
+    ////                return self.collation.sectionTitles[section] as String
+    ////            }
+    //
+    //            let group:NSArray! = peopleData.valueForKey("group") as! NSArray
+    //            let groupD:NSDictionary! = group[section] as! NSDictionary
+    //            let name:String! = groupD.valueForKey("-name") as! String
+    //
+    //            return name
+    //    }
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let  headerCell = tableView.dequeueReusableCellWithIdentifier("cellHeader")
+//        headerCell?.textLabel?.text = "title"
+        
+        return headerCell
+    }
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return 22;
+//    }
+    
 
-
+    
+    // MARK: - UIColor Extension
 }
 import UIKit
 
