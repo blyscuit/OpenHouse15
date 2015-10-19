@@ -9,17 +9,43 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITableViewDataSource,UITableViewDelegate {
+class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource {
     
     @IBOutlet weak var tableMain: UITableView!
+    @IBOutlet weak var bingoTable: UICollectionView!
+    
+    var bingoBoard:Bingo!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableMain.delegate = self
         tableMain.dataSource = self
+        
+        bingoTable.delegate = self
+        bingoTable.dataSource = self
+        bingoBoard = Bingo(filename: "Level_5")
+//        bingoTable.frame.size = CGSizeMake(bingoTable.frame.size.width, bingoTable.frame.size.width)
+        
+//        bingoTable.reloadData()
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: (self.view.frame.size.width-60)/5, height:(self.view.frame.size.width-60)/5)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        bingoTable.collectionViewLayout = layout
     }
 
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: (self.view.frame.size.width-60)/5, height:(self.view.frame.size.width-60)/5)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        bingoTable.collectionViewLayout = layout
+        
+        bingoTable.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -119,53 +145,42 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
 //        return 22;
 //    }
     
+    // MARK: - collection view data source
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5*5
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stamp", forIndexPath: indexPath) as! BingoCollectionViewCell
+            cell.facultyImage.backgroundColor = UIColor.randomColor()
+            
+//             Customize cell height
+            cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y,collectionView.frame.size.width/5, collectionView.frame.size.height/5)
+            return cell
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: (self.view.frame.size.width-60)/5, height:(self.view.frame.size.width-60)/5)
+    }
+    func collectionView(collectionView: UICollectionView,
+        shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+            return true
+    }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        print((collectionView.cellForItemAtIndexPath(indexPath) as! BingoCollectionViewCell).facultyImage.backgroundColor)
+    }
+//    func collectionView(collectionView: UICollectionView,
+//        layout collectionViewLayout: UICollectionViewLayout,
+//        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+//            return CGSizeMake(collectionView.bounds.size.width/6, collectionView.bounds.size.height/6)
+//    }
+}
 
     
-    // MARK: - UIColor Extension
-}
-import UIKit
-
-extension UIColor {
-    public convenience init(rgba: String) {
-        var red:   CGFloat = 0.0
-        var green: CGFloat = 0.0
-        var blue:  CGFloat = 0.0
-        var alpha: CGFloat = 1.0
-        
-        if rgba.hasPrefix("#") {
-            let index   = rgba.startIndex.advancedBy(1)
-            let hex     = rgba.substringFromIndex(index)
-            let scanner = NSScanner(string: hex)
-            var hexValue: CUnsignedLongLong = 0
-            if scanner.scanHexLongLong(&hexValue) {
-                switch (hex.characters.count) {
-                case 3:
-                    red   = CGFloat((hexValue & 0xF00) >> 8)       / 15.0
-                    green = CGFloat((hexValue & 0x0F0) >> 4)       / 15.0
-                    blue  = CGFloat(hexValue & 0x00F)              / 15.0
-                case 4:
-                    red   = CGFloat((hexValue & 0xF000) >> 12)     / 15.0
-                    green = CGFloat((hexValue & 0x0F00) >> 8)      / 15.0
-                    blue  = CGFloat((hexValue & 0x00F0) >> 4)      / 15.0
-                    alpha = CGFloat(hexValue & 0x000F)             / 15.0
-                case 6:
-                    red   = CGFloat((hexValue & 0xFF0000) >> 16)   / 255.0
-                    green = CGFloat((hexValue & 0x00FF00) >> 8)    / 255.0
-                    blue  = CGFloat(hexValue & 0x0000FF)           / 255.0
-                case 8:
-                    red   = CGFloat((hexValue & 0xFF000000) >> 24) / 255.0
-                    green = CGFloat((hexValue & 0x00FF0000) >> 16) / 255.0
-                    blue  = CGFloat((hexValue & 0x0000FF00) >> 8)  / 255.0
-                    alpha = CGFloat(hexValue & 0x000000FF)         / 255.0
-                default:
-                    print("Invalid RGB string, number of characters after '#' should be either 3, 4, 6 or 8")
-                }
-            } else {
-                print("Scan hex error")
-            }
-        } else {
-            print("Invalid RGB string, missing '#' as prefix")
-        }
-        self.init(red:red, green:green, blue:blue, alpha:alpha)
-    }
-}
+    
