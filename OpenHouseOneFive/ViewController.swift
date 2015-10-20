@@ -14,6 +14,8 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     @IBOutlet weak var tableMain: UITableView!
     @IBOutlet weak var bingoTable: UICollectionView!
     
+    let titleText = ["NOW EVENT","CHECK IN"]
+    
     var bingoBoard:Bingo!
     
     override func viewDidLoad() {
@@ -136,8 +138,8 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     //            return name
     //    }
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let  headerCell = tableView.dequeueReusableCellWithIdentifier("cellHeader")
-//        headerCell?.textLabel?.text = "title"
+        let  headerCell = tableView.dequeueReusableCellWithIdentifier("cellHeader") as? TitleTableViewCell
+        headerCell?.titleLabel?.text = titleText[section]
         
         return headerCell
     }

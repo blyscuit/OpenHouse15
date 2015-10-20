@@ -223,7 +223,7 @@
                                     </variation>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHeader" rowHeight="58" id="Icu-fJ-Gkb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHeader" rowHeight="58" id="Icu-fJ-Gkb" customClass="TitleTableViewCell" customModule="OpenHouseOneFive" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Icu-fJ-Gkb" id="tbh-rq-Kmc">
@@ -277,6 +277,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="titleImage" destination="4zi-eE-VG3" id="i7k-Vb-CKO"/>
+                                            <outlet property="titleLabel" destination="wak-tp-Zkm" id="tM5-yX-rpW"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="evf-3b-cad" detailTextLabel="UWx-0l-LV9" style="IBUITableViewCellStyleValue2" id="HwJ-0B-Gwo">
                                         <rect key="frame" x="0.0" y="86" width="600" height="44"/>

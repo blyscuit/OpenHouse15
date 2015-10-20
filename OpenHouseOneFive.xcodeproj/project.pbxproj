@@ -27,6 +27,7 @@
 		685B0E1C1BCBBB670062BC91 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0E171BCBBB670062BC91 /* SwitchCameraButton.swift */; settings = {ASSET_TAGS = (); }; };
 		685B0E1D1BCBBB670062BC91 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0E181BCBBB670062BC91 /* ToggleTorchButton.swift */; settings = {ASSET_TAGS = (); }; };
 		688664671BD5F7DA004CD6B5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688664661BD5F7DA004CD6B5 /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		68FF90251BD6906B006F96B0 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF90241BD6906B006F96B0 /* TitleTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9B4B93233F958E8D7B16F47F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43687B0FA55EC8F12C4E8018 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		685B0E171BCBBB670062BC91 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
 		685B0E181BCBBB670062BC91 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTorchButton.swift; sourceTree = "<group>"; };
 		688664661BD5F7DA004CD6B5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		68FF90241BD6906B006F96B0 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		7B9403EFE43B1F5F5FB922BE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BE51DA5727BFF817F72037D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */,
 				688664661BD5F7DA004CD6B5 /* MapViewController.swift */,
 				685B0DE71BCBBB3F0062BC91 /* ViewController.swift */,
+				68FF90241BD6906B006F96B0 /* TitleTableViewCell.swift */,
 				682677201BD528AF00B3D6D5 /* Tile.swift */,
 				682677221BD5297400B3D6D5 /* Extensions.swift */,
 				6826771E1BD5288300B3D6D5 /* Bingo.swift */,
@@ -388,6 +391,7 @@
 				682677231BD5297400B3D6D5 /* Extensions.swift in Sources */,
 				6826771F1BD5288300B3D6D5 /* Bingo.swift in Sources */,
 				685B0E1D1BCBBB670062BC91 /* ToggleTorchButton.swift in Sources */,
+				68FF90251BD6906B006F96B0 /* TitleTableViewCell.swift in Sources */,
 				682677281BD5344E00B3D6D5 /* BingoCollectionViewCell.swift in Sources */,
 				682677211BD528AF00B3D6D5 /* Tile.swift in Sources */,
 				685B0DE61BCBBB3F0062BC91 /* AppDelegate.swift in Sources */,
