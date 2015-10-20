@@ -141,9 +141,12 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         
         return headerCell
     }
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return 22;
-//    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 22;
+    }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 58
+    }
     
     // MARK: - collection view data source
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

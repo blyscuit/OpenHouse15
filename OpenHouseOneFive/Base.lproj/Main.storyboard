@@ -152,7 +152,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fvi-U4-r2r">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grid-bingo" translatesAutoresizingMaskIntoConstraints="NO" id="Fvi-U4-r2r">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                 <animations/>
                                                             </imageView>
@@ -438,6 +438,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="grid-bingo" width="189" height="189"/>
         <image name="home" width="1563" height="2779"/>
         <image name="now-event-icon" width="34" height="50"/>
         <image name="section-gradient" width="1240" height="398"/>
