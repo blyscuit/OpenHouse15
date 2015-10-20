@@ -9,7 +9,7 @@
         <!--Item 2-->
         <scene sceneID="tsc-Hu-Rbl">
             <objects>
-                <viewController id="eMU-Kd-X9a" sceneMemberID="viewController">
+                <viewController id="eMU-Kd-X9a" customClass="MapViewController" customModule="OpenHouseOneFive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E0T-9N-o3k"/>
                         <viewControllerLayoutGuide type="bottom" id="vhk-IX-AOf"/>
