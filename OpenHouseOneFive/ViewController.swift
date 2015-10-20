@@ -15,6 +15,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     @IBOutlet weak var bingoTable: UICollectionView!
     
     let titleText = ["NOW EVENT","CHECK IN"]
+    let titleImage = ["now-event-icon.png","check-in-icon.png"]
     
     var bingoBoard:Bingo!
     
@@ -140,7 +141,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let  headerCell = tableView.dequeueReusableCellWithIdentifier("cellHeader") as? TitleTableViewCell
         headerCell?.titleLabel?.text = titleText[section]
-        
+        headerCell?.titleImage.image = UIImage(named: titleImage[section])
         return headerCell
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
