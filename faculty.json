@@ -325,7 +325,7 @@
   },
   {
              "Number":"40",
-             "code":"spsc",
+             "code":"code40",
   "คณะ":"",
   "QR Code":"LIzoiMlDyjbVvu79",
   "Artwork":"",
@@ -342,7 +342,7 @@
   },
   {
              "Number":"41",
-             "code":"c40",
+             "code":"c41",
   "คณะ":"เวทีกลาง",
   "QR Code":"oGF2HR3ibC8eU7Ni",
   "Artwork":"",
@@ -360,6 +360,7 @@
   {
              "Number":"42",
              "code":"eng",
+             "code":"c42",
   "คณะ":"CU Tour",
   "QR Code":"gri2TnmSHWeoewiw",
   "Artwork":"",
@@ -375,7 +376,8 @@
   "Note":""
   },
   {
-  "Number":"43",
+             "Number":"43",
+             "code":"c43",
   "คณะ":"Redeem",
   "QR Code":"6Qjq0GpcBzV0up7m",
   "Artwork":"",
@@ -391,7 +393,8 @@
   "Note":""
   },
   {
-  "Number":"44",
+             "Number":"44",
+             "code":"c44",
   "คณะ":"",
   "QR Code":"6y3J9zqyXiXtjS7q",
   "Artwork":"",
@@ -407,7 +410,8 @@
   "Note":""
   },
   {
-  "Number":"45",
+             "Number":"45",
+             "code":"c45",
   "คณะ":"",
   "QR Code":"s1Bm1kKF2Du40W85",
   "Artwork":"",
@@ -423,7 +427,8 @@
   "Note":""
   },
   {
-  "Number":"46",
+             "Number":"46",
+             "code":"c46",
   "คณะ":"",
   "QR Code":"Ye1xJQ2gZlBM5gO0",
   "Artwork":"",

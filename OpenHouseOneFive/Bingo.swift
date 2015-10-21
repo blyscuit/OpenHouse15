@@ -58,16 +58,25 @@ class Bingo: NSObject {
                 let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
                 let jsonObj = JSON(data: data)
                 if jsonObj != JSON.null {
-                    
-                    // Loop through the rows...
-                    for row in 0..<NumRows {
-                        for column in 0..<NumColumns {
-                            tiles [column,row]?.id = jsonObj["fac"][row*5+column]["Number"].intValue
-                        }
-                    }
+                
                     
                     for (key,subJson):(String, JSON) in jsonObj["fac"] {
                         //Do something you want
+                        
+                        // Loop through the rows...
+                        for row in 0..<NumRows {
+                            for column in 0..<NumColumns {
+                                let tile = tiles [column,row]
+                                let json = jsonObj["fac"][row*5+column]
+                                if(tile!.id == json["Number"].intValue){
+                                    tile!.thaiName = json["คณะ"].stringValue
+                                    
+                                    tile!.name = json["code"].stringValue
+                                    tile!.qr = json["QR Code"].stringValue
+                                    print(tile!.name)
+                                }
+                            }
+                        }
                         
                         print("jsonData:\(subJson)")
                         

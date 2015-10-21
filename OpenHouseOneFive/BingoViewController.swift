@@ -7,13 +7,18 @@
 //
 
 import UIKit
-
+@objc protocol BingoViewControllerDelegate {
+    func bingoControllerDidCheckIn(controller: BingoViewController)
+    func bingoControllerDidTapCell(controller: BingoViewController)
+}
 class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollectionViewDelegate {
 
     @IBOutlet weak var qrInstructionLabel: UILabel!
     @IBOutlet weak var bingoCOllection: UICollectionView!
     
+    var delegate: BingoViewControllerDelegate?
     @IBAction func checkInPress(sender: AnyObject) {
+        delegate?.bingoControllerDidCheckIn(self)
     }
     func start() {
         bingoCOllection.delegate = self

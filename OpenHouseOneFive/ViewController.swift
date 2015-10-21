@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITableViewDataSource,UITableViewDelegate {
+class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITableViewDataSource,UITableViewDelegate,BingoViewControllerDelegate{
     
     @IBOutlet weak var tableMain: UITableView!
     
@@ -30,12 +30,11 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        genFacArray()
-        
         tableMain.delegate = self
         tableMain.dataSource = self
         
         bingoBoard = Bingo(filename: "Level_5")
+        genFacArray()
 //        bingoTable.frame.size = CGSizeMake(bingoTable.frame.size.width, bingoTable.frame.size.width)
         
 //        bingoTable.reloadData()
@@ -44,7 +43,20 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     func genFacArray(){
         facultyArray = [Tile]()
         facultyVisitArray = [Tile]()
-        
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                if let tile = bingoBoard.tileAtColumn(column, row: row){
+                    if((tile.got) == true){
+                        facultyVisitArray.append(tile)
+                    }else{
+                        facultyArray.append(tile)
+                    }
+                }
+            }
+        }
+//        NSUserDefaults.standardUserDefaults().setObject(bingoBoard, forKey: "listA")
+
+        tableMain.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -123,10 +135,21 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             return cell
             }else if(indexPath.section==1){
                 var cell = tableView.dequeueReusableCellWithIdentifier("bingoCell", forIndexPath: indexPath) as! BingoViewController
+                bingoCell = cell
+                cell.delegate = self
                 cell.start()
                 return cell
             }else{
-                var cell = tableView.dequeueReusableCellWithIdentifier("facultyStatusCell", forIndexPath: indexPath) as UITableViewCell
+                var cell = tableView.dequeueReusableCellWithIdentifier("facultyStatusCell", forIndexPath: indexPath) as! TitleTableViewCell
+                let tile:Tile!
+                if(indexPath.section == 2){
+                    tile = facultyVisitArray[indexPath.row]
+                }else{
+                    tile = facultyArray[indexPath.row]
+                }
+                cell.titleLabel.text = tile.thaiName
+                cell.subTitleLabel.text = tile.name
+                cell.imageView?.image = UIImage(named: "\(tile.id)")
                 return cell
             }
     }
@@ -161,11 +184,17 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             return headerCell
         }
     }
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if(indexPath.section == 1){
+            return false
+        }
+        return true
+    }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if(indexPath.section==0){
             return 22;
         }else if(indexPath.section==1){
-            return self.view.frame.size.width + 100;
+            return self.view.frame.size.width + 150;
         }else{
             return 58
         }
@@ -175,11 +204,13 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     }
     
     
-//    func collectionView(collectionView: UICollectionView,
-//        layout collectionViewLayout: UICollectionViewLayout,
-//        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//            return CGSizeMake(collectionView.bounds.size.width/6, collectionView.bounds.size.height/6)
-//    }
+    // MARK: - bingo view data source
+    func bingoControllerDidCheckIn(controller: BingoViewController) {
+        self.scanAction(self)
+    }
+    func bingoControllerDidTapCell(controller: BingoViewController) {
+        
+    }
 }
 
     
