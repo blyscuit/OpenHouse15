@@ -14,6 +14,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     @IBOutlet weak var tableMain: UITableView!
     @IBOutlet weak var bingoTable: UICollectionView!
     
+    @IBOutlet weak var qrInstructionLabel: UILabel!
     let titleText = ["NOW EVENT","CHECK IN"]
     let titleImage = ["now-event-icon.png","check-in-icon.png"]
     
@@ -37,6 +38,8 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         bingoTable.collectionViewLayout = layout
+        
+        setQRText()
     }
 
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
@@ -180,6 +183,26 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
         print((collectionView.cellForItemAtIndexPath(indexPath) as! BingoCollectionViewCell).facultyImage.backgroundColor)
+    }
+    
+    func setQRText(){
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: "Explore more faculty and scan QR Code to unlock a prize.")
+        // NSMutableAttributedString(
+            //string: "Explore more faculty and scan QR Code to unlock a prize.",
+            //attributes: [NSFontAttributeName:UIFont(
+            //    name: "Georgia",
+            //    size: 18.0)!])
+        //Add more attributes here
+        
+            myMutableString.addAttribute(NSFontAttributeName,
+                value: UIFont.boldSystemFontOfSize(13),
+                range: NSRange(
+                    location: 25,
+                    length: 12))
+        
+        //Apply to the label
+        qrInstructionLabel.attributedText = myMutableString
     }
 //    func collectionView(collectionView: UICollectionView,
 //        layout collectionViewLayout: UICollectionViewLayout,
