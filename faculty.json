@@ -1,7 +1,9 @@
- [
+{
+    "fac" : [
   {
-  "Number":"21",
-  "คณะ":"วิศวกรรมศาสตร์",
+             "Number":"21",
+             "คณะ":"วิศวกรรมศาสตร์",
+             "code":"eng",
   "QR Code":"fMGVr97R9HeGTL4N",
   "Artwork":"1",
   "Event Information":"",
@@ -16,7 +18,8 @@
   "Note":""
   },
   {
-  "Number":"22",
+             "Number":"22",
+             "code":"arts",
   "คณะ":"",
   "QR Code":"yE5iMoYzMwpuxfzN",
   "Artwork":"1",
@@ -32,7 +35,8 @@
   "Note":""
   },
   {
-  "Number":"23",
+             "Number":"23",
+             "code":"sci",
   "คณะ":"",
   "QR Code":"Cepu8n96Y8w8LwjA",
   "Artwork":"1",
@@ -48,7 +52,8 @@
   "Note":""
   },
   {
-  "Number":"24",
+             "Number":"24",
+             "code":"polsci",
   "คณะ":"",
   "QR Code":"MJoGVKs9y29w8gAE",
   "Artwork":"1",
@@ -64,7 +69,8 @@
   "Note":"มีอาชีพที่รองรับ"
   },
   {
-  "Number":"25",
+             "Number":"25",
+             "code":"arch",
   "คณะ":"",
   "QR Code":"OjqE5fSahXYOTE8Y",
   "Artwork":"",
@@ -80,7 +86,8 @@
   "Note":""
   },
   {
-  "Number":"26",
+             "Number":"26",
+             "code":"banshi",
   "คณะ":"",
   "QR Code":"IPKrzjacJb4XcGwO",
   "Artwork":"1",
@@ -96,7 +103,8 @@
   "Note":""
   },
   {
-  "Number":"27",
+             "Number":"27",
+             "code":"edu",
   "คณะ":"",
   "QR Code":"S2YWgebQVH1o1cmN",
   "Artwork":"1",
@@ -112,7 +120,8 @@
   "Note":"มีอาชีพที่รองรับ"
   },
   {
-  "Number":"28",
+             "Number":"28",
+             "code":"nitade",
   "คณะ":"",
   "QR Code":"bHXT5cbB5lluq51M",
   "Artwork":"",
@@ -128,7 +137,8 @@
   "Note":""
   },
   {
-  "Number":"29",
+             "Number":"29",
+             "code":"econ",
   "คณะ":"",
   "QR Code":"BQOKAPTm6tw0Il22",
   "Artwork":"1",
@@ -144,7 +154,8 @@
   "Note":""
   },
   {
-  "Number":"30",
+             "Number":"30",
+             "code":"md",
   "คณะ":"",
   "QR Code":"G9b1HKCobSsoKe6d",
   "Artwork":"",
@@ -160,7 +171,8 @@
   "Note":""
   },
   {
-  "Number":"31",
+             "Number":"31",
+             "code":"vet",
   "คณะ":"",
   "QR Code":"qoVwSy0lddz2g7Ku",
   "Artwork":"1",
@@ -176,7 +188,8 @@
   "Note":"มีอาชีพรองรับ"
   },
   {
-  "Number":"32",
+             "Number":"32",
+             "code":"dent",
   "คณะ":"",
   "QR Code":"hWLTxKXRiu7qmMxH",
   "Artwork":"1",
@@ -192,7 +205,8 @@
   "Note":""
   },
   {
-  "Number":"33",
+             "Number":"33",
+             "code":"rx",
   "คณะ":"",
   "QR Code":"nvxjSf97YgtcT57x",
   "Artwork":"1",
@@ -208,7 +222,8 @@
   "Note":"มีอาชีพรองรับ"
   },
   {
-  "Number":"34",
+             "Number":"34",
+             "code":"law",
   "คณะ":"",
   "QR Code":"QNlgRIHYGSm45gyH",
   "Artwork":"1",
@@ -224,7 +239,8 @@
   "Note":"มีอาชีพรองรับ"
   },
   {
-  "Number":"35",
+             "Number":"35",
+             "code":"faa",
   "คณะ":"",
   "QR Code":"urixGxpbPd6P6wFh",
   "Artwork":"",
@@ -240,7 +256,8 @@
   "Note":""
   },
   {
-  "Number":"36",
+             "Number":"36",
+             "code":"nurs",
   "คณะ":"",
   "QR Code":"tPbrsCd27HWXOgIO",
   "Artwork":"",
@@ -256,7 +273,8 @@
   "Note":"มีอาชีพรองรับ"
   },
   {
-  "Number":"37",
+             "Number":"37",
+             "code":"ahs",
   "คณะ":"",
   "QR Code":"ljIZhHe8yPjupHRR",
   "Artwork":"1",
@@ -272,7 +290,8 @@
   "Note":""
   },
   {
-  "Number":"38",
+             "Number":"38",
+             "code":"psy",
   "คณะ":"",
   "QR Code":"89KstJRCDK4vnTb9",
   "Artwork":"1",
@@ -288,7 +307,8 @@
   "Note":""
   },
   {
-  "Number":"39",
+             "Number":"39",
+             "code":"spsc",
   "คณะ":"",
   "QR Code":"QVXZozHwduOKctp6",
   "Artwork":"1",
@@ -304,7 +324,8 @@
   "Note":"มีอาชีพรองรับ"
   },
   {
-  "Number":"40",
+             "Number":"40",
+             "code":"spsc",
   "คณะ":"",
   "QR Code":"LIzoiMlDyjbVvu79",
   "Artwork":"",
@@ -320,7 +341,8 @@
   "Note":""
   },
   {
-  "Number":"41",
+             "Number":"41",
+             "code":"c40",
   "คณะ":"เวทีกลาง",
   "QR Code":"oGF2HR3ibC8eU7Ni",
   "Artwork":"",
@@ -336,7 +358,8 @@
   "Note":""
   },
   {
-  "Number":"42",
+             "Number":"42",
+             "code":"eng",
   "คณะ":"CU Tour",
   "QR Code":"gri2TnmSHWeoewiw",
   "Artwork":"",
@@ -415,4 +438,5 @@
   "ชมรมต่างๆ (Optional)":"",
   "Note":""
   }
-  ]
+  ],
+}

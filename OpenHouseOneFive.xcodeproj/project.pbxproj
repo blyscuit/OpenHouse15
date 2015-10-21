@@ -32,7 +32,6 @@
 		689BCC771BD77FC40065EC02 /* faculty.json in Resources */ = {isa = PBXBuildFile; fileRef = 689BCC761BD77FC40065EC02 /* faculty.json */; settings = {ASSET_TAGS = (); }; };
 		689BCC7C1BD790200065EC02 /* BingoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BCC7B1BD790200065EC02 /* BingoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		68FF90251BD6906B006F96B0 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF90241BD6906B006F96B0 /* TitleTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		B882B77001C8A2B504B7AF2A /* Pods_OpenHouseOneFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A57062083E122CEDF46AD1 /* Pods_OpenHouseOneFive.framework */; };
 		E998AA896A8DD8F8B779A28C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999D8BB554E2A2914AD3A01C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B882B77001C8A2B504B7AF2A /* Pods_OpenHouseOneFive.framework in Frameworks */,
 				E998AA896A8DD8F8B779A28C /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,7 +585,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFiveTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenHouseOneFive.app/OpenHouseOneFive";
+				TEST_HOST = "";
 			};
 			name = Debug;
 		};
@@ -599,7 +597,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFiveTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenHouseOneFive.app/OpenHouseOneFive";
+				TEST_HOST = "";
 			};
 			name = Release;
 		};

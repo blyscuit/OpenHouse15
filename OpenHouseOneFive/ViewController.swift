@@ -15,6 +15,10 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     
     @IBOutlet weak var qrInstructionLabel: UILabel!
     
+    var facultyArray:[Tile]!
+    var facultyVisitArray:[Tile]!
+    
+    
     var bingoCell:BingoViewController!
     
     let titleText = ["NOW EVENT","CHECK IN","Visited faculties","Locked faculties -- Please check in to unlock"]
@@ -25,6 +29,9 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        genFacArray()
+        
         tableMain.delegate = self
         tableMain.dataSource = self
         
@@ -32,6 +39,12 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
 //        bingoTable.frame.size = CGSizeMake(bingoTable.frame.size.width, bingoTable.frame.size.width)
         
 //        bingoTable.reloadData()
+    }
+    
+    func genFacArray(){
+        facultyArray = [Tile]()
+        facultyVisitArray = [Tile]()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,7 +104,10 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             if(section == 0||section == 1){
                 return 1
             }
-            return 0
+            else if(section == 2){
+                return facultyVisitArray.count
+            }
+            return facultyArray.count
     }
     
     func tableView(tableView: UITableView,
@@ -149,7 +165,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         if(indexPath.section==0){
             return 22;
         }else if(indexPath.section==1){
-            return 700;
+            return self.view.frame.size.width + 100;
         }else{
             return 58
         }

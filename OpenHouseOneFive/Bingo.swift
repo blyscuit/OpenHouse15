@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 var NumColumns = 5
 var NumRows = 5
@@ -52,15 +53,33 @@ class Bingo: NSObject {
             }
         }
         
-        if let dictionary = Dictionary<String, AnyObject>.loadJSONFromBundle("faculty") {
-            
-            // Loop through the rows...
-            
-            for row in 0..<NumRows {
-                for column in 0..<NumColumns {
-                    tiles [NumColumns,NumRows]?.id = 0
+        if let path = NSBundle.mainBundle().pathForResource("faculty", ofType: "json"){
+            do {
+                let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let jsonObj = JSON(data: data)
+                if jsonObj != JSON.null {
+                    
+                    // Loop through the rows...
+                    for (key,subJson):(String, JSON) in jsonObj["fac"] {
+                        //Do something you want
+                        
+                        print("jsonData:\(subJson)")
+                        for row in 0..<NumRows {
+                            for column in 0..<NumColumns {
+                                tiles [column,row]?.id =
+                            }
+                        }
+                    }
+                } else {
+                    print("invalid JSON file")
                 }
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
             }
+        } else {
+            print("Invaild filename/path!")
         }
     }
+
 }
