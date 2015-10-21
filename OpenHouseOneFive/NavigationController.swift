@@ -15,23 +15,24 @@ class NavigationController: UINavigationController {
 
 //        Navigation Bar:
         
-        navigationBar.barTintColor = UIColor(rgba:"#FB5986")
+//        navigationBar.barTintColor = UIColor(rgba:"#FB5986")
 //        Replace greenColor with whatever UIColor you want, you can use an RGB too if you prefer.
         
 //        Navigation Bar Text:
         
-        navigationBar.tintColor = UIColor.whiteColor()
+        navigationBar.tintColor = UIColor(rgba:"#FB5986")
         // Do any additional setup after loading the view.
         
         let logo = UIImage(named: "app-icon-nav.png")
         let imageView = UIImageView(image:logo)
+        imageView.backgroundColor=UIColor.redColor()
         navigationItem.titleView = imageView
         
-        var image = UIImage(named: "info-icon.png")
+        let image = UIImage(named: "info-icon.png")
         
 //        image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         
-        var homeButton : UIBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toAbout")
+        let homeButton : UIBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toAbout")
         
         navigationItem.rightBarButtonItem=homeButton
     }
