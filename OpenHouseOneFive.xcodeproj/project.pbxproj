@@ -33,7 +33,7 @@
 		689BCC7C1BD790200065EC02 /* BingoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BCC7B1BD790200065EC02 /* BingoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		68FF90251BD6906B006F96B0 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF90241BD6906B006F96B0 /* TitleTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		B882B77001C8A2B504B7AF2A /* Pods_OpenHouseOneFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A57062083E122CEDF46AD1 /* Pods_OpenHouseOneFive.framework */; };
-		D86034A64787788EB0247472 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FE64ED9E618C119AE72367 /* Pods.framework */; };
+		E998AA896A8DD8F8B779A28C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999D8BB554E2A2914AD3A01C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25FE64ED9E618C119AE72367 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F8BCC6F1BD731AE0012BA88 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		4F8BCC711BD733440012BA88 /* FAQ.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FAQ.json; sourceTree = "<group>"; };
 		682405541BD1623900B95C99 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		689BCC7B1BD790200065EC02 /* BingoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingoViewController.swift; sourceTree = "<group>"; };
 		68FF90241BD6906B006F96B0 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		7B9403EFE43B1F5F5FB922BE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		999D8BB554E2A2914AD3A01C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A57062083E122CEDF46AD1 /* Pods_OpenHouseOneFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenHouseOneFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE51DA5727BFF817F72037D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,7 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B882B77001C8A2B504B7AF2A /* Pods_OpenHouseOneFive.framework in Frameworks */,
-				D86034A64787788EB0247472 /* Pods.framework in Frameworks */,
+				E998AA896A8DD8F8B779A28C /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				B2A57062083E122CEDF46AD1 /* Pods_OpenHouseOneFive.framework */,
-				25FE64ED9E618C119AE72367 /* Pods.framework */,
+				999D8BB554E2A2914AD3A01C /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -559,6 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OpenHouseOneFive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -571,6 +572,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OpenHouseOneFive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
