@@ -30,9 +30,11 @@
 		685B0E1C1BCBBB670062BC91 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0E171BCBBB670062BC91 /* SwitchCameraButton.swift */; settings = {ASSET_TAGS = (); }; };
 		685B0E1D1BCBBB670062BC91 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0E181BCBBB670062BC91 /* ToggleTorchButton.swift */; settings = {ASSET_TAGS = (); }; };
 		688664671BD5F7DA004CD6B5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688664661BD5F7DA004CD6B5 /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		689BCC771BD77FC40065EC02 /* faculty.json in Resources */ = {isa = PBXBuildFile; fileRef = 689BCC761BD77FC40065EC02 /* faculty.json */; settings = {ASSET_TAGS = (); }; };
+		689BCC7C1BD790200065EC02 /* BingoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BCC7B1BD790200065EC02 /* BingoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		68FF90251BD6906B006F96B0 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF90241BD6906B006F96B0 /* TitleTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		B882B77001C8A2B504B7AF2A /* Pods_OpenHouseOneFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A57062083E122CEDF46AD1 /* Pods_OpenHouseOneFive.framework */; };
-		D86034A64787788EB0247472 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FE64ED9E618C119AE72367 /* Pods.framework */; };
+		E998AA896A8DD8F8B779A28C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999D8BB554E2A2914AD3A01C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25FE64ED9E618C119AE72367 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F8BCC6F1BD731AE0012BA88 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		4F8BCC711BD733440012BA88 /* FAQ.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FAQ.json; sourceTree = "<group>"; };
 		4F8BCC731BD7A1BB0012BA88 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
@@ -83,8 +84,11 @@
 		685B0E171BCBBB670062BC91 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
 		685B0E181BCBBB670062BC91 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTorchButton.swift; sourceTree = "<group>"; };
 		688664661BD5F7DA004CD6B5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		689BCC761BD77FC40065EC02 /* faculty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faculty.json; sourceTree = "<group>"; };
+		689BCC7B1BD790200065EC02 /* BingoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingoViewController.swift; sourceTree = "<group>"; };
 		68FF90241BD6906B006F96B0 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		7B9403EFE43B1F5F5FB922BE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		999D8BB554E2A2914AD3A01C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A57062083E122CEDF46AD1 /* Pods_OpenHouseOneFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenHouseOneFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE51DA5727BFF817F72037D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B882B77001C8A2B504B7AF2A /* Pods_OpenHouseOneFive.framework in Frameworks */,
-				D86034A64787788EB0247472 /* Pods.framework in Frameworks */,
+				E998AA896A8DD8F8B779A28C /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +137,7 @@
 				685B0E041BCBBB400062BC91 /* OpenHouseOneFiveUITests */,
 				685B0DE31BCBBB3F0062BC91 /* Products */,
 				682677251BD531CA00B3D6D5 /* Level_5.json */,
+				689BCC761BD77FC40065EC02 /* faculty.json */,
 				4A089DAD059C84B66C16279A /* Pods */,
 				8CB0E8A0F0B68D91E8BB2AFD /* Frameworks */,
 			);
@@ -160,6 +165,7 @@
 				682677201BD528AF00B3D6D5 /* Tile.swift */,
 				682677221BD5297400B3D6D5 /* Extensions.swift */,
 				6826771E1BD5288300B3D6D5 /* Bingo.swift */,
+				689BCC7B1BD790200065EC02 /* BingoViewController.swift */,
 				685B0DE91BCBBB3F0062BC91 /* Main.storyboard */,
 				4F8BCC6F1BD731AE0012BA88 /* FAQViewController.swift */,
 				4F8BCC711BD733440012BA88 /* FAQ.json */,
@@ -207,7 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				B2A57062083E122CEDF46AD1 /* Pods_OpenHouseOneFive.framework */,
-				25FE64ED9E618C119AE72367 /* Pods.framework */,
+				999D8BB554E2A2914AD3A01C /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				689BCC771BD77FC40065EC02 /* faculty.json in Resources */,
 				682677261BD531CA00B3D6D5 /* Level_5.json in Resources */,
 				685B0DF01BCBBB400062BC91 /* LaunchScreen.storyboard in Resources */,
 				685B0DED1BCBBB400062BC91 /* Assets.xcassets in Resources */,
@@ -397,6 +404,7 @@
 			files = (
 				685B0E1B1BCBBB670062BC91 /* ReaderOverlayView.swift in Sources */,
 				6826771D1BD5286800B3D6D5 /* Array2D.swift in Sources */,
+				689BCC7C1BD790200065EC02 /* BingoViewController.swift in Sources */,
 				682405551BD1623900B95C99 /* NavigationController.swift in Sources */,
 				685B0DE81BCBBB3F0062BC91 /* ViewController.swift in Sources */,
 				685B0E191BCBBB670062BC91 /* QRCodeReader.swift in Sources */,
@@ -555,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OpenHouseOneFive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -567,6 +576,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OpenHouseOneFive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFive;
 				PRODUCT_NAME = "$(TARGET_NAME)";

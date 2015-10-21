@@ -51,5 +51,16 @@ class Bingo: NSObject {
                 }
             }
         }
+        
+        if let dictionary = Dictionary<String, AnyObject>.loadJSONFromBundle("faculty") {
+            
+            // Loop through the rows...
+            
+            for row in 0..<NumRows {
+                for column in 0..<NumColumns {
+                    tiles [NumColumns,NumRows]?.id = 0
+                }
+            }
+        }
     }
 }
