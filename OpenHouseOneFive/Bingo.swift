@@ -60,15 +60,17 @@ class Bingo: NSObject {
                 if jsonObj != JSON.null {
                     
                     // Loop through the rows...
+                    for row in 0..<NumRows {
+                        for column in 0..<NumColumns {
+                            tiles [column,row]?.id = jsonObj["fac"][row*5+column]["Number"].intValue
+                        }
+                    }
+                    
                     for (key,subJson):(String, JSON) in jsonObj["fac"] {
                         //Do something you want
                         
                         print("jsonData:\(subJson)")
-                        for row in 0..<NumRows {
-                            for column in 0..<NumColumns {
-                                tiles [column,row]?.id =
-                            }
-                        }
+                        
                     }
                 } else {
                     print("invalid JSON file")
