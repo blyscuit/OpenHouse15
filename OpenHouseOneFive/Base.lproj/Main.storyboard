@@ -337,6 +337,7 @@
                     <tabBarItem key="tabBarItem" title="Item 1" id="hdo-x4-RtG"/>
                     <connections>
                         <outlet property="bingoTable" destination="HtT-la-lt0" id="Z8u-48-3wh"/>
+                        <outlet property="qrInstructionLabel" destination="MBi-KP-iGz" id="yTb-z9-dS2"/>
                         <outlet property="tableMain" destination="uH8-zk-cBj" id="Ocn-6Z-NQu"/>
                     </connections>
                 </viewController>
