@@ -23,23 +23,9 @@ class NavigationController: UINavigationController {
         navigationBar.tintColor = UIColor(rgba:"#FB5986")
         // Do any additional setup after loading the view.
         
-        let logo = UIImage(named: "app-icon-nav.png")
-        let imageView = UIImageView(image:logo)
-        imageView.backgroundColor=UIColor.redColor()
-        navigationItem.titleView = imageView
         
-        let image = UIImage(named: "info-icon.png")
-        
-//        image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        
-        let homeButton : UIBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toAbout")
-        
-        navigationItem.rightBarButtonItem=homeButton
     }
     
-    func toAbout(){
-        print("about")
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
