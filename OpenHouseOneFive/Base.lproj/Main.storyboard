@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Map View Controller-->
         <scene sceneID="tsc-Hu-Rbl">
             <objects>
                 <viewController id="eMU-Kd-X9a" customClass="MapViewController" customModule="OpenHouseOneFive" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,13 +21,15 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="aQh-tg-aFA"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab-2" selectedImage="tab-2-selected" id="aQh-tg-aFA">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nW-ja-R12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1347" y="-360"/>
         </scene>
-        <!--Item 1-->
+        <!--View Controller-->
         <scene sceneID="aXa-xN-WDc">
             <objects>
                 <viewController id="hCK-nN-Drd" customClass="ViewController" customModule="OpenHouseOneFive" customModuleProvider="target" sceneMemberID="viewController">
@@ -485,7 +487,9 @@
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="hdo-x4-RtG"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab-1" selectedImage="tab-1-selected" id="hdo-x4-RtG">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="tableMain" destination="uH8-zk-cBj" id="Ocn-6Z-NQu"/>
                     </connections>
@@ -511,10 +515,10 @@
             </objects>
             <point key="canvasLocation" x="-160" y="-690"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="SbN-KC-5nT">
             <objects>
-                <tabBarController id="YQ6-UF-Jnd" sceneMemberID="viewController">
+                <tabBarController id="YQ6-UF-Jnd" customClass="TabViewController" customModule="OpenHouseOneFive" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Hc6-B0-bBc"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="m02-B6-E1A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -566,7 +570,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="K1U-vr-pNN">
             <objects>
                 <viewController id="Ins-Zd-Cp7" customClass="FAQViewController" customModule="OpenHouseOneFive" customModuleProvider="target" sceneMemberID="viewController">
@@ -658,7 +662,9 @@
                             <constraint firstItem="sDF-7O-cfj" firstAttribute="centerY" secondItem="TmS-fv-rRG" secondAttribute="centerY" id="jBO-sz-P1g"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="V36-j1-zPV"/>
+                    <tabBarItem key="tabBarItem" image="tab-5" selectedImage="tab-5-selected" id="V36-j1-zPV">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3P3-80-aen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -693,10 +699,16 @@
     <resources>
         <image name="grid-bingo" width="189" height="189"/>
         <image name="home" width="1563" height="2779"/>
-        <image name="now-event-icon" width="34" height="50"/>
-        <image name="section-gradient" width="1240" height="398"/>
-        <image name="tip-icon" width="110" height="110"/>
-        <image name="topic-texture" width="1240" height="156"/>
-        <image name="user-icon" width="70" height="70"/>
+        <image name="now-event-icon" width="11" height="16"/>
+        <image name="section-gradient" width="413" height="132"/>
+        <image name="tab-1" width="39" height="39"/>
+        <image name="tab-1-selected" width="39" height="39"/>
+        <image name="tab-2" width="39" height="39"/>
+        <image name="tab-2-selected" width="39" height="39"/>
+        <image name="tab-5" width="39" height="39"/>
+        <image name="tab-5-selected" width="39" height="39"/>
+        <image name="tip-icon" width="36" height="36"/>
+        <image name="topic-texture" width="413" height="52"/>
+        <image name="user-icon" width="23" height="23"/>
     </resources>
 </document>

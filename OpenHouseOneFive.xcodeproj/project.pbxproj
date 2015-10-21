@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F8BCC701BD731AE0012BA88 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8BCC6F1BD731AE0012BA88 /* FAQViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4F8BCC721BD733440012BA88 /* FAQ.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F8BCC711BD733440012BA88 /* FAQ.json */; settings = {ASSET_TAGS = (); }; };
+		4F8BCC741BD7A1BB0012BA88 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8BCC731BD7A1BB0012BA88 /* TabViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		682405551BD1623900B95C99 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682405541BD1623900B95C99 /* NavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 		6826771D1BD5286800B3D6D5 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6826771C1BD5286800B3D6D5 /* Array2D.swift */; settings = {ASSET_TAGS = (); }; };
 		6826771F1BD5288300B3D6D5 /* Bingo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6826771E1BD5288300B3D6D5 /* Bingo.swift */; settings = {ASSET_TAGS = (); }; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		4F8BCC6F1BD731AE0012BA88 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		4F8BCC711BD733440012BA88 /* FAQ.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FAQ.json; sourceTree = "<group>"; };
+		4F8BCC731BD7A1BB0012BA88 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		682405541BD1623900B95C99 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		6826771C1BD5286800B3D6D5 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		6826771E1BD5288300B3D6D5 /* Bingo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bingo.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				685B0DEC1BCBBB400062BC91 /* Assets.xcassets */,
 				685B0DEE1BCBBB400062BC91 /* LaunchScreen.storyboard */,
 				685B0DF11BCBBB400062BC91 /* Info.plist */,
+				4F8BCC731BD7A1BB0012BA88 /* TabViewController.swift */,
 			);
 			path = OpenHouseOneFive;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				6826771F1BD5288300B3D6D5 /* Bingo.swift in Sources */,
 				685B0E1D1BCBBB670062BC91 /* ToggleTorchButton.swift in Sources */,
 				68FF90251BD6906B006F96B0 /* TitleTableViewCell.swift in Sources */,
+				4F8BCC741BD7A1BB0012BA88 /* TabViewController.swift in Sources */,
 				682677281BD5344E00B3D6D5 /* BingoCollectionViewCell.swift in Sources */,
 				682677211BD528AF00B3D6D5 /* Tile.swift in Sources */,
 				685B0DE61BCBBB3F0062BC91 /* AppDelegate.swift in Sources */,
