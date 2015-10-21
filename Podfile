@@ -1,3 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-pod 'GoogleMaps'
+platform :ios, '8.0'
+use_frameworks!
+
+    pod 'GoogleMaps'
+    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
