@@ -16,6 +16,8 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
     @IBOutlet weak var qrInstructionLabel: UILabel!
     @IBOutlet weak var bingoCOllection: UICollectionView!
     
+    var bingoBoard:Bingo!
+    
     var delegate: BingoViewControllerDelegate?
     @IBAction func checkInPress(sender: AnyObject) {
         delegate?.bingoControllerDidCheckIn(self)
@@ -33,6 +35,7 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         bingoCOllection.collectionViewLayout = layout
+        
     }
     
     func setQRText(){
@@ -79,7 +82,10 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
             
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stamp", forIndexPath: indexPath) as! BingoCollectionViewCell
-            cell.facultyImage.backgroundColor = UIColor.randomColor()
+            let column = indexPath.row % 5
+            let row = indexPath.row / 5
+            cell.facultyImage.backgroundColor = bingoBoard.tileAtColumn(column, row: row)?.color
+            print(cell.facultyImage.backgroundColor)
             
             //             Customize cell height
             cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y,collectionView.frame.size.width/5, collectionView.frame.size.height/5)

@@ -19,6 +19,8 @@ class Tile : NSObject,NSCoding {
     var name:String?
     var thaiName:String?
     
+    var color:UIColor?
+    
     init(column: Int, row: Int,id:Int) {
         self.column = column
         self.row = row
@@ -34,9 +36,10 @@ class Tile : NSObject,NSCoding {
         self.column = aDecoder.decodeObjectForKey("column") as! Int
         self.row = aDecoder.decodeObjectForKey("row") as! Int
         self.id = aDecoder.decodeObjectForKey("id") as! Int
-        self.qr = aDecoder.decodeObjectForKey("qr") as! String
-        self.thaiName = aDecoder.decodeObjectForKey("tname") as! String
-        self.name = aDecoder.decodeObjectForKey("name") as! String
+        self.qr = aDecoder.decodeObjectForKey("qr") as? String
+        self.thaiName = aDecoder.decodeObjectForKey("tname") as? String
+        self.name = aDecoder.decodeObjectForKey("name") as? String
+        self.color = aDecoder.decodeObjectForKey("color") as? UIColor
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
@@ -47,6 +50,7 @@ class Tile : NSObject,NSCoding {
         aCoder.encodeObject(id, forKey: "id")
         aCoder.encodeObject(thaiName, forKey: "tname")
         aCoder.encodeObject(qr, forKey: "qr")
+        aCoder.encodeObject(color, forKey: "color")
     }
     
     //MARK: NSObjectProtocol

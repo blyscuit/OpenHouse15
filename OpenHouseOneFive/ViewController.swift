@@ -33,7 +33,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         tableMain.delegate = self
         tableMain.dataSource = self
         
-        bingoBoard = Bingo(filename: "Level_5")
+        bingoBoard = Bingo(random: true)
         genFacArray()
 //        bingoTable.frame.size = CGSizeMake(bingoTable.frame.size.width, bingoTable.frame.size.width)
         
@@ -54,7 +54,8 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 }
             }
         }
-//        NSUserDefaults.standardUserDefaults().setObject(bingoBoard, forKey: "listA")
+//        bingoBoard.gotTile(bingoBoard.tileAtColumn(0, row: 0)!)
+        bingoBoard.saveDataToUser()
 
         tableMain.reloadData()
     }
@@ -135,6 +136,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             return cell
             }else if(indexPath.section==1){
                 var cell = tableView.dequeueReusableCellWithIdentifier("bingoCell", forIndexPath: indexPath) as! BingoViewController
+                cell.bingoBoard = self.bingoBoard
                 bingoCell = cell
                 cell.delegate = self
                 cell.start()
