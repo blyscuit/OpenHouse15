@@ -36,7 +36,9 @@ class Bingo: NSObject {
                 // one element for each row of the level. Each of those row elements in
                 // turn is also an array describing the columns in that row. If a column
                 // is 1, it means there is a tile at that location, 0 means there is not.
-                if let tilesArray: AnyObject = dictionary["tiles"] {
+                let tileType = String(format: "type%i", Int(arc4random_uniform(3)) + 1)
+                
+                if let tilesArray: AnyObject = dictionary[tileType] {
                     
                     NumRows = tilesArray.count
                     NumColumns = tilesArray[0].count
@@ -137,7 +139,7 @@ class Bingo: NSObject {
     }
     
     func loadData()->Bool{
-//        return false
+        return false
         if let data = NSUserDefaults.standardUserDefaults().dataForKey("bingoArray")
             
         {
