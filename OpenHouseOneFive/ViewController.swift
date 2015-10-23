@@ -21,7 +21,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     
     var bingoCell:BingoViewController!
     
-    let titleText = ["NOW EVENT","CHECK IN","Visited faculties","Locked faculties -- Please check in to unlock"]
+    let titleText = ["NOW EVENT","CHECK IN","Visited faculties","Locked faculties - Please check in to unlock "]
     let titleImage = ["now-event-icon.png","check-in-icon.png"]
     
     var bingoBoard:Bingo!
@@ -184,7 +184,30 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             return headerCell
         }else{
             let  headerCell = tableView.dequeueReusableCellWithIdentifier("facultyCell") as? TitleTableViewCell
-            headerCell?.titleLabel?.text = titleText[section]
+            if(section==3){
+                var myMutableString = NSMutableAttributedString()
+                myMutableString = NSMutableAttributedString(string: titleText[section])
+                // NSMutableAttributedString(
+                //string: "Explore more faculty and scan QR Code to unlock a prize.",
+                //attributes: [NSFontAttributeName:UIFont(
+                //    name: "Georgia",
+                //    size: 18.0)!])
+                //Add more attributes here
+                
+                if #available(iOS 8.2, *) {
+                    myMutableString.addAttribute(NSFontAttributeName,
+                        value: UIFont.systemFontOfSize(13, weight: 0.05),
+                        range: NSRange(
+                            location: 16,
+                            length: 29))
+                } else {
+                    // Fallback on earlier versions
+                }
+                myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(16, 29))
+                headerCell?.titleLabel.attributedText = myMutableString
+            }else{
+                headerCell?.titleLabel?.text = titleText[section]
+            }
             
             return headerCell
         }

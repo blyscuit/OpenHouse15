@@ -58,10 +58,12 @@
                                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="115" height="47"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="landPress:" destination="eMU-Kd-X9a" eventType="touchUpInside" id="a1L-nP-vfm"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="JEh-wI-ebp" firstAttribute="width" secondItem="PCk-Jm-VKS" secondAttribute="width" id="Dg0-bE-5Zi"/>
                                             <constraint firstItem="JEh-wI-ebp" firstAttribute="centerY" secondItem="PCk-Jm-VKS" secondAttribute="centerY" id="mAq-jP-plM"/>
@@ -82,10 +84,12 @@
                                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="115" height="47"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="infoPress:" destination="eMU-Kd-X9a" eventType="touchUpInside" id="3I4-LD-HvJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="IE9-iI-dN5" firstAttribute="width" secondItem="eU4-5c-qd1" secondAttribute="width" id="4Gw-Uu-Nuv"/>
                                             <constraint firstItem="IE9-iI-dN5" firstAttribute="centerY" secondItem="eU4-5c-qd1" secondAttribute="centerY" id="5AB-5I-weE"/>
@@ -103,10 +107,12 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="115" height="45"/>
                                                 <animations/>
                                                 <state key="normal" image="faculty-button-active"/>
+                                                <connections>
+                                                    <action selector="facPress:" destination="eMU-Kd-X9a" eventType="touchUpInside" id="X8N-Ac-Max"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="eYJ-3W-qf8" firstAttribute="height" secondItem="S5b-NV-asF" secondAttribute="height" id="0lY-Yo-b8v"/>
                                             <constraint firstItem="eYJ-3W-qf8" firstAttribute="centerY" secondItem="S5b-NV-asF" secondAttribute="centerY" id="CD2-m0-ayn"/>
@@ -259,7 +265,14 @@
                     </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="aButton" destination="K0l-6F-aDr" id="x47-7E-zB7"/>
+                        <outlet property="bButton" destination="AJh-Ka-24W" id="WwC-31-fjS"/>
+                        <outlet property="cButton" destination="TBw-3H-SuR" id="6GH-rK-WYc"/>
+                        <outlet property="facultyButton" destination="eYJ-3W-qf8" id="gC7-BJ-Ns4"/>
+                        <outlet property="inforButton" destination="IE9-iI-dN5" id="her-lr-epU"/>
+                        <outlet property="landmarkButton" destination="JEh-wI-ebp" id="yAg-Fc-QLU"/>
                         <outlet property="mapView" destination="7OG-G4-16H" id="bvm-am-Vci"/>
+                        <outlet property="stationButton" destination="dnf-AE-DOC" id="hx4-9Q-2aW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nW-ja-R12" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -679,6 +692,12 @@
                                                             <exclude reference="X2w-BT-HMl"/>
                                                         </mask>
                                                         <mask key="constraints">
+                                                            <exclude reference="3fK-Q7-e4P"/>
+                                                            <exclude reference="7bO-fF-xip"/>
+                                                            <exclude reference="IGi-Zt-eIS"/>
+                                                            <exclude reference="Xtl-tt-jTm"/>
+                                                            <exclude reference="uHI-HP-Ev9"/>
+                                                            <exclude reference="yhU-jY-7ds"/>
                                                             <exclude reference="QJG-Nf-Sxq"/>
                                                             <exclude reference="WfH-Ox-u9p"/>
                                                             <exclude reference="qJi-Zw-h0k"/>
@@ -690,12 +709,6 @@
                                                             <exclude reference="Q10-EC-52A"/>
                                                             <exclude reference="Zwh-6p-BPZ"/>
                                                             <exclude reference="kT2-R8-rxX"/>
-                                                            <exclude reference="3fK-Q7-e4P"/>
-                                                            <exclude reference="7bO-fF-xip"/>
-                                                            <exclude reference="IGi-Zt-eIS"/>
-                                                            <exclude reference="Xtl-tt-jTm"/>
-                                                            <exclude reference="uHI-HP-Ev9"/>
-                                                            <exclude reference="yhU-jY-7ds"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
@@ -703,13 +716,13 @@
                                                             <include reference="X2w-BT-HMl"/>
                                                         </mask>
                                                         <mask key="constraints">
-                                                            <include reference="9Eb-Du-Z7m"/>
                                                             <exclude reference="3fK-Q7-e4P"/>
                                                             <include reference="7bO-fF-xip"/>
                                                             <exclude reference="IGi-Zt-eIS"/>
                                                             <include reference="Xtl-tt-jTm"/>
                                                             <include reference="uHI-HP-Ev9"/>
                                                             <include reference="yhU-jY-7ds"/>
+                                                            <include reference="9Eb-Du-Z7m"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
