@@ -80,7 +80,7 @@ class Bingo: NSObject {
                                         tile!.thaiName = subJson["คณะ"].stringValue
                                         
                                         tile!.name = subJson["Faculty"].stringValue
-                                        tile!.qr = subJson["QR Code "].stringValue
+                                        tile!.qr = subJson["QR Code"].stringValue
                                         tile!.color = UIColor(rgba: subJson["Color"].stringValue)
                                         print(tile!.name)
                                     }
@@ -105,6 +105,18 @@ class Bingo: NSObject {
     
     func gotTile(tile:Tile){
         tile.got = true
+    }
+    
+    func gotTileWithQR(QR:String){
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                let tile = tiles [column,row]
+                
+                if tile?.qr == QR {
+                    gotTile(tile!)
+                }
+            }
+        }
     }
     
     func saveDataToUser(){

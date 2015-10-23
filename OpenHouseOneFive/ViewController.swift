@@ -54,7 +54,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 }
             }
         }
-//        bingoBoard.gotTile(bingoBoard.tileAtColumn(0, row: 0)!)
+//        bingoBoard.gotTile(bingoBoard.tileAtColumn(0, row: 4)!)
         bingoBoard.saveDataToUser()
 
         tableMain.reloadData()
@@ -96,6 +96,9 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             
             self.presentViewController(alert, animated: true, completion: nil)
+            
+            self.bingoBoard.gotTileWithQR(result)
+            self.genFacArray()
             })
     }
     
@@ -212,6 +215,9 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     }
     func bingoControllerDidTapCell(controller: BingoViewController) {
         
+    }
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        tableMain.reloadData()
     }
 }
 
