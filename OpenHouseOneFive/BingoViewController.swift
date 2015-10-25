@@ -15,6 +15,7 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
 
     @IBOutlet weak var qrInstructionLabel: UILabel!
     @IBOutlet weak var bingoCOllection: UICollectionView!
+    @IBOutlet weak var gridOverlay: UIImageView!
     
     var bingoBoard:Bingo!
     
@@ -28,6 +29,7 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
         
         setQRText()
         
+        self.gridOverlay.frame = bingoCOllection.frame
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -36,6 +38,7 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
         layout.minimumLineSpacing = 0
         bingoCOllection.collectionViewLayout = layout
         
+        self.gridOverlay.frame = bingoCOllection.frame
     }
     
     func setQRText(){
@@ -75,7 +78,7 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5*5
+        return NumColumns*NumRows
     }
     
     func collectionView(collectionView: UICollectionView,
@@ -83,7 +86,8 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
             
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stamp", forIndexPath: indexPath) as! BingoCollectionViewCell
             let column = indexPath.row % 5
-            let row = indexPath.row / 5
+            var row = indexPath.row / 5
+            row = 4 - row
             cell.facultyImage.backgroundColor = bingoBoard.tileAtColumn(column, row: row)?.color
             print(cell.facultyImage.backgroundColor)
             

@@ -36,7 +36,9 @@ class Bingo: NSObject {
                 // one element for each row of the level. Each of those row elements in
                 // turn is also an array describing the columns in that row. If a column
                 // is 1, it means there is a tile at that location, 0 means there is not.
-                if let tilesArray: AnyObject = dictionary["tiles"] {
+                let tileType = String(format: "type%i", Int(arc4random_uniform(3)) + 1)
+                
+                if let tilesArray: AnyObject = dictionary[tileType] {
                     
                     NumRows = tilesArray.count
                     NumColumns = tilesArray[0].count
@@ -80,7 +82,7 @@ class Bingo: NSObject {
                                         tile!.thaiName = subJson["คณะ"].stringValue
                                         
                                         tile!.name = subJson["Faculty"].stringValue
-                                        tile!.qr = subJson["QR Code "].stringValue
+                                        tile!.qr = subJson["QR Code"].stringValue
                                         tile!.color = UIColor(rgba: subJson["Color"].stringValue)
                                         print(tile!.name)
                                     }
@@ -107,6 +109,18 @@ class Bingo: NSObject {
         tile.got = true
     }
     
+    func gotTileWithQR(QR:String){
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                let tile = tiles [column,row]
+                
+                if tile?.qr == QR {
+                    gotTile(tile!)
+                }
+            }
+        }
+    }
+    
     func saveDataToUser(){
         var array = [Tile]()
         for row in 0..<NumRows {
@@ -125,7 +139,7 @@ class Bingo: NSObject {
     }
     
     func loadData()->Bool{
-//        return false
+        return false
         if let data = NSUserDefaults.standardUserDefaults().dataForKey("bingoArray")
             
         {

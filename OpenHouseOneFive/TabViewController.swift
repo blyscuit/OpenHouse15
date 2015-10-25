@@ -38,7 +38,6 @@ class TabViewController: UITabBarController {
 
     }
     
-    
     func toAbout(){
         print("about")
         
@@ -48,6 +47,15 @@ class TabViewController: UITabBarController {
 
         }
         
+    }
+    
+    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        if(tabBar.selectedItem == tabBar.items?[1]){
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        }else{
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
+            
+        }
     }
     
 }
