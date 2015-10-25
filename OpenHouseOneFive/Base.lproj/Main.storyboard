@@ -515,6 +515,45 @@
             </objects>
             <point key="canvasLocation" x="-160" y="-690"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="38r-jh-QkA">
+            <objects>
+                <navigationController storyboardIdentifier="aboutView" id="cQO-Eh-pHf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2RQ-SI-34j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3yp-EI-eal" kind="relationship" relationship="rootViewController" id="9Sf-xZ-c2I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6AU-6X-9Iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-160" y="-1443"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="bfk-xG-BTm">
+            <objects>
+                <viewController id="3yp-EI-eal" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jnr-Mn-eIW"/>
+                        <viewControllerLayoutGuide type="bottom" id="qyF-Jv-SOs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b6W-Cf-RFL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="3ke-H8-aqB">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Tsh-5D-HBr"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H54-Rm-Avb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="-1448"/>
+        </scene>
         <!--Tab View Controller-->
         <scene sceneID="SbN-KC-5nT">
             <objects>

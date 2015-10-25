@@ -41,6 +41,13 @@ class TabViewController: UITabBarController {
     
     func toAbout(){
         print("about")
+        
+        let aboutView = self.storyboard?.instantiateViewControllerWithIdentifier("aboutView")
+        
+        self.presentViewController(aboutView!, animated: true) { () -> Void in
+
+        }
+        
     }
     
 }
