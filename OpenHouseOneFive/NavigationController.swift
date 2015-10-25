@@ -15,12 +15,12 @@ class NavigationController: UINavigationController {
 
 //        Navigation Bar:
         
-//        navigationBar.barTintColor = UIColor(rgba:"#FB5986")
+        navigationBar.barTintColor = UIColor(rgba:"#FB5986")
 //        Replace greenColor with whatever UIColor you want, you can use an RGB too if you prefer.
         
 //        Navigation Bar Text:
         
-        navigationBar.tintColor = UIColor(rgba:"#FB5986")
+        navigationBar.tintColor = UIColor(rgba:"#ffffff")
         // Do any additional setup after loading the view.
         
         
@@ -32,6 +32,9 @@ class NavigationController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
+//    override func shouldAutorotate() -> Bool {
+//        return false
+//    }
 
     /*
     // MARK: - Navigation

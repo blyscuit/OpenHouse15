@@ -21,7 +21,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     
     var bingoCell:BingoViewController!
     
-    let titleText = ["NOW EVENT","CHECK IN","Visited faculties","Locked faculties -- Please check in to unlock"]
+    let titleText = ["NOW EVENT","CHECK IN","Visited faculties","Locked faculties - Please check in to unlock "]
     let titleImage = ["now-event-icon.png","check-in-icon.png"]
     
     var bingoBoard:Bingo!
@@ -33,7 +33,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         tableMain.delegate = self
         tableMain.dataSource = self
         
-        bingoBoard = Bingo(filename: "Level_5")
+        bingoBoard = Bingo(random: true)
         genFacArray()
 //        bingoTable.frame.size = CGSizeMake(bingoTable.frame.size.width, bingoTable.frame.size.width)
         
@@ -54,7 +54,8 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 }
             }
         }
-//        NSUserDefaults.standardUserDefaults().setObject(bingoBoard, forKey: "listA")
+//        bingoBoard.gotTile(bingoBoard.tileAtColumn(0, row: 4)!)
+        bingoBoard.saveDataToUser()
 
         tableMain.reloadData()
     }
@@ -95,6 +96,9 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             
             self.presentViewController(alert, animated: true, completion: nil)
+            
+            self.bingoBoard.gotTileWithQR(result)
+            self.genFacArray()
             })
     }
     
@@ -135,6 +139,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             return cell
             }else if(indexPath.section==1){
                 var cell = tableView.dequeueReusableCellWithIdentifier("bingoCell", forIndexPath: indexPath) as! BingoViewController
+                cell.bingoBoard = self.bingoBoard
                 bingoCell = cell
                 cell.delegate = self
                 cell.start()
@@ -179,7 +184,30 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             return headerCell
         }else{
             let  headerCell = tableView.dequeueReusableCellWithIdentifier("facultyCell") as? TitleTableViewCell
-            headerCell?.titleLabel?.text = titleText[section]
+            if(section==3){
+                var myMutableString = NSMutableAttributedString()
+                myMutableString = NSMutableAttributedString(string: titleText[section])
+                // NSMutableAttributedString(
+                //string: "Explore more faculty and scan QR Code to unlock a prize.",
+                //attributes: [NSFontAttributeName:UIFont(
+                //    name: "Georgia",
+                //    size: 18.0)!])
+                //Add more attributes here
+                
+                if #available(iOS 8.2, *) {
+                    myMutableString.addAttribute(NSFontAttributeName,
+                        value: UIFont.systemFontOfSize(13, weight: 0.05),
+                        range: NSRange(
+                            location: 16,
+                            length: 29))
+                } else {
+                    // Fallback on earlier versions
+                }
+                myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(16, 29))
+                headerCell?.titleLabel.attributedText = myMutableString
+            }else{
+                headerCell?.titleLabel?.text = titleText[section]
+            }
             
             return headerCell
         }
@@ -210,6 +238,9 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     }
     func bingoControllerDidTapCell(controller: BingoViewController) {
         
+    }
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        tableMain.reloadData()
     }
 }
 
