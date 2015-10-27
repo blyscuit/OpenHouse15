@@ -39,6 +39,7 @@ class ScheduleBaseView :  UIViewController ,CAPSPageMenuDelegate {
             
             controller = SchedulePage01(nibName: "SchedulePage", bundle: nil)
             controller.title = getDateString(dateObj);
+            controller.schedule = jsonDateSch["schedule"]
             controllerArray.append(controller)
             
         }
