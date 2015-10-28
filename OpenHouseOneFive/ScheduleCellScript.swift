@@ -14,6 +14,12 @@ class ScheduleCellScript: UITableViewCell{
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     
+    @IBOutlet weak var barTop: UIImageView!
+    @IBOutlet weak var barTopB: UIImageView!
+    
+    @IBOutlet weak var barBottom: UIImageView!
+    
+    @IBOutlet weak var dot: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib();

@@ -14,6 +14,7 @@
 		4F82DA0C1BDFE2EE00FED6B3 /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F82DA0B1BDFE2EE00FED6B3 /* ScheduleCell.xib */; settings = {ASSET_TAGS = (); }; };
 		4F82DA0E1BDFE37900FED6B3 /* ScheduleCellScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82DA0D1BDFE37900FED6B3 /* ScheduleCellScript.swift */; settings = {ASSET_TAGS = (); }; };
 		4F82DA101BDFF10300FED6B3 /* Schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F82DA0F1BDFF10300FED6B3 /* Schedule.json */; settings = {ASSET_TAGS = (); }; };
+		4F82DA121BE064E600FED6B3 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82DA111BE064E600FED6B3 /* NSDateExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		4F8BCC701BD731AE0012BA88 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8BCC6F1BD731AE0012BA88 /* FAQViewController.swift */; };
 		4F8BCC721BD733440012BA88 /* FAQ.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F8BCC711BD733440012BA88 /* FAQ.json */; };
 		4F8BCC741BD7A1BB0012BA88 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8BCC731BD7A1BB0012BA88 /* TabViewController.swift */; };
@@ -72,6 +73,7 @@
 		4F82DA0B1BDFE2EE00FED6B3 /* ScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleCell.xib; sourceTree = "<group>"; };
 		4F82DA0D1BDFE37900FED6B3 /* ScheduleCellScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCellScript.swift; sourceTree = "<group>"; };
 		4F82DA0F1BDFF10300FED6B3 /* Schedule.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Schedule.json; sourceTree = "<group>"; };
+		4F82DA111BE064E600FED6B3 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		4F8BCC6F1BD731AE0012BA88 /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		4F8BCC711BD733440012BA88 /* FAQ.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FAQ.json; sourceTree = "<group>"; };
 		4F8BCC731BD7A1BB0012BA88 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				4F72561E1BDF910500852F8C /* Paging */,
 				685B0E131BCBBB670062BC91 /* QRCodeReader */,
 				685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */,
+				4F82DA111BE064E600FED6B3 /* NSDateExtension.swift */,
 				688664661BD5F7DA004CD6B5 /* MapViewController.swift */,
 				685B0DE71BCBBB3F0062BC91 /* ViewController.swift */,
 				68FF90241BD6906B006F96B0 /* TitleTableViewCell.swift */,
@@ -462,6 +465,7 @@
 				6826771D1BD5286800B3D6D5 /* Array2D.swift in Sources */,
 				689BCC7C1BD790200065EC02 /* BingoViewController.swift in Sources */,
 				682405551BD1623900B95C99 /* NavigationController.swift in Sources */,
+				4F82DA121BE064E600FED6B3 /* NSDateExtension.swift in Sources */,
 				685B0DE81BCBBB3F0062BC91 /* ViewController.swift in Sources */,
 				685B0E191BCBBB670062BC91 /* QRCodeReader.swift in Sources */,
 				685B0E1A1BCBBB670062BC91 /* QRCodeViewController.swift in Sources */,
