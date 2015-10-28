@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbK-tV-9sN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbK-tV-9sN">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -131,7 +131,7 @@
                                             <constraint firstAttribute="height" constant="15" id="gl8-5k-2YW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ThaiSansNeue-Bold" family="ThaiSans Neue" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สายรถปอ.พ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ano-Pm-EOx">
@@ -190,7 +190,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbP-L6-FNw" userLabel="search">
                                 <rect key="frame" x="128" y="34" width="345" height="44"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search place or destination" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57h-na-CJM">
+                                    <searchBar hidden="YES" userInteractionEnabled="NO" contentMode="redraw" searchBarStyle="minimal" placeholder="Search place or destination" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57h-na-CJM">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="44"/>
                                         <animations/>
                                         <textInputTraits key="textInputTraits"/>
@@ -208,7 +208,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ke-Y3-ZJI" userLabel="topbut">
-                                <rect key="frame" x="128" y="94" width="345" height="45"/>
+                                <rect key="frame" x="128" y="62" width="345" height="45"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCk-Jm-VKS">
                                         <rect key="frame" x="115" y="0.0" width="115" height="45"/>
@@ -309,7 +309,7 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seD-Pk-Oab" userLabel="lowbut">
-                                <rect key="frame" x="128" y="139" width="345" height="45"/>
+                                <rect key="frame" x="128" y="107" width="345" height="45"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popbus-box" translatesAutoresizingMaskIntoConstraints="NO" id="hf6-eF-cs3">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="45"/>
@@ -412,7 +412,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="8Qx-Ij-rCz" secondAttribute="trailing" constant="3" id="2vH-8b-lQ7"/>
                             <constraint firstItem="7OG-G4-16H" firstAttribute="centerY" secondItem="PFz-gh-6GG" secondAttribute="centerY" id="4sq-9z-hDA"/>
                             <constraint firstItem="7OG-G4-16H" firstAttribute="height" secondItem="PFz-gh-6GG" secondAttribute="height" id="Aiw-SQ-6OS"/>
-                            <constraint firstItem="3Ke-Y3-ZJI" firstAttribute="top" secondItem="RbP-L6-FNw" secondAttribute="bottom" constant="16" id="GGr-Mz-uGl"/>
+                            <constraint firstItem="3Ke-Y3-ZJI" firstAttribute="top" secondItem="RbP-L6-FNw" secondAttribute="bottom" constant="-16" id="GGr-Mz-uGl"/>
                             <constraint firstItem="rHh-f8-wGZ" firstAttribute="centerX" secondItem="PFz-gh-6GG" secondAttribute="centerX" id="IUO-XM-nwd"/>
                             <constraint firstItem="RbP-L6-FNw" firstAttribute="top" secondItem="EhF-Te-RN2" secondAttribute="bottom" constant="14" id="Ifq-qj-7GY"/>
                             <constraint firstItem="vhk-IX-AOf" firstAttribute="top" secondItem="8Qx-Ij-rCz" secondAttribute="bottom" constant="17" id="LWa-KI-Cl8"/>
@@ -621,7 +621,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="evf-3b-cad">
-                                                    <rect key="frame" x="15" y="15" width="91" height="14.5"/>
+                                                    <rect key="frame" x="15" y="15" width="91" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -629,7 +629,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UWx-0l-LV9">
-                                                    <rect key="frame" x="112" y="15" width="33" height="14.5"/>
+                                                    <rect key="frame" x="112" y="15" width="33" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -776,6 +776,21 @@
                                                             </attributedString>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HN8-ZA-GFb">
+                                                            <rect key="frame" x="162" y="112" width="277" height="40"/>
+                                                            <animations/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="8YX-E1-Boz"/>
+                                                                <constraint firstAttribute="width" constant="277" id="Ci7-Vt-hWQ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                            <state key="normal" image="check-in-button">
+                                                                <color key="titleColor" red="0.39215686274509803" green="0.29019607843137252" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="checkInPress:" destination="IK6-6X-Xip" eventType="touchUpInside" id="Vgg-S8-3T4"/>
+                                                            </connections>
+                                                        </button>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HtT-la-lt0">
                                                             <rect key="frame" x="30" y="174" width="540" height="540"/>
                                                             <animations/>
@@ -830,21 +845,6 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <animations/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HN8-ZA-GFb">
-                                                            <rect key="frame" x="162" y="112" width="277" height="40"/>
-                                                            <animations/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="8YX-E1-Boz"/>
-                                                                <constraint firstAttribute="width" constant="277" id="Ci7-Vt-hWQ"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                            <state key="normal" image="check-in-button">
-                                                                <color key="titleColor" red="0.39215686274509803" green="0.29019607843137252" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="checkInPress:" destination="IK6-6X-Xip" eventType="touchUpInside" id="Vgg-S8-3T4"/>
-                                                            </connections>
-                                                        </button>
                                                     </subviews>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1065,16 +1065,16 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="201"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yEb-dE-a1u" id="Ys5-Ld-Dda">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" editable="NO" text="Question:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-u1-hUc">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" scrollEnabled="NO" editable="NO" text="Question:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-u1-hUc">
                                                     <rect key="frame" x="18" y="8" width="564" height="45"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="102" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dmy-L9-TuT">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="102" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dmy-L9-TuT">
                                                     <rect key="frame" x="18" y="55" width="564" height="133"/>
                                                     <animations/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>

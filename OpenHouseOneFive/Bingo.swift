@@ -109,16 +109,18 @@ class Bingo: NSObject {
         tile.got = true
     }
     
-    func gotTileWithQR(QR:String){
+    func gotTileWithQR(QR:String) -> Tile?{
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
                 let tile = tiles [column,row]
                 
                 if tile?.qr == QR {
                     gotTile(tile!)
+                    return tile
                 }
             }
         }
+        return nil
     }
     
     func saveDataToUser(){

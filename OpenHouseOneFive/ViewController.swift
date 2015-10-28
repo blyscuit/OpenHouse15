@@ -92,12 +92,20 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     
     func reader(reader: QRCodeReaderViewController, didScanResult result: String) {
         self.dismissViewControllerAnimated(true, completion: { [unowned self] () -> Void in
-            let alert = UIAlertController(title: "QRCodeReader", message: result, preferredStyle: .Alert)
+            
+            let mess:String?
+            
+            if let tile = self.bingoBoard.gotTileWithQR(result){
+                 mess = "\(tile.name!) \(tile.thaiName)"
+            }else{
+                mess = "Incorrect QR code"
+            }
+            
+            let alert = UIAlertController(title: "Faculty unlock", message: result, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             
             self.presentViewController(alert, animated: true, completion: nil)
             
-            self.bingoBoard.gotTileWithQR(result)
             self.genFacArray()
             })
     }
