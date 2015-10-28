@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: GMSMapView!
@@ -24,6 +24,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var detailView: UIView!
     
     @IBOutlet weak var facInfoButton: UIView!
+    @IBOutlet weak var facultyInfoButton: UIButton!
+    @IBOutlet weak var locationButton: UIButton!
     
     var landMarkArray = [GMSMarker]()
     var stationArray = [GMSMarker]()
@@ -34,6 +36,13 @@ class MapViewController: UIViewController {
     var bRoute:GMSPolyline?
     var cRoute:GMSPolyline?
     
+    var viewInitialPosition:CGRect!
+    
+    var positionButtonInitialPosition:CGPoint!
+    
+    @IBOutlet weak var facultyNameLabel: UILabel!
+    @IBOutlet weak var buildingNameEngLabel: UILabel!
+    @IBOutlet weak var buildingNameLabel: UILabel!
     var stationOn:Bool = false
     var facOn:Bool = false
     var landOn:Bool = false
@@ -51,6 +60,7 @@ class MapViewController: UIViewController {
         mapView.camera = camera
         mapView.myLocationEnabled = true
         mapView.settings.myLocationButton = false
+        mapView.delegate = self
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -64,6 +74,27 @@ class MapViewController: UIViewController {
         toggleInfoButton()
         toggleLandButton()
         toggleStationButton()
+        viewInitialPosition = CGRectMake(CGRectGetMidX(self.view.frame) - detailView.frame.size.width/2, self.view.frame.size.height - (detailView.frame.origin.y - 170),detailView.frame.size.width,detailView.frame.size.height)
+        // detailView.frame
+        detailView.frame.origin = CGPointMake(-1000,0)
+        detailView.alpha=0.0
+        detailView.layer.borderWidth = 1
+        
+        detailView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        detailView.clipsToBounds = true
+        
+        positionButtonInitialPosition = CGPointMake(self.view.frame.size.width - locationButton.frame.size.width - 20,self.view.frame.size.height - locationButton.frame.size.width - 65)
+        self.view.layoutIfNeeded()
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if(detailView.alpha == 1.0){
+            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
+        }else{
+            self.locationButton.frame.origin = positionButtonInitialPosition
+        }
+        self.view.layoutIfNeeded()
     }
     
     func populateArray(){
@@ -219,11 +250,11 @@ class MapViewController: UIViewController {
     @IBAction func infoPress(sender: AnyObject) {
         toggleInfoButton()
     }
-}
+
 
 // MARK: - CLLocationManagerDelegate
 //1
-extension MapViewController: CLLocationManagerDelegate {
+
     // 2
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         // 3
@@ -266,6 +297,39 @@ extension MapViewController: CLLocationManagerDelegate {
     
     
     @IBAction func closeDetail(sender: AnyObject) {
+        UIView.animateWithDuration(0.3, animations: {
+            self.detailView.alpha = 0.0
+
+            
+            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y)
+            
+            }, completion: { (SUCCESS) -> Void in
+                self.detailView.frame.origin = CGPointMake(-1000, 0)
+                self.view.layoutIfNeeded()
+        })
+    }
+    
+    func animateInDetail(marker:GMSMarker){
+        if(detailView.alpha == 1){
+            return
+        }
+        self.buildingNameLabel.text = marker.title
+        self.buildingNameEngLabel.text = marker.description
+        self.facultyNameLabel.text = marker.snippet
+        self.detailView.frame = viewInitialPosition
+        
+        self.locationButton.frame.origin = positionButtonInitialPosition
+        
+        UIView.animateWithDuration(0.3, animations: {
+            self.detailView.alpha = 1.0
+            
+            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
+            
+            self.view.layoutIfNeeded()
+            
+            }, completion: { (SUCCESS) -> Void in
+                
+        })
     }
     
     func toggleLine(line:GMSPolyline, on:Bool){
@@ -274,5 +338,18 @@ extension MapViewController: CLLocationManagerDelegate {
         }else{
             line.map = nil
         }
+    }
+    
+    func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+        animateInDetail(marker)
+        return true
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    @IBAction func  facultyInfoPress(sender: AnyObject) {
+    }
+    @IBAction func facultyHighlightPress(sender: AnyObject) {
     }
 }

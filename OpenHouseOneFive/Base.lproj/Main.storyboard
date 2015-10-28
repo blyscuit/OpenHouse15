@@ -10,6 +10,8 @@
     <customFonts key="customFonts">
         <mutableArray key="ThaiSansNeue-Bold.ttf">
             <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
         </mutableArray>
         <mutableArray key="ThaiSansNeue-Regular.ttf">
             <string>ThaiSansNeue-Regular</string>
@@ -31,13 +33,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7OG-G4-16H" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHh-f8-wGZ">
                                 <rect key="frame" x="123" y="390" width="354" height="134"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin-info-icon" translatesAutoresizingMaskIntoConstraints="NO" id="9r7-hB-hkY">
-                                        <rect key="frame" x="5" y="5" width="25" height="25"/>
+                                        <rect key="frame" x="8" y="5" width="25" height="25"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="QBS-xh-s5j"/>
@@ -52,6 +54,9 @@
                                             <constraint firstAttribute="height" constant="49" id="ocP-lL-wsb"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="faculty_highlight_button"/>
+                                        <connections>
+                                            <action selector="facultyHighlightPress:" destination="eMU-Kd-X9a" eventType="touchUpInside" id="vhh-HK-Hiw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKo-Qj-3Sh">
                                         <rect key="frame" x="177" y="85" width="177" height="49"/>
@@ -61,23 +66,34 @@
                                             <constraint firstAttribute="width" constant="177" id="gJn-jU-tx1"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="faculty_info_active_button"/>
+                                        <connections>
+                                            <action selector="facultyInfoPress:" destination="eMU-Kd-X9a" eventType="touchUpInside" id="EPM-qo-Iu5"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="อาคาร" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxg-PE-HkF">
-                                        <rect key="frame" x="38" y="7" width="283" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="อาคาร" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxg-PE-HkF">
+                                        <rect key="frame" x="41" y="7" width="283" height="15"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="CGH-6l-csV"/>
+                                            <constraint firstAttribute="width" constant="283" id="S3K-kk-pGa"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="ThaiSansNeue-Bold" family="ThaiSans Neue" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA9-mW-Mfx">
-                                        <rect key="frame" x="38" y="20" width="283" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA9-mW-Mfx">
+                                        <rect key="frame" x="41" y="20" width="283" height="15"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="283" id="dxd-wt-Ja8"/>
+                                            <constraint firstAttribute="height" constant="15" id="s8L-Pj-s7g"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="ThaiSansNeue-Regular" family="ThaiSans Neue" pointSize="14"/>
                                         <color key="textColor" red="0.49076522435897418" green="0.49076522435897418" blue="0.49076522435897418" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVZ-Xc-hFM">
-                                        <rect key="frame" x="336" y="0.0" width="10" height="10"/>
+                                        <rect key="frame" x="334" y="10" width="10" height="10"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="YYM-Rr-56W"/>
@@ -99,27 +115,63 @@
                                             <action selector="closeDetail:" destination="eMU-Kd-X9a" eventType="touchUpInside" id="0hu-LF-d1I"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dashed_line" translatesAutoresizingMaskIntoConstraints="NO" id="99D-Iq-GJ1">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dashed_line" translatesAutoresizingMaskIntoConstraints="NO" id="99D-Iq-GJ1">
                                         <rect key="frame" x="0.0" y="38" width="354" height="7"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="354" id="2DA-ZR-NvQ"/>
+                                            <constraint firstAttribute="height" constant="7" id="xWt-dH-oI9"/>
+                                        </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="อาคาร" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfz-V3-w2I">
+                                        <rect key="frame" x="11" y="48" width="283" height="15"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="283" id="3Do-z6-GnW"/>
+                                            <constraint firstAttribute="height" constant="15" id="gl8-5k-2YW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ThaiSansNeue-Bold" family="ThaiSans Neue" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สายรถปอ.พ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ano-Pm-EOx">
+                                        <rect key="frame" x="11" y="62" width="56" height="19"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="NQs-Br-9VP"/>
+                                            <constraint firstAttribute="height" constant="19" id="qKT-Cp-Gxd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ThaiSansNeue-Bold" family="ThaiSans Neue" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="JA9-mW-Mfx" firstAttribute="leading" secondItem="9r7-hB-hkY" secondAttribute="trailing" constant="8" id="0yF-1R-txS"/>
                                     <constraint firstAttribute="bottom" secondItem="3BK-8T-FhJ" secondAttribute="bottom" id="24H-5G-f0K"/>
+                                    <constraint firstItem="Qxg-PE-HkF" firstAttribute="leading" secondItem="9r7-hB-hkY" secondAttribute="trailing" constant="8" id="3WR-7j-Nex"/>
                                     <constraint firstItem="9r7-hB-hkY" firstAttribute="top" secondItem="rHh-f8-wGZ" secondAttribute="top" constant="5" id="3tO-Jd-fb3"/>
+                                    <constraint firstItem="gfz-V3-w2I" firstAttribute="leading" secondItem="rHh-f8-wGZ" secondAttribute="leading" constant="11" id="6Kt-Ps-EEv"/>
+                                    <constraint firstItem="JA9-mW-Mfx" firstAttribute="top" secondItem="Qxg-PE-HkF" secondAttribute="bottom" constant="-2" id="GDQ-mS-xha"/>
                                     <constraint firstItem="Gqj-4A-Zo1" firstAttribute="top" secondItem="rHh-f8-wGZ" secondAttribute="top" id="Hl9-qI-Ag8"/>
                                     <constraint firstAttribute="bottom" secondItem="Gqj-4A-Zo1" secondAttribute="bottom" constant="114" id="JB7-VO-jmR"/>
-                                    <constraint firstItem="9r7-hB-hkY" firstAttribute="leading" secondItem="rHh-f8-wGZ" secondAttribute="leading" constant="5" id="Jx6-oz-hqZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="nVZ-Xc-hFM" secondAttribute="trailing" constant="8" id="L0f-dS-bJF"/>
+                                    <constraint firstItem="9r7-hB-hkY" firstAttribute="leading" secondItem="rHh-f8-wGZ" secondAttribute="leading" constant="8" id="Jx6-oz-hqZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="nVZ-Xc-hFM" secondAttribute="trailing" constant="10" id="L0f-dS-bJF"/>
                                     <constraint firstAttribute="width" constant="354" id="Njg-GU-X3C"/>
                                     <constraint firstAttribute="trailing" secondItem="Gqj-4A-Zo1" secondAttribute="trailing" constant="8" id="Q3r-fM-VTK"/>
-                                    <constraint firstItem="nVZ-Xc-hFM" firstAttribute="top" secondItem="rHh-f8-wGZ" secondAttribute="top" id="jp9-66-hTn"/>
+                                    <constraint firstItem="99D-Iq-GJ1" firstAttribute="top" secondItem="JA9-mW-Mfx" secondAttribute="bottom" constant="3" id="RQe-ZC-RaB"/>
+                                    <constraint firstItem="gfz-V3-w2I" firstAttribute="leading" secondItem="Ano-Pm-EOx" secondAttribute="trailing" constant="-56" id="VY6-Ls-Zmc"/>
+                                    <constraint firstItem="nVZ-Xc-hFM" firstAttribute="top" secondItem="rHh-f8-wGZ" secondAttribute="top" constant="10" id="jp9-66-hTn"/>
                                     <constraint firstAttribute="bottom" secondItem="PKo-Qj-3Sh" secondAttribute="bottom" id="k79-4S-MhH"/>
                                     <constraint firstAttribute="trailing" secondItem="PKo-Qj-3Sh" secondAttribute="trailing" id="kRe-KF-upL"/>
                                     <constraint firstItem="3BK-8T-FhJ" firstAttribute="leading" secondItem="rHh-f8-wGZ" secondAttribute="leading" id="lM7-r0-eCe"/>
+                                    <constraint firstItem="Qxg-PE-HkF" firstAttribute="top" secondItem="rHh-f8-wGZ" secondAttribute="top" constant="7" id="oDJ-Y5-12R"/>
+                                    <constraint firstItem="99D-Iq-GJ1" firstAttribute="centerX" secondItem="rHh-f8-wGZ" secondAttribute="centerX" id="oLJ-tO-in6"/>
                                     <constraint firstAttribute="height" constant="134" id="qG3-Su-xWy"/>
+                                    <constraint firstItem="Ano-Pm-EOx" firstAttribute="top" secondItem="gfz-V3-w2I" secondAttribute="bottom" constant="-1" id="qoz-m6-YZt"/>
+                                    <constraint firstItem="gfz-V3-w2I" firstAttribute="top" secondItem="99D-Iq-GJ1" secondAttribute="bottom" constant="3" id="zbZ-Cj-zau"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -382,12 +434,17 @@
                     <connections>
                         <outlet property="aButton" destination="K0l-6F-aDr" id="x47-7E-zB7"/>
                         <outlet property="bButton" destination="AJh-Ka-24W" id="WwC-31-fjS"/>
+                        <outlet property="buildingNameEngLabel" destination="JA9-mW-Mfx" id="SuC-DY-eyD"/>
+                        <outlet property="buildingNameLabel" destination="Qxg-PE-HkF" id="X3I-6L-S0b"/>
                         <outlet property="cButton" destination="TBw-3H-SuR" id="6GH-rK-WYc"/>
                         <outlet property="detailView" destination="rHh-f8-wGZ" id="wPg-kq-1kq"/>
                         <outlet property="facInfoButton" destination="rHh-f8-wGZ" id="7iu-4d-2dz"/>
                         <outlet property="facultyButton" destination="eYJ-3W-qf8" id="gC7-BJ-Ns4"/>
+                        <outlet property="facultyInfoButton" destination="PKo-Qj-3Sh" id="KXe-7b-VXv"/>
+                        <outlet property="facultyNameLabel" destination="gfz-V3-w2I" id="bo8-os-66q"/>
                         <outlet property="inforButton" destination="IE9-iI-dN5" id="her-lr-epU"/>
                         <outlet property="landmarkButton" destination="JEh-wI-ebp" id="yAg-Fc-QLU"/>
+                        <outlet property="locationButton" destination="8Qx-Ij-rCz" id="g6g-sH-X5f"/>
                         <outlet property="mapView" destination="7OG-G4-16H" id="bvm-am-Vci"/>
                         <outlet property="stationButton" destination="dnf-AE-DOC" id="hx4-9Q-2aW"/>
                     </connections>
