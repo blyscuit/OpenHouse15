@@ -8,8 +8,13 @@
 
 import UIKit
 import AVFoundation
-
+@objc protocol MainMenuControllerDelegate {
+    func mainControllerDidTabWeb(text: String, controller: ViewController)
+//    func bingoControllerDidTapCell(controller: ViewController)
+}
 class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITableViewDataSource,UITableViewDelegate,BingoViewControllerDelegate{
+    
+    var delegate: MainMenuControllerDelegate?
     
     @IBOutlet weak var tableMain: UITableView!
     
@@ -41,6 +46,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     }
     
     func genFacArray(){
+                
         facultyArray = [Tile]()
         facultyVisitArray = [Tile]()
         for row in 0..<NumRows {
@@ -97,6 +103,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             
             if let tile = self.bingoBoard.gotTileWithQR(result){
                  mess = "\(tile.name!) \(tile.thaiName)"
+                self.bingoBoard.saveDataToUser()
             }else{
                 mess = "Incorrect QR code"
             }
@@ -221,10 +228,10 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         }
     }
     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if(indexPath.section == 1){
-            return false
+        if(indexPath.section == 2){
+            return true
         }
-        return true
+        return false
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if(indexPath.section==0){
@@ -237,6 +244,11 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 58
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let str = "\(facultyVisitArray[indexPath.row].id)"
+        delegate?.mainControllerDidTabWeb(str, controller: self)
     }
     
     

@@ -141,7 +141,7 @@ class Bingo: NSObject {
     }
     
     func loadData()->Bool{
-        return false
+//        return false
         if let data = NSUserDefaults.standardUserDefaults().dataForKey("bingoArray")
             
         {

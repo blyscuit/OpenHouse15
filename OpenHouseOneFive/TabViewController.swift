@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabViewController: UITabBarController {
+class TabViewController: UITabBarController,MainMenuControllerDelegate {
     
     
     override func viewDidLoad() {
@@ -40,6 +40,8 @@ class TabViewController: UITabBarController {
             _tabBarItem.selectedImage = _tabBarItem.selectedImage?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
             
         }
+        
+        (viewControllers?.first as! ViewController).delegate = self
 
     }
     
@@ -56,6 +58,18 @@ class TabViewController: UITabBarController {
             UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         }else{
             self.navigationController?.setNavigationBarHidden(false, animated: false)
+            
+        }
+    }
+    
+    var toWeb:String!
+    func mainControllerDidTabWeb(text: String, controller: ViewController) {
+        toWeb = text
+        self.performSegueWithIdentifier("web_p", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "web_p"){
             
         }
     }
