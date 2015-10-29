@@ -20,13 +20,18 @@ class TabViewController: UITabBarController {
         navigationItem.titleView = imageView
         //        UINavigationBar.appearance().setBackgroundImage(logo, forBarMetrics: UIBarMetrics.Default)
         
-        let image = UIImage(named: "info-icon.png")
+        var image = UIImage(named: "info-icon.png")
         
         //        image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         
         let homeButton : UIBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toAbout")
         
+        
+        image = UIImage(named: "user-icon.png")
+        let userButton : UIBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toUser")
+        
         navigationItem.rightBarButtonItem=homeButton
+        navigationItem.leftBarButtonItem=userButton
         
         for var _tabBarItem in self.tabBar.items!{
             _tabBarItem.title = nil
@@ -41,14 +46,19 @@ class TabViewController: UITabBarController {
     func toAbout(){
         print("about")
     }
+    func toUser(){
+        print("user")
+    }
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         if(tabBar.selectedItem == tabBar.items?[1]){
             self.navigationController?.setNavigationBarHidden(true, animated: false)
+            UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         }else{
             self.navigationController?.setNavigationBarHidden(false, animated: false)
             
         }
     }
+    
     
 }
