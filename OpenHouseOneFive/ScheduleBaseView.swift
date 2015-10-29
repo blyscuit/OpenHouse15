@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class ScheduleBaseView :  UIViewController ,CAPSPageMenuDelegate {
     
-    let FAQ_JSON_FILE = "Schedule"
+    let JSON_FILE = "Schedule"
     var jsonObj: JSON = []
     
     
@@ -90,7 +90,7 @@ class ScheduleBaseView :  UIViewController ,CAPSPageMenuDelegate {
     
     
     func loadJSONFile(){
-        if let path = NSBundle.mainBundle().pathForResource(FAQ_JSON_FILE, ofType: "json"){
+        if let path = NSBundle.mainBundle().pathForResource(JSON_FILE, ofType: "json"){
             do {
                 let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
                 loadJSON(data);
