@@ -40,6 +40,7 @@ class TabViewController: UITabBarController {
             _tabBarItem.selectedImage = _tabBarItem.selectedImage?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
             
         }
+        
 
     }
     

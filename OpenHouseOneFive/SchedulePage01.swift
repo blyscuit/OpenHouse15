@@ -114,6 +114,7 @@ import SwiftyJSON
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 160.0
+        tableView.contentInset.bottom = 49
     }
     
     func parseDateFromJSON(date:String) -> NSDate {

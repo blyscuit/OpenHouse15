@@ -14,6 +14,8 @@ class FAQViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
     let FAQ_JSON_FILE = "FAQ"
     var jsonObj: JSON = []
     
+    @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         print("FAQ View Loaded")
         if let path = NSBundle.mainBundle().pathForResource(FAQ_JSON_FILE, ofType: "json"){
@@ -31,6 +33,7 @@ class FAQViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
             print("Invaild filename/path!")
         }
         
+        configureTableView()
         
         
     }
@@ -45,34 +48,7 @@ class FAQViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
 
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("faqCell");
-        let question:UITextView = cell?.viewWithTag(101) as! UITextView
-        let answer:UITextView = cell?.viewWithTag(102)as! UITextView
-        
-        question.scrollEnabled = true
-        answer.scrollEnabled = true
-        
-        question.text = jsonObj["faq"][indexPath.row]["question"].string
-        answer.text = jsonObj["faq"][indexPath.row]["answer"].string
-        
-        //------Calculate size---------
-        let fixedWidth = question.frame.size.width
-        let newSize = question.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
-        var newFrame = question.frame
-        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-        question.frame = newFrame;
-        
-        let fixedWidth2 = answer.frame.size.width
-        let newSize2 = answer.sizeThatFits(CGSize(width: fixedWidth2, height: CGFloat.max))
-        var newFrame2 = answer.frame
-        newFrame2.size = CGSize(width: max(newSize2.width, fixedWidth2), height: newSize2.height)
-        answer.frame = newFrame2;
-        //------------------------------
-        
-        return 1.5*question.frame.height + answer.frame.height
-    }
+
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,30 +59,21 @@ class FAQViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         let cell = tableView.dequeueReusableCellWithIdentifier("faqCell");
         let question:UITextView = cell?.viewWithTag(101) as! UITextView
         let answer:UITextView = cell?.viewWithTag(102)as! UITextView
-        
-//        question.backgroundColor = UIColor.redColor()
-//        answer.backgroundColor = UIColor.blueColor()
-        
-        let fixedWidth = question.frame.size.width
-        let newSize = question.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
-        var newFrame = question.frame
-        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-        question.frame = newFrame;
-        
-        let fixedWidth2 = answer.frame.size.width
-        let newSize2 = answer.sizeThatFits(CGSize(width: fixedWidth2, height: CGFloat.max))
-        var newFrame2 = answer.frame
-        newFrame2.size = CGSize(width: max(newSize2.width, fixedWidth2), height: newSize2.height)
-        answer.frame = newFrame2;
+
         
         question.text = jsonObj["faq"][indexPath.row]["question"].string
         answer.text = jsonObj["faq"][indexPath.row]["answer"].string
-        
-//        print(answer.contentSize.height)
+
         
         return cell!
         
     }
     
+    
+    func configureTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 160.0
+        tableView.contentInset.bottom = 49
+    }
     
 }
