@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F72561B1BDF90F000852F8C /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72561A1BDF90F000852F8C /* CAPSPageMenu.swift */; settings = {ASSET_TAGS = (); }; };
-		4F72561D1BDF90FF00852F8C /* ScheduleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72561C1BDF90FF00852F8C /* ScheduleBaseView.swift */; settings = {ASSET_TAGS = (); }; };
-		4F7256221BDF91F100852F8C /* SchedulePage01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7256211BDF91F100852F8C /* SchedulePage01.swift */; settings = {ASSET_TAGS = (); }; };
-		4F82DA0A1BDF9C0400FED6B3 /* SchedulePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F82DA091BDF9C0400FED6B3 /* SchedulePage.xib */; settings = {ASSET_TAGS = (); }; };
-		4F82DA0C1BDFE2EE00FED6B3 /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F82DA0B1BDFE2EE00FED6B3 /* ScheduleCell.xib */; settings = {ASSET_TAGS = (); }; };
-		4F82DA0E1BDFE37900FED6B3 /* ScheduleCellScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82DA0D1BDFE37900FED6B3 /* ScheduleCellScript.swift */; settings = {ASSET_TAGS = (); }; };
-		4F82DA101BDFF10300FED6B3 /* Schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F82DA0F1BDFF10300FED6B3 /* Schedule.json */; settings = {ASSET_TAGS = (); }; };
-		4F82DA121BE064E600FED6B3 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82DA111BE064E600FED6B3 /* NSDateExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		4F72561B1BDF90F000852F8C /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72561A1BDF90F000852F8C /* CAPSPageMenu.swift */; };
+		4F72561D1BDF90FF00852F8C /* ScheduleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72561C1BDF90FF00852F8C /* ScheduleBaseView.swift */; };
+		4F7256221BDF91F100852F8C /* SchedulePage01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7256211BDF91F100852F8C /* SchedulePage01.swift */; };
+		4F82DA0A1BDF9C0400FED6B3 /* SchedulePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F82DA091BDF9C0400FED6B3 /* SchedulePage.xib */; };
+		4F82DA0C1BDFE2EE00FED6B3 /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F82DA0B1BDFE2EE00FED6B3 /* ScheduleCell.xib */; };
+		4F82DA0E1BDFE37900FED6B3 /* ScheduleCellScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82DA0D1BDFE37900FED6B3 /* ScheduleCellScript.swift */; };
+		4F82DA101BDFF10300FED6B3 /* Schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F82DA0F1BDFF10300FED6B3 /* Schedule.json */; };
+		4F82DA121BE064E600FED6B3 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82DA111BE064E600FED6B3 /* NSDateExtension.swift */; };
 		4F8BCC701BD731AE0012BA88 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8BCC6F1BD731AE0012BA88 /* FAQViewController.swift */; };
 		4F8BCC721BD733440012BA88 /* FAQ.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F8BCC711BD733440012BA88 /* FAQ.json */; };
 		4F8BCC741BD7A1BB0012BA88 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8BCC731BD7A1BB0012BA88 /* TabViewController.swift */; };
@@ -25,6 +25,7 @@
 		682677231BD5297400B3D6D5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682677221BD5297400B3D6D5 /* Extensions.swift */; };
 		682677261BD531CA00B3D6D5 /* Level_5.json in Resources */ = {isa = PBXBuildFile; fileRef = 682677251BD531CA00B3D6D5 /* Level_5.json */; };
 		682677281BD5344E00B3D6D5 /* BingoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682677271BD5344E00B3D6D5 /* BingoCollectionViewCell.swift */; };
+		68431C281BE109D5004DC850 /* cuOpenHouseRouteData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68431C271BE109D5004DC850 /* cuOpenHouseRouteData.json */; };
 		685B0DE61BCBBB3F0062BC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */; };
 		685B0DE81BCBBB3F0062BC91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0DE71BCBBB3F0062BC91 /* ViewController.swift */; };
 		685B0DEB1BCBBB3F0062BC91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685B0DE91BCBBB3F0062BC91 /* Main.storyboard */; };
@@ -84,6 +85,8 @@
 		682677221BD5297400B3D6D5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		682677251BD531CA00B3D6D5 /* Level_5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_5.json; sourceTree = "<group>"; };
 		682677271BD5344E00B3D6D5 /* BingoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingoCollectionViewCell.swift; sourceTree = "<group>"; };
+		682FF46B1BDF968300217F9A /* OpenHouseOneFive-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenHouseOneFive-Bridging-Header.h"; sourceTree = "<group>"; };
+		68431C271BE109D5004DC850 /* cuOpenHouseRouteData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cuOpenHouseRouteData.json; sourceTree = "<group>"; };
 		685B0DE21BCBBB3F0062BC91 /* OpenHouseOneFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenHouseOneFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		685B0DE71BCBBB3F0062BC91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +174,7 @@
 				685B0DF91BCBBB400062BC91 /* OpenHouseOneFiveTests */,
 				685B0E041BCBBB400062BC91 /* OpenHouseOneFiveUITests */,
 				685B0DE31BCBBB3F0062BC91 /* Products */,
+				68431C271BE109D5004DC850 /* cuOpenHouseRouteData.json */,
 				682677251BD531CA00B3D6D5 /* Level_5.json */,
 				689BCC761BD77FC40065EC02 /* faculty.json */,
 				68EA4A931BDF8BFA005E44D8 /* Font */,
@@ -214,6 +218,7 @@
 				685B0DEE1BCBBB400062BC91 /* LaunchScreen.storyboard */,
 				685B0DF11BCBBB400062BC91 /* Info.plist */,
 				4F8BCC731BD7A1BB0012BA88 /* TabViewController.swift */,
+				682FF46B1BDF968300217F9A /* OpenHouseOneFive-Bridging-Header.h */,
 			);
 			path = OpenHouseOneFive;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 		685B0DDA1BCBBB3F0062BC91 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Thinc;
 				TargetAttributes = {
@@ -384,6 +390,7 @@
 				68EA4A911BDF8BF2005E44D8 /* ThaiSansNeue-Regular.ttf in Resources */,
 				685B0DEB1BCBBB3F0062BC91 /* Main.storyboard in Resources */,
 				4F8BCC721BD733440012BA88 /* FAQ.json in Resources */,
+				68431C281BE109D5004DC850 /* cuOpenHouseRouteData.json in Resources */,
 				68EA4A8F1BDF8BF2005E44D8 /* ThaiSansNeue-Bold.ttf in Resources */,
 				4F82DA0A1BDF9C0400FED6B3 /* SchedulePage.xib in Resources */,
 				68EA4A921BDF8BF2005E44D8 /* ThaiSansNeue-UltraLight.ttf in Resources */,
@@ -626,6 +633,7 @@
 			baseConfigurationReference = BE51DA5727BFF817F72037D6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = OpenHouseOneFive/Info.plist;
@@ -633,6 +641,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenHouseOneFive/OpenHouseOneFive-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -641,6 +651,7 @@
 			baseConfigurationReference = 7B9403EFE43B1F5F5FB922BE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = OpenHouseOneFive/Info.plist;
@@ -648,6 +659,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Thinc.OpenHouseOneFive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenHouseOneFive/OpenHouseOneFive-Bridging-Header.h";
 			};
 			name = Release;
 		};

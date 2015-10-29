@@ -8,8 +8,9 @@
 
 import UIKit
 import GoogleMaps
+import SwiftyJSON
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: GMSMapView!
@@ -24,16 +25,28 @@ class MapViewController: UIViewController {
     @IBOutlet weak var detailView: UIView!
     
     @IBOutlet weak var facInfoButton: UIView!
+    @IBOutlet weak var facultyInfoButton: UIButton!
+    @IBOutlet weak var locationButton: UIButton!
     
     var landMarkArray = [GMSMarker]()
     var stationArray = [GMSMarker]()
     var facultyArray = [GMSMarker]()
     var infomationkArray = [GMSMarker]()
+    var aStationArray = [GMSMarker]()
+    var bStationArray = [GMSMarker]()
+    var cStationArray = [GMSMarker]()
     
     var aRoute:GMSPolyline?
     var bRoute:GMSPolyline?
     var cRoute:GMSPolyline?
     
+    var viewInitialPosition:CGRect!
+    
+    var positionButtonInitialPosition:CGPoint!
+    
+    @IBOutlet weak var facultyNameLabel: UILabel!
+    @IBOutlet weak var buildingNameEngLabel: UILabel!
+    @IBOutlet weak var buildingNameLabel: UILabel!
     var stationOn:Bool = false
     var facOn:Bool = false
     var landOn:Bool = false
@@ -44,13 +57,12 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        var camera = GMSCameraPosition.cameraWithLatitude(-33.86,
-            longitude: 151.20, zoom: 6)
+        var camera = GMSCameraPosition.cameraWithLatitude(13.7406223,
+            longitude: 100.5307583, zoom: 15)
         mapView.camera = camera
         mapView.myLocationEnabled = true
         mapView.settings.myLocationButton = false
+        mapView.delegate = self
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -64,9 +76,80 @@ class MapViewController: UIViewController {
         toggleInfoButton()
         toggleLandButton()
         toggleStationButton()
+        viewInitialPosition = CGRectMake(CGRectGetMidX(self.view.frame) - detailView.frame.size.width/2, self.view.frame.size.height - (detailView.frame.origin.y - 170),detailView.frame.size.width,detailView.frame.size.height)
+        // detailView.frame
+        detailView.frame.origin = CGPointMake(-1000,0)
+        detailView.alpha=0.0
+        detailView.layer.borderWidth = 1
+        
+        detailView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        detailView.clipsToBounds = true
+        
+        positionButtonInitialPosition = CGPointMake(self.view.frame.size.width - locationButton.frame.size.width - 20,self.view.frame.size.height - locationButton.frame.size.width - 65)
+        self.view.layoutIfNeeded()
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if(detailView.alpha == 1.0){
+            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
+        }else{
+            self.locationButton.frame.origin = positionButtonInitialPosition
+        }
+        self.view.layoutIfNeeded()
     }
     
     func populateArray(){
+        var jsonObj:JSON!
+        if let path = NSBundle.mainBundle().pathForResource("cuOpenHouseRouteData", ofType: "json"){
+            do {
+                let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                jsonObj = JSON(data: data)
+                if jsonObj != JSON.null {
+                    print("jsonData:\(jsonObj)")
+                } else {
+                    print("invalid JSON file")
+                }
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+            
+            
+        } else {
+            print("Invaild filename/path!")
+        }
+        
+        aRoute = GMSPolyline()
+        bRoute = GMSPolyline()
+        cRoute = GMSPolyline()
+        
+        for (index,subJson):(String, JSON) in jsonObj {
+//            for (key,subsubJson):(String, JSON) in subJson {
+                //Do something you want
+            let name = subJson["name"]
+            
+            var path = GMSMutablePath()
+            for (index2,pathJson):(String, JSON) in subJson["pathway"] {
+                
+                path.addCoordinate(CLLocationCoordinate2DMake(pathJson["latitude"].doubleValue, pathJson["longitude"].doubleValue))
+            }
+            if name == "A"{
+                aRoute = GMSPolyline(path: path)
+                aRoute?.strokeColor = UIColor(rgba: subJson["color"].stringValue)
+                aRoute?.strokeWidth = 2.5
+            }else if name == "B"{
+                bRoute = GMSPolyline(path: path)
+                bRoute?.strokeColor = UIColor(rgba: subJson["color"].stringValue)
+                bRoute?.strokeWidth = 2.5
+            }else if name == "C"{
+                cRoute = GMSPolyline(path: path)
+                cRoute?.strokeColor = UIColor(rgba: subJson["color"].stringValue)
+                cRoute?.strokeWidth = 2.5
+            }
+//            }
+        }
         
         var marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
@@ -75,20 +158,12 @@ class MapViewController: UIViewController {
         
         facultyArray.append(marker)
         
-        var path = GMSMutablePath()
-        path.addCoordinate(CLLocationCoordinate2DMake(-33.85, 151.20))
-        path.addCoordinate(CLLocationCoordinate2DMake(-33.70, 151.40))
-        path.addCoordinate(CLLocationCoordinate2DMake(-33.73, 151.41))
-        var polyline = GMSPolyline(path: path)
-        
-        aRoute = polyline
-        bRoute = GMSPolyline()
-        cRoute = GMSPolyline()
     }
     
     func toggleAButton(){
         aOn = !aOn
         toggleLine(aRoute!, on: aOn)
+        toggleArray(aStationArray, on: aOn)
         if(aOn == false){
             if let image = UIImage(named: "route-a-inactive.png") {
                 aButton.setImage(image, forState: .Normal)
@@ -102,6 +177,7 @@ class MapViewController: UIViewController {
     func toggleBButton(){
         bOn = !bOn
         toggleLine(bRoute!, on: bOn)
+        toggleArray(bStationArray, on: bOn)
         if(bOn == false){
             if let image = UIImage(named: "route-b-inactive.png") {
                 bButton.setImage(image, forState: .Normal)
@@ -115,6 +191,7 @@ class MapViewController: UIViewController {
     func toggleCButton(){
         cOn = !cOn
         toggleLine(cRoute!, on: cOn)
+        toggleArray(cStationArray, on: cOn)
         if(cOn == false){
             if let image = UIImage(named: "route-c-inactive.png") {
                 cButton.setImage(image, forState: .Normal)
@@ -219,11 +296,11 @@ class MapViewController: UIViewController {
     @IBAction func infoPress(sender: AnyObject) {
         toggleInfoButton()
     }
-}
+
 
 // MARK: - CLLocationManagerDelegate
 //1
-extension MapViewController: CLLocationManagerDelegate {
+
     // 2
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         // 3
@@ -266,6 +343,39 @@ extension MapViewController: CLLocationManagerDelegate {
     
     
     @IBAction func closeDetail(sender: AnyObject) {
+        UIView.animateWithDuration(0.3, animations: {
+            self.detailView.alpha = 0.0
+
+            
+            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y)
+            
+            }, completion: { (SUCCESS) -> Void in
+                self.detailView.frame.origin = CGPointMake(-1000, 0)
+                self.view.layoutIfNeeded()
+        })
+    }
+    
+    func animateInDetail(marker:GMSMarker){
+        if(detailView.alpha == 1){
+            return
+        }
+        self.buildingNameLabel.text = marker.title
+        self.buildingNameEngLabel.text = marker.description
+        self.facultyNameLabel.text = marker.snippet
+        self.detailView.frame = viewInitialPosition
+        
+        self.locationButton.frame.origin = positionButtonInitialPosition
+        
+        UIView.animateWithDuration(0.3, animations: {
+            self.detailView.alpha = 1.0
+            
+            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
+            
+            self.view.layoutIfNeeded()
+            
+            }, completion: { (SUCCESS) -> Void in
+                
+        })
     }
     
     func toggleLine(line:GMSPolyline, on:Bool){
@@ -274,5 +384,18 @@ extension MapViewController: CLLocationManagerDelegate {
         }else{
             line.map = nil
         }
+    }
+    
+    func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+        animateInDetail(marker)
+        return true
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    @IBAction func  facultyInfoPress(sender: AnyObject) {
+    }
+    @IBAction func facultyHighlightPress(sender: AnyObject) {
     }
 }

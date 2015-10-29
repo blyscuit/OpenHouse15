@@ -60,8 +60,5 @@ class TabViewController: UITabBarController {
         }
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
     
 }
