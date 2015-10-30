@@ -637,17 +637,17 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="tableMain" destination="Qeo-gI-vId" id="jUd-Yl-Pku"/>
-                        <segue destination="9Rw-gN-ybG" kind="presentation" id="cy7-Xm-aia"/>
+                        <segue destination="9Rw-gN-ybG" kind="presentation" identifier="highlightDetail_m" id="cy7-Xm-aia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ErZ-6Q-C8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1357" y="412"/>
         </scene>
-        <!--View Controller-->
+        <!--Highlight Detail-->
         <scene sceneID="S2a-uQ-OEL">
             <objects>
-                <viewController id="9Rw-gN-ybG" sceneMemberID="viewController">
+                <viewController id="9Rw-gN-ybG" customClass="HighlightDetail" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qTC-Ot-NTY"/>
                         <viewControllerLayoutGuide type="bottom" id="aXp-kP-1o3"/>

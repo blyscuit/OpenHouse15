@@ -103,6 +103,7 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
             navigationItem.title="Highlight"
         }else if(tabBar.selectedItem == tabBar.items?[4]){
             setTopBar(4)
+            navigationItem.title="Faq"
             
         }
     }
