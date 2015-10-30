@@ -13,7 +13,7 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
     var arrayMain = [[String]]()
     @IBOutlet weak var tableMain: UITableView!
     var titleText = ["FACULTIES"]
-    var titleImage = [""]
+    var titleImage = ["faculty_icon"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,6 +68,8 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
 
             if(indexPath.row % 2 == 1){
                 cell.backgroundColor = UIColor(rgba: "#f9f9f9")
+            }else{
+                cell.backgroundColor = UIColor.clearColor()
             }
                 return cell
     }
