@@ -46,7 +46,9 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
         -> UITableViewCell {
             //            let user = self.sections[indexPath.section].users[indexPath.row]
                 let cell = tableView.dequeueReusableCellWithIdentifier("highlightCell", forIndexPath: indexPath) as UITableViewCell
-                
+            
+                var tmpButton = self.view.viewWithTag(tmpTag) as? UIButton
+            
                 return cell
     }
     
