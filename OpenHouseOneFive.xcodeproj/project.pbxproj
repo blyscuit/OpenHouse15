@@ -139,8 +139,6 @@
 		68FF90241BD6906B006F96B0 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		75936CD31BE283BC005642E5 /* HighlightBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HighlightBaseViewController.swift; path = OpenHouseOneFive/HighlightBaseViewController.swift; sourceTree = "<group>"; };
 		75936CD51BE29E64005642E5 /* highlight.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = highlight.json; sourceTree = "<group>"; };
-		75936CD71BE2B2CB005642E5 /* HighlightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighlightView.h; sourceTree = "<group>"; };
-		75936CD81BE2B2CB005642E5 /* HighlightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighlightView.m; sourceTree = "<group>"; };
 		75936CDA1BE2B363005642E5 /* HighLightJsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighLightJsonParser.swift; sourceTree = "<group>"; };
 		75936CDD1BE2F6CF005642E5 /* 21_Art.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 21_Art.jpg; sourceTree = "<group>"; };
 		75936CDE1BE2F6CF005642E5 /* 22_Art.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 22_Art.jpg; sourceTree = "<group>"; };
@@ -160,6 +158,8 @@
 		75936CEF1BE2F6CF005642E5 /* 38_Art.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 38_Art.jpg; sourceTree = "<group>"; };
 		75936CF01BE2F6CF005642E5 /* 39_Art.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 39_Art.JPG; sourceTree = "<group>"; };
 		75936D051BE3590F005642E5 /* 26_Art.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 26_Art.jpg; sourceTree = "<group>"; };
+		75936D081BE361A3005642E5 /* HighlightDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighlightDetail.h; sourceTree = "<group>"; };
+		75936D091BE361A3005642E5 /* HighlightDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighlightDetail.m; sourceTree = "<group>"; };
 		7B9403EFE43B1F5F5FB922BE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		999D8BB554E2A2914AD3A01C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A57062083E122CEDF46AD1 /* Pods_OpenHouseOneFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenHouseOneFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -320,9 +320,9 @@
 			children = (
 				75936CD31BE283BC005642E5 /* HighlightBaseViewController.swift */,
 				75936CDC1BE2F6CF005642E5 /* ArtWork */,
-				75936CD71BE2B2CB005642E5 /* HighlightView.h */,
-				75936CD81BE2B2CB005642E5 /* HighlightView.m */,
 				75936CDA1BE2B363005642E5 /* HighLightJsonParser.swift */,
+				75936D081BE361A3005642E5 /* HighlightDetail.h */,
+				75936D091BE361A3005642E5 /* HighlightDetail.m */,
 			);
 			name = Highlight;
 			path = ..;
@@ -576,7 +576,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				685B0E1B1BCBBB670062BC91 /* ReaderOverlayView.swift in Sources */,
-				75936CD91BE2B2CB005642E5 /* HighlightView.m in Sources */,
 				6826771D1BD5286800B3D6D5 /* Array2D.swift in Sources */,
 				75936CD41BE283BC005642E5 /* HighlightBaseViewController.swift in Sources */,
 				689BCC7C1BD790200065EC02 /* BingoViewController.swift in Sources */,
@@ -584,6 +583,7 @@
 				4F82DA121BE064E600FED6B3 /* NSDateExtension.swift in Sources */,
 				685B0DE81BCBBB3F0062BC91 /* ViewController.swift in Sources */,
 				685B0E191BCBBB670062BC91 /* QRCodeReader.swift in Sources */,
+				75936D0A1BE361A3005642E5 /* HighlightDetail.m in Sources */,
 				68BF18AC1BE3460800FECDD6 /* HighlightViewController.swift in Sources */,
 				685B0E1A1BCBBB670062BC91 /* QRCodeViewController.swift in Sources */,
 				4F72561B1BDF90F000852F8C /* CAPSPageMenu.swift in Sources */,
