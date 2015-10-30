@@ -21,6 +21,7 @@
                 <outlet property="dataSource" destination="-1" id="4UY-Zd-zNz"/>
                 <outlet property="delegate" destination="-1" id="Zo7-Js-WdE"/>
             </connections>
+            <point key="canvasLocation" x="423" y="283"/>
         </tableView>
     </objects>
 </document>

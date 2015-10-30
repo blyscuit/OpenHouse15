@@ -34,7 +34,7 @@ class ScheduleBaseView :  UIViewController ,CAPSPageMenuDelegate {
         for var jsonDateSch:JSON in jsonObj["open_house"].array!{
             
             let date = jsonDateSch["date"].string
-            
+                
             let dateObj = parseDateFromJSON(date!)
             
             controller = SchedulePage01(nibName: "SchedulePage", bundle: nil)
