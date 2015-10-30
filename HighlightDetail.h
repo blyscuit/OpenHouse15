@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol HighlightViewDelegate;
+
+
 @import GoogleMaps;
 
 @interface HighlightDetail : UIViewController
+
+@property (weak,nonatomic) id<HighlightViewDelegate> delegate;
 
 @property (strong, nonatomic) UIImageView *image;
 
@@ -22,5 +27,10 @@
 @property (nonatomic,strong) NSArray *arrDetail;
 
 @property (nonatomic,strong) UIButton *closeButton;
+
+@end
+
+@protocol HighlightViewDelegate <NSObject>
+-(void)highlightViewClose:(HighlightDetail*)controller;
 
 @end

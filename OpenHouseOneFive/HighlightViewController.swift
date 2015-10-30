@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HighlightViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
+class HighlightViewController: UIViewController, UITableViewDataSource,UITableViewDelegate,HighlightViewDelegate {
 
     var arrayMain = [[String]]()
     @IBOutlet weak var tableMain: UITableView!
@@ -93,6 +93,21 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 //        let str = "\(facultyVisitArray[indexPath.row].id)"
 //        delegate?.mainControllerDidTabWeb(str, controller: self)
+        performSegueWithIdentifier("highlightDetail_m", sender: arrayMain[indexPath.row])
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "highlightDetail_m"){
+            let hDVC = segue.destinationViewController as! HighlightDetail
+            hDVC.delegate = self
+            hDVC.arrDetail = sender as! [String]
+        }
+    }
+    
+    func highlightViewClose(controller: HighlightDetail!) {
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            
+        }
     }
 
 }
