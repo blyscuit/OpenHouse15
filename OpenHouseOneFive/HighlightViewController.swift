@@ -10,15 +10,22 @@ import UIKit
 
 class HighlightViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
 
+    var arrayMain = [[String]]()
     @IBOutlet weak var tableMain: UITableView!
     var titleText = ["FACULTIES"]
     var titleImage = [""]
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let hlJsonParser = HighLightJsonParser()
+        arrayMain = hlJsonParser.serializeJSON()
+//        print(arrayMain)
         tableMain.delegate = self
         tableMain.dataSource = self
         // Do any additional setup after loading the view.
+        
+        tableMain.separatorStyle = UITableViewCellSeparatorStyle.None
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +45,7 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int)
         -> Int {
-            return 5
+            return arrayMain.count
     }
     
     func tableView(tableView: UITableView,
@@ -47,11 +54,21 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
             //            let user = self.sections[indexPath.section].users[indexPath.row]
                 let cell = tableView.dequeueReusableCellWithIdentifier("highlightCell", forIndexPath: indexPath) as UITableViewCell
             
-            var titleImage = self.view.viewWithTag(100) as? UIImageView
+            var titleImageView = self.view.viewWithTag(100) as? UIImageView
             var labelImage = self.view.viewWithTag(101) as? UIImageView
             var labelTitle = self.view.viewWithTag(102) as? UILabel
             var labelEng = self.view.viewWithTag(103) as? UILabel
             
+            //            titleImageView?.image = UIImage()
+            labelTitle!.text = arrayMain[indexPath.row][1]
+            labelEng!.text = arrayMain[indexPath.row][0]
+            let imageName = "\(self.arrayMain[indexPath.row][6]).jpg"
+            titleImageView?.image = UIImage(named: imageName)
+            titleImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+
+            if(indexPath.row % 2 == 1){
+                cell.backgroundColor = UIColor(rgba: "#f9f9f9")
+            }
                 return cell
     }
     
@@ -64,13 +81,10 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
         
     }
     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if(indexPath.section == 2){
-            return true
-        }
-        return false
+        return true
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 66
+        return 70
     }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 58

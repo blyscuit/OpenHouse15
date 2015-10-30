@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenHouseOneFive/NavigationController.swift"
-            timestampString = "467262340.36505"
+            timestampString = "467888521.481454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "NavigationController"
             landmarkType = "3">
          </BreakpointContent>
