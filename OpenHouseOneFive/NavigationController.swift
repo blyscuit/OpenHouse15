@@ -22,7 +22,8 @@ class NavigationController: UINavigationController {
         
         navigationBar.tintColor = UIColor(rgba:"#ffffff")
         // Do any additional setup after loading the view.
-        
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor(rgba:"#ffffff"), NSFontAttributeName: UIFont.boldSystemFontOfSize(18)]
+
         
     }
     

@@ -7,12 +7,16 @@
 								"Location":"ลานเกียร์ และอาคารวิศวฯ 100 ปี",
 								"Highlight":"พบกับกิจกรรมน่าสนใจจากคณะวิศวกรรมศาสตร์ อยากรู้ว่าจบไปทำงานอะไร วิศวะฯ จุฬาคืออะไร ห้ามพลาดกิจกรรมภายในงาน",
 								"Latitude":"",
-								"Longitude":"",
+                              "Longitude":"",
+                              "คณะ": "วิศวกรรมศาสตร์",
+                              "FacultyName": "Faculty of Engineering",
 								"ExternalLink":""
 
 							},
 							{
-								"Faculty":"22",
+                              "Faculty":"22",
+                              "คณะ": "อักษรศาสตร์",
+                              "FacultyName": "Faculty of Arts",
 								"Artwork_name":"22_Art",
 								"Title":"เปิดบ้านอักษรศาสตร์ ปีการศึกษา 2558 (Arts Open House 2015)",
 								"Location":"อาคารมหาจักรีสิรินธร คณะอักษรศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
@@ -23,7 +27,9 @@
 
 							},
 							{
-								"Faculty":"23",
+                              "Faculty":"23",
+                              "คณะ": "วิทยาศาสตร์",
+                              "FacultyName": "Faculty of Science",
 								"Artwork_name":"23_Art",
 								"Title":"Explore Science",
 								"Location":"อาคารมหามกุฏ คณะวิทยาศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
@@ -34,7 +40,9 @@
 
 							},
 							{
-								"Faculty":"24",
+                              "Faculty":"24",
+                              "คณะ": "รัฐศาสตร์",
+                              "FacultyName": "Faculty of Political Science",
 								"Artwork_name":"24_Art",
 								"Title":"เปิดเรือนเยือนจุฬาฯ ๒๕๕๘: ความเป็นไทย ศิลปะและการเมือง (CU PolSci Open House 2015: Thainess, Art, and Politics) ",
 								"Location":"คณะรัฐศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
@@ -45,7 +53,9 @@
 
 							},
 							{
-								"Faculty":"25",
+                              "Faculty":"25",
+                              "คณะ": "สถาปัตยกรรมศาสตร์",
+                              "FacultyName": "Faculty of Architecture",
 								"Artwork_name":"25_Art",
 								"Title":"เปิดเรือนเยือน คณะสถาปัตยกรรมศาสตร์",
 								"Location":"คณะสถาปัตยกรรมศาสตร์",
@@ -56,7 +66,9 @@
 
 							},
 							{
-								"Faculty":"26",
+                              "Faculty":"26",
+                              "คณะ": "พาณิชยศาสตร์ และการบัญชี",
+                              "FacultyName": "Faculty of Commerce and Accountancy",
 								"Artwork_name":"26_Art",
 								"Title":"",
 								"Location":"คณะพาณิชยศาสตร์และการบัญชี",
@@ -67,7 +79,9 @@
 
 							},
 							{
-								"Faculty":"27",
+                              "Faculty":"27",
+                              "คณะ": "ครุศาสตร์",
+                              "FacultyName": "Faculty of Education",
 								"Artwork_name":"27_Art",
 								"Title":"เปิดเรือนเยือนจุฬาฯ คณะศึกษาศาสตร์",
 								"Location":"คณะศึกษาศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
@@ -78,7 +92,9 @@
 
 							},
 							{
-								"Faculty":"28",
+                              "Faculty":"28",
+                              "คณะ": "นิเทศศาสตร์",
+                              "FacultyName": "Faculty of Communication Arts",
 								"Artwork_name":"28_Art",
 								"Title":"นิเทศเรนเจอร์",
 								"Location":"คณะนิเทศศาสตร์",
@@ -89,7 +105,9 @@
 
 							},
 							{
-								"Faculty":"29",
+                              "Faculty":"29",
+                              "คณะ": "เศรษฐศาสตร์",
+                              "FacultyName": "Faculty of Economics",
 								"Artwork_name":"29_Art",
 								"Title":"เปิดบ้านเศรษฐศาสตร์จุฬาฯ Open House Econ CU ",
 								"Location":"คณะเศรษฐศาสตร์  จุฬาลงกรณ์มหาวิทยาลัย",
@@ -100,7 +118,9 @@
 
 							},
 							{
-								"Faculty":"30",
+                              "Faculty":"30",
+                              "คณะ": "แพทยศาสตร์",
+                              "FacultyName": "Faculty of Medicine",
 								"Artwork_name":"30_Art",
 								"Title":"MDCU Open House 2015: เปิดบ้านหมอจุฬาฯ",
 								"Location":"อาคารแพทยพัฒน์ คณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
@@ -111,7 +131,9 @@
 
 							},
 							{
-								"Faculty":"31",
+                              "Faculty":"31",
+                              "คณะ": "สัตวแพทยศาสตร์",
+                              "FacultyName": "Faculty of Veterinary Science",
 								"Artwork_name":"31_Art",
 								"Title":"เปิดเรือนเยือนจุฬา ตอน เปิดเรือนเยือนฟาร์มเค้า",
 								"Location":"Park@Siam Square",
@@ -122,7 +144,9 @@
 
 							},
 							{
-								"Faculty":"32",
+                              "Faculty":"32",
+                              "คณะ": "ทันตแพทยศาสตร์",
+                              "FacultyName": "Faculty of Dentistry",
 								"Artwork_name":"32_Art",
 								"Title":"ชื่องานของคณะ : ทันต์เที่ยวไทย",
 								"Location":"สถานที่จัดงาน : คณะทันตแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย บริเวณข้างศูนย์หนังสือจุฬาฯ สยามสแควร์",
@@ -133,7 +157,9 @@
 
 							},
 							{
-								"Faculty":"33",
+                              "Faculty":"33",
+                              "คณะ": "เภสัชศาสตร์",
+                              "FacultyName": "Faculty of Phamaceutical Science",
 								"Artwork_name":"33_Art",
 								"Title":"สรวลเสเภสัช",
 								"Location":"ชั้น 1 คณะเภสัชศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
@@ -144,7 +170,9 @@
 
 							},
 							{
-								"Faculty":"34",
+                              "Faculty":"34",
+                              "คณะ": "นิติศาสตร์",
+                              "FacultyName": "Faculty of Law",
 								"Artwork_name":"34_Art",
 								"Title":"",
 								"Location":"โถงบริเวณ อาคารเทพทวาราวดี คณะนิติศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
@@ -155,7 +183,9 @@
 
 							},
 							{
-								"Faculty":"35",
+                              "Faculty":"35",
+                              "คณะ": "ศิลปกรรมศาสตร์",
+                              "FacultyName": "Faculty of Fine and Applied Art",
 								"Artwork_name":"35_Art",
 								"Title":"เปิดเรือนเยือน คณะศิลปกรรมศาสตร์",
 								"Location":"คณะศิลปกรรมศาสตร์",
@@ -166,7 +196,9 @@
 
 							},
 							{
-								"Faculty":"37",
+                              "Faculty":"37",
+                              "คณะ": "สหเวชศาสตร์",
+                              "FacultyName": "Faculty of Allied Health Scienes",
 								"Artwork_name":"37_Art",
 								"Title":"แวะมาเยือนเรือนตึกแดง : แดนดินถิ่น สหเวช จุฬาฯ",
 								"Location":"อาคารจุฬาพัฒน์ 1 , 2 และ 3 คณะสหเวชศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย",
@@ -177,7 +209,9 @@
 
 							},
 							{
-								"Faculty":"38",
+                              "Faculty":"38",
+                              "คณะ": "จิตวิทยา",
+                              "FacultyName": "Faculty of Psychology",
 								"Artwork_name":"38_Art",
 								"Title":"O.H.! PSYCHE CU 2015 (Psychology CU Open House 2015:เปิดบ้านจิตวิทยา จุฬาฯ)",
 								"Location":"พื้นที่บริเวณอาคารบรมราชชนนีศรีศตพรรษ \n(คณะจิตวิทยา จุฬาลงกรณ์มหาวิทยาลัย)",
@@ -188,7 +222,9 @@
 
 							},
 							{
-								"Faculty":"39",
+                              "Faculty":"39",
+                              "คณะ": "วิทยาศาสตร์การกีฬา",
+                              "FacultyName": "Faculty of Sports Science",
 								"Artwork_name":"39_Art",
 								"Title":"Health science behind the scene",
 								"Location":"สนามหญ้าด้านหน้าอาคารบรมราชชนนีศรีศตพรรษ",
@@ -199,7 +235,9 @@
 
 							},
 							{
-								"Faculty":"40",
+                              "Faculty":"40",
+                              "คณะ": "สำนักวิชาทรัพยากรการเกษตร",
+                              "FacultyName": "School of Agricultural Resources",
 								"Artwork_name":"40_Art",
 								"Title":"เปิดเรือนศาสตร์การบริหารเกษตรไทย ใต้ร่มพระบารมี ด้วยวิถีเกษตรกรรม",
 								"Location":"โรงอาหารใต้อาคารวิทยกิตติ์(อาคารศูนย์หนังสือจุฬา)",

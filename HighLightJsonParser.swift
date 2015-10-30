@@ -31,14 +31,16 @@ class HighLightJsonParser: NSObject {
             var title = jsonDetail["Title"].stringValue
             var highlight = jsonDetail["Highlight"].stringValue
             
-            row.append(fac)
-            row.append(title)
-            row.append(location)
-            row.append(highlight)
-            row.append(artPic)
-            row.append(lat)
-            row.append(long)
-            row.append(external)
+            row.append(jsonDetail["FacultyName"].stringValue)//0
+            row.append(jsonDetail["คณะ"].stringValue)//1
+            row.append(fac)//2
+            row.append(title)//3
+            row.append(location)//4
+            row.append(highlight)//5
+            row.append(artPic)//6
+            row.append(lat)//7
+            row.append(long)//8
+            row.append(external)//9
             
             arrDetail.append(row)
             
