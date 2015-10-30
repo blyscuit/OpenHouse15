@@ -1,16 +1,36 @@
 {
     "faq" : [
              {
-             "question" : "What is answer to the meaning of life?",
-             "answer" : "42\n66"
+             "question" : "ช่องทางการติดตามข่าวสาร",
+             "answer" : "น้องๆสามารถติดตามและพูดคุยกันเพิ่มเติมได้ที่\nFacebook : cuopenhouse2015\nInstagram : @cuopenhouse2015\nTwitter : @cuopenhouse"
              },
              {
-             "question" : "This is a question.",
-             "answer" : "I see"
+             "question" : "งานมีวันไหนบ้างคะ",
+             "answer" : "งานเปิดเรือนเยือนจุฬาฯ (CU Open House 2015) จัดในวันที่ 15-17 พ.ย. 2558\nโดยวันที่ 15 พฤศจิกายน เวลา 9.00-19.00 น.\nและวันที่ 16-17 พฤศจิกายน เวลา 9.00-16.00 น."
              },
              {
-             "question" : "This is a question\nthis this.",
-             "answer" : "Miusov, as a man man of breeding and deilcacy, could not but feel some inwrd qualms, when he reached the Father Superior's with Ivan: he felt ashamed of havin lost his temper. He felt that he ought to have disdaimed that despicable wretch, Fyodor Pavlovitch, too much to have been upset by him in Father Zossima's cell, and so to have forgotten himself. Miusov, as a man man of breeding and deilcacy, could not but feel some inwrd qualms, when he reached the Father Superior's with Ivan: he felt ashamed of havin lost his temper. He felt that he ought to have disdaimed that despicable wretch, Fyodor Pavlovitch, too much to have been upset by him in Father Zossima's cell, and so to have forgotten himself. "
+             "question" : "ใส่ชุดอะไรไปคะ",
+             "answer" : "น้องๆสามารถใส่ได้ทั้งชุดนักเรียนหรือชุดไปรเวทจ้า แต่พี่ๆขอให้เป็นชุดสุภาพหน่อยนะคะ"
+             },
+             {
+             "question" : "ต้องไปทั้ง 3 วันไหมคะ",
+             "answer" : "น้องๆสามารถไปวันไหนก็ได้ค่ะ"
+             },
+             {
+             "question" : "เดินทางไปจุฬา ยังไงคะพี่ ",
+             "answer" : "น้องๆสามารถมาโดย BTS ลงสถานีสยาม และ ต่อรถปอ.พ. มายังจุฬาฯ โดยขึ้นที่บริเวณหน้าโรงภาพยนตร์ลิโด้ หรือสามารถมาโดย MRT สถานีสามย่านได้ค่ะ"
+             },
+             {
+             "question" : "ต้องลงทะเบียนก่อนเข้างานไหมคะ",
+             "answer" : "งานนี้ไม่มีลงทะเบียนก่อนเข้างานนะคะ"
+             },
+             {
+             "question" : "มีค่าใช้จ่ายไหมคะ",
+             "answer" : "น้องๆสามารถเข้าชมงานนี้ ฟรีค่ะ"
+             },
+             {
+             "question" : "ถ้าผู้ปกครองมาส่ง สามารถจอดรถที่ไหนได้บ้างคะ",
+             "answer" : "ตึกจอดรถคณะอักษรศาสตร์\nตึกจอดรถคณะรัฐศาสตร์\nอาคารจามจุรี 9\nโดยเสียค่าใช้จ่ายในอัตราชั่วโมงละ 10 บาท"
              }
              
              ]

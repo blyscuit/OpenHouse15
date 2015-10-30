@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftyJSON
 
 class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITableViewDataSource,UITableViewDelegate,BingoViewControllerDelegate{
     
@@ -30,6 +31,9 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        loadJSONFile()
+        
+        
         tableMain.delegate = self
         tableMain.dataSource = self
         
@@ -38,6 +42,11 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
 //        bingoTable.frame.size = CGSizeMake(bingoTable.frame.size.width, bingoTable.frame.size.width)
         
 //        bingoTable.reloadData()
+        
+        //JSON
+        
+        
+        
     }
     
     func genFacArray(){
@@ -141,19 +150,19 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             if(indexPath.section==0){
             let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
             
-            cell.detailTextLabel?.text = "Tile"
-            cell.textLabel?.text = "Time am"
-            
+                setNowEvent(cell.textLabel, detailLabel: cell.detailTextLabel)
+                
+                
             return cell
             }else if(indexPath.section==1){
-                var cell = tableView.dequeueReusableCellWithIdentifier("bingoCell", forIndexPath: indexPath) as! BingoViewController
+                let cell = tableView.dequeueReusableCellWithIdentifier("bingoCell", forIndexPath: indexPath) as! BingoViewController
                 cell.bingoBoard = self.bingoBoard
                 bingoCell = cell
                 cell.delegate = self
                 cell.start()
                 return cell
             }else{
-                var cell = tableView.dequeueReusableCellWithIdentifier("facultyStatusCell", forIndexPath: indexPath) as! TitleTableViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier("facultyStatusCell", forIndexPath: indexPath) as! TitleTableViewCell
                 let tile:Tile!
                 if(indexPath.section == 2){
                     tile = facultyVisitArray[indexPath.row]
@@ -250,6 +259,100 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         tableMain.reloadData()
     }
+    
+    //JSON
+    
+    let JSON_FILE = "Schedule"
+    var jsonObj: JSON = []
+    
+    func loadJSONFile(){
+        if let path = NSBundle.mainBundle().pathForResource(JSON_FILE, ofType: "json"){
+            do {
+                let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                loadJSON(data);
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+            
+            
+        } else {
+            print("Invaild filename/path!")
+        }
+    }
+    
+    func loadJSON(data: NSData) {
+        jsonObj = JSON(data: data)
+        if jsonObj != JSON.null {
+            print("jsonData:\(jsonObj)")
+        } else {
+            print("invalid JSON file")
+        }
+        
+    }
+    
+    func parseDateFromJSON(date:String) -> NSDate {
+        let dateFor: NSDateFormatter = NSDateFormatter()
+        dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return dateFor.dateFromString(date)!
+    }
+    
+    func getDateString(date:NSDate) -> String{
+        let dateFor: NSDateFormatter = NSDateFormatter()
+        dateFor.dateFormat = "h:mm a"
+        return dateFor.stringFromDate(date)
+    }
+    
+    func setNowEvent(timeLabel:UILabel?, detailLabel:UILabel?){
+        for var jsonDateSch:JSON in jsonObj["open_house"].array!{
+//            let now = parseDateFromJSON("2015-11-15T14:23:00+07:00")
+            let now = NSDate()
+            
+            let date = jsonDateSch["date"].string
+            
+            let dateObj = parseDateFromJSON(date!)
+            
+            var timeText = "N/A"
+            var detailText = "Not Available"
+            print("now \(now) compared to dateObj \(dateObj)")
+            if(dateObj.isBeforeDate(now)){
+                
+                timeText = getDateString(parseDateFromJSON(jsonDateSch["schedule"][0]["time"].string!))
+                detailText = jsonDateSch["schedule"][0]["title"].string!
+                
+                
+                for var subjson:JSON in jsonDateSch["schedule"].array!{
+                    let subdate = subjson["time"].string
+                    
+                    let subdateObj = parseDateFromJSON(subdate!)
+//                    print("now \(now) compared to \(subdateObj)")
+                    
+                    if(subdateObj.isAfterDate(now)){
+                        break
+                    }
+                    
+                    if(subdateObj.isBeforeDate(now)){
+                        timeText = getDateString(subdateObj)
+                        detailText = subjson["title"].string!
+                    }
+                    
+                }
+                
+                print("event time = \(timeText)\ndetail = \(detailText)")
+                
+                timeLabel?.text = timeText
+                detailLabel?.text = detailText
+                
+                break
+            }
+            
+            timeLabel?.text = timeText
+            detailLabel?.text = detailText
+            
+        }
+    }
+    
 }
 
     
