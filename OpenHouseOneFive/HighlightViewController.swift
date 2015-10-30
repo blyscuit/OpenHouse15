@@ -99,7 +99,7 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "highlightDetail_m"){
+        if(segue.identifier == "highlightDetail_m"){ 
             let hDVC = segue.destinationViewController as! HighlightDetail
             hDVC.delegate = self
             hDVC.arrDetail = sender as! [String]

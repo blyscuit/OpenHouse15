@@ -118,7 +118,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 mess = "Incorrect QR code"
             }
             
-            let alert = UIAlertController(title: "Faculty unlock", message: result, preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Faculty unlock", message: mess, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             
             self.presentViewController(alert, animated: true, completion: nil)

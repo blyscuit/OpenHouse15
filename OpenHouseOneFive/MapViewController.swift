@@ -10,8 +10,14 @@ import UIKit
 import GoogleMaps
 import SwiftyJSON
 
-class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
+@objc protocol MapControllerDelegate {
+    func mapControllerDidTabWeb(text: String, controller: MapViewController)
+}
 
+class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
+    
+    var delegate: MapControllerDelegate?
+    
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var cButton: UIButton!
@@ -319,8 +325,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             
+            mapView.animateToZoom(12)
             // 7
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            mapView.animateToLocation(location.coordinate)
             
             // 8
             locationManager.stopUpdatingLocation()
@@ -397,5 +404,6 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     @IBAction func  facultyInfoPress(sender: AnyObject) {
     }
     @IBAction func facultyHighlightPress(sender: AnyObject) {
+        
     }
 }

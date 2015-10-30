@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabViewController: UITabBarController,MainMenuControllerDelegate {
+class TabViewController: UITabBarController,MainMenuControllerDelegate,MapControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,7 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate {
         }
         
         (viewControllers?.first as! ViewController).delegate = self
+        (viewControllers?[1] as! MapViewController).delegate = self
         
     }
     
@@ -111,10 +112,15 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate {
         toWeb = text
         self.performSegueWithIdentifier("web_p", sender: self)
     }
+    func mapControllerDidTabWeb(text: String, controller: MapViewController) {
+        toWeb = text
+        self.performSegueWithIdentifier("web_p", sender: self)
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "web_p"){
-            
+            let wVC = segue.destinationViewController as! WebViewController
+            wVC.idNumber = toWeb
         }
     }
     
