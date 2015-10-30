@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import SwiftyJSON
+
 @objc protocol MainMenuControllerDelegate {
     func mainControllerDidTabWeb(text: String, controller: ViewController)
 //    func bingoControllerDidTapCell(controller: ViewController)

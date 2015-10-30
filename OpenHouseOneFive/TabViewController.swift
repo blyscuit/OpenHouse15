@@ -9,26 +9,25 @@
 import UIKit
 
 class TabViewController: UITabBarController,MainMenuControllerDelegate {
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let logo = UIImage(named: "app-icon-nav.png")
         let imageView = UIImageView(image:logo)
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        //        imageView.backgroundColor=UIColor.redColor()
+
         navigationItem.titleView = imageView
-        //        UINavigationBar.appearance().setBackgroundImage(logo, forBarMetrics: UIBarMetrics.Default)
+
         
         var image = UIImage(named: "info-icon.png")
         
-        //        image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        //                image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         
-        let homeButton : UIBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toAbout")
+        var homeButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toAbout")
         
         
         image = UIImage(named: "user-icon.png")
-        let userButton : UIBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toUser")
+        var userButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toUser")
         
         navigationItem.rightBarButtonItem=homeButton
         navigationItem.leftBarButtonItem=userButton
@@ -42,7 +41,7 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate {
         }
         
         (viewControllers?.first as! ViewController).delegate = self
-
+        
     }
     
     func toAbout(){
@@ -52,12 +51,57 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate {
         print("user")
     }
     
+    func setTopBar(numb:Int){
+        switch(numb){
+        case 0:
+            let logo = UIImage(named: "app-icon-nav.png")
+            let imageView = UIImageView(image:logo)
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            
+            navigationItem.titleView = imageView
+            
+            
+            var image = UIImage(named: "info-icon.png")
+            
+            //                image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+            
+            var homeButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toAbout")
+            
+            
+            image = UIImage(named: "user-icon.png")
+            var userButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toUser")
+            
+            navigationItem.rightBarButtonItem=homeButton
+            navigationItem.leftBarButtonItem=userButton
+        default:
+            navigationItem.rightBarButtonItem=nil
+            navigationItem.leftBarButtonItem=nil
+            
+            navigationItem.titleView=nil
+        }
+    }
+    
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         if(tabBar.selectedItem == tabBar.items?[1]){
             self.navigationController?.setNavigationBarHidden(true, animated: false)
             UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         }else{
             self.navigationController?.setNavigationBarHidden(false, animated: false)
+            
+        }
+        
+        if(tabBar.selectedItem == tabBar.items?[0]){
+            setTopBar(0)
+        }else if(tabBar.selectedItem == tabBar.items?[1]){
+            setTopBar(1)
+        }else if(tabBar.selectedItem == tabBar.items?[2]){
+            setTopBar(2)
+            navigationItem.title="Main Stage Schedule"
+        }else if(tabBar.selectedItem == tabBar.items?[3]){
+            setTopBar(3)
+            navigationItem.title="Highlight"
+        }else if(tabBar.selectedItem == tabBar.items?[4]){
+            setTopBar(4)
             
         }
     }
