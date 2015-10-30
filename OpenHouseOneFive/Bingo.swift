@@ -123,6 +123,34 @@ class Bingo: NSObject {
         return nil
     }
     
+    func tileWithFaculty(fac:String) -> Tile?{
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                let tile = tiles [column,row]
+                
+                if tile?.name == fac {
+
+                    return tile
+                }
+            }
+        }
+        return nil
+    }
+    
+    func tileWithID(inID:String) -> Tile?{
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                let tile = tiles [column,row]
+                print("\(tile!.id)")
+                if "\(tile!.id)" == inID {
+                    
+                    return tile
+                }
+            }
+        }
+        return nil
+    }
+    
     func saveDataToUser(){
         var array = [Tile]()
         for row in 0..<NumRows {

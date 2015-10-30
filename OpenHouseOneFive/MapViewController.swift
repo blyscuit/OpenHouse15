@@ -18,6 +18,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     
     var delegate: MapControllerDelegate?
     
+    @IBOutlet weak var facultyButtonView: UIView!
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var cButton: UIButton!
@@ -61,8 +62,13 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     var bOn:Bool = false
     var cOn:Bool = false
     
+    var bingoBoard:Bingo!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bingoBoard = Bingo(random: true)
+        
         var camera = GMSCameraPosition.cameraWithLatitude(13.7406223,
             longitude: 100.5307583, zoom: 15)
         mapView.camera = camera
@@ -85,8 +91,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         viewInitialPosition = CGRectMake(CGRectGetMidX(self.view.frame) - detailView.frame.size.width/2, self.view.frame.size.height - (detailView.frame.origin.y - 170),detailView.frame.size.width,detailView.frame.size.height)
         // detailView.frame
         detailView.frame.origin = CGPointMake(-1000,0)
+        facultyButtonView.frame.origin = CGPointMake(-1000,0)
         detailView.alpha=0.0
+        facultyButtonView.alpha=0.0
         detailView.layer.borderWidth = 1
+        facultyButtonView.layer.borderWidth = 1
         
         detailView.layer.borderColor = UIColor.lightGrayColor().CGColor
         detailView.clipsToBounds = true
@@ -96,7 +105,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         
     }
     
+    
     override func viewDidAppear(animated: Bool) {
+        
+        bingoBoard = Bingo(random: true)
+        
         if(detailView.alpha == 1.0){
             self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
         }else{
@@ -158,9 +171,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         }
         
         var marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
+        marker.position = CLLocationCoordinate2DMake(13.7406223,100.5307583)
         marker.title = "Sydney"
         marker.snippet = "Australia"
+        
+//        marker.userData = bingoBoard.tileWithID("21")
         
         facultyArray.append(marker)
         
@@ -325,7 +340,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             
-            mapView.animateToZoom(12)
+            mapView.animateToZoom(16)
             // 7
             mapView.animateToLocation(location.coordinate)
             
@@ -352,9 +367,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     @IBAction func closeDetail(sender: AnyObject) {
         UIView.animateWithDuration(0.3, animations: {
             self.detailView.alpha = 0.0
-
+            self.facultyButtonView.alpha=0.0
             
-            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y)
+//            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y)
             
             }, completion: { (SUCCESS) -> Void in
                 self.detailView.frame.origin = CGPointMake(-1000, 0)
@@ -366,17 +381,37 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         if(detailView.alpha == 1){
             return
         }
-        self.buildingNameLabel.text = marker.title
-        self.buildingNameEngLabel.text = marker.description
-        self.facultyNameLabel.text = marker.snippet
-        self.detailView.frame = viewInitialPosition
+        
+        if marker.userData != nil{
+        let tile:Tile? = marker.userData as! Tile
+//        if(tile != nil){
+        self.buildingNameLabel.text = tile!.thaiName// marker.title
+        self.buildingNameEngLabel.text = tile!.name// marker.description
+        self.facultyNameLabel.text = tile!.thaiName// marker.snippet
+        self.detailView!.frame = viewInitialPosition
+            self.facultyButtonView.frame = CGRectMake(self.detailView!.frame.origin.x, self.detailView!.frame.origin.y + self.detailView!.frame.size.height, self.detailView!.frame.size.width, self.detailView!.frame.size.height)
+            
+            self.facultyButtonView.hidden = false
+            if(tile!.got == true){
+                self.facultyInfoButton.enabled = true
+                self.facultyInfoButton.imageView?.image = UIImage(named: "faculty_info_active_button")
+            }else{
+                self.facultyInfoButton.enabled = false
+                self.facultyInfoButton.imageView?.image = UIImage(named: "faculty_info_inactive_button")
+            }
+        }else{
+            self.facultyButtonView.hidden = true
+            self.buildingNameLabel.text = marker.title
+            self.buildingNameEngLabel.text = marker.description
+//            self.facultyNameLabel.text = marker.snippet
+        }
         
         self.locationButton.frame.origin = positionButtonInitialPosition
         
         UIView.animateWithDuration(0.3, animations: {
             self.detailView.alpha = 1.0
-            
-            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
+            self.facultyButtonView.alpha = 1.0
+//            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
             
             self.view.layoutIfNeeded()
             
