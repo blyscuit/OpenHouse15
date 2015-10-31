@@ -120,39 +120,60 @@
                                 <rect key="frame" x="123" y="432" width="354" height="42"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6M-4C-Bzv">
-                                        <rect key="frame" x="0.0" y="0.0" width="177" height="49"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="42"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="49" id="7UK-88-7DS"/>
                                             <constraint firstAttribute="width" constant="177" id="RBf-U4-sdo"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="faculty_highlight_button"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="7UK-88-7DS"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="facultyHighlightPress:" destination="eMU-Kd-X9a" eventType="touchUpInside" id="cYW-Lb-Esq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="man-NG-lD3">
-                                        <rect key="frame" x="177" y="0.0" width="177" height="49"/>
+                                        <rect key="frame" x="177" y="0.0" width="177" height="42"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="177" id="WTS-Pt-mPz"/>
                                             <constraint firstAttribute="height" constant="49" id="hLi-rJ-R8s"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="faculty_info_active_button"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="hLi-rJ-R8s"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="facultyInfoPress:" destination="eMU-Kd-X9a" eventType="touchUpInside" id="30G-Pq-ddn"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="7Xl-l0-eNr"/>
-                                    <constraint firstAttribute="bottom" secondItem="l6M-4C-Bzv" secondAttribute="bottom" constant="-7" id="9EZ-gm-YZR"/>
+                                    <constraint firstAttribute="bottom" secondItem="l6M-4C-Bzv" secondAttribute="bottom" id="9EZ-gm-YZR"/>
                                     <constraint firstAttribute="trailing" secondItem="man-NG-lD3" secondAttribute="trailing" id="Cyd-kD-jUJ"/>
                                     <constraint firstItem="l6M-4C-Bzv" firstAttribute="leading" secondItem="ctd-8O-Icf" secondAttribute="leading" id="Iha-Ec-W9X"/>
+                                    <constraint firstItem="man-NG-lD3" firstAttribute="centerY" secondItem="ctd-8O-Icf" secondAttribute="centerY" id="YN7-h5-YXa"/>
                                     <constraint firstAttribute="bottom" secondItem="man-NG-lD3" secondAttribute="bottom" constant="-7" id="cNC-t5-T6a"/>
                                     <constraint firstAttribute="width" constant="354" id="fGy-00-Thw"/>
+                                    <constraint firstItem="l6M-4C-Bzv" firstAttribute="centerY" secondItem="ctd-8O-Icf" secondAttribute="centerY" id="fsI-aP-tCO"/>
+                                    <constraint firstItem="l6M-4C-Bzv" firstAttribute="height" secondItem="ctd-8O-Icf" secondAttribute="height" id="hkN-IS-aiv"/>
+                                    <constraint firstItem="man-NG-lD3" firstAttribute="height" secondItem="ctd-8O-Icf" secondAttribute="height" id="jvL-HF-29B"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9EZ-gm-YZR"/>
+                                        <exclude reference="cNC-t5-T6a"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EhF-Te-RN2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
@@ -422,8 +443,11 @@
                         <outlet property="inforButton" destination="IE9-iI-dN5" id="her-lr-epU"/>
                         <outlet property="landmarkButton" destination="JEh-wI-ebp" id="yAg-Fc-QLU"/>
                         <outlet property="locationButton" destination="8Qx-Ij-rCz" id="g6g-sH-X5f"/>
+                        <outlet property="lowButtonView" destination="seD-Pk-Oab" id="3Ov-CD-StB"/>
                         <outlet property="mapView" destination="7OG-G4-16H" id="bvm-am-Vci"/>
                         <outlet property="stationButton" destination="dnf-AE-DOC" id="hx4-9Q-2aW"/>
+                        <outlet property="topButtonView" destination="3Ke-Y3-ZJI" id="GUu-R0-0iK"/>
+                        <segue destination="9Rw-gN-ybG" kind="presentation" identifier="hightlight_m" id="Oes-zV-abu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nW-ja-R12" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -491,7 +515,7 @@
                                                         <constraint firstAttribute="width" constant="20" id="Zsp-oS-ef2"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1or-nl-ibC">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1or-nl-ibC">
                                                     <rect key="frame" x="96" y="25" width="463" height="21"/>
                                                     <animations/>
                                                     <constraints>
@@ -507,7 +531,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xs-sR-B7o">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8Xs-sR-B7o">
                                                     <rect key="frame" x="96" y="43" width="463" height="21"/>
                                                     <animations/>
                                                     <constraints>
@@ -931,7 +955,7 @@
                                                         <constraint firstAttribute="height" constant="48" id="qGg-3K-neK"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-Lq-RIS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-Lq-RIS">
                                                     <rect key="frame" x="103" y="30" width="489" height="21"/>
                                                     <animations/>
                                                     <constraints>
@@ -941,7 +965,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ไตเติล" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCY-s3-wqp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ไตเติล" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BCY-s3-wqp">
                                                     <rect key="frame" x="103" y="7" width="489" height="21"/>
                                                     <animations/>
                                                     <constraints>
@@ -1877,4 +1901,7 @@
         <image name="topic-texture" width="413" height="52"/>
         <image name="user-icon" width="23" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Oes-zV-abu"/>
+    </inferredMetricsTieBreakers>
 </document>

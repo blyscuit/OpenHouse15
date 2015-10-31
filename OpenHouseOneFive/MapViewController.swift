@@ -14,7 +14,7 @@ import SwiftyJSON
     func mapControllerDidTabWeb(text: String, controller: MapViewController)
 }
 
-class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
+class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate,HighlightViewDelegate {
     
     var delegate: MapControllerDelegate?
     
@@ -34,6 +34,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     @IBOutlet weak var facInfoButton: UIView!
     @IBOutlet weak var facultyInfoButton: UIButton!
     @IBOutlet weak var locationButton: UIButton!
+    
+    var selectingTile:Tile!
     
     var landMarkArray = [GMSMarker]()
     var stationArray = [GMSMarker]()
@@ -62,10 +64,23 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     var bOn:Bool = false
     var cOn:Bool = false
     
+    @IBOutlet weak var lowButtonView: UIView!
+    @IBOutlet weak var topButtonView: UIView!
     var bingoBoard:Bingo!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(self.view.frame.size.width<=320){
+//            self.topButtonView.layer.anchorPoint = CGPointMake(0.5, 0.0)
+            self.topButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
+            self.lowButtonView.layer.anchorPoint = CGPointMake(0.5, 0.7)
+            self.lowButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
+            self.facultyButtonView.layer.anchorPoint = CGPointMake(0.5, 0.7)
+            self.facultyButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
+//            self.detailView.layer.anchorPoint = CGPointMake(0.5, 0.0)
+            self.detailView.transform = CGAffineTransformMakeScale(0.85, 0.85);
+        }
         
         bingoBoard = Bingo(random: true)
         
@@ -175,7 +190,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         marker.title = "Sydney"
         marker.snippet = "Australia"
         
-//        marker.userData = bingoBoard.tileWithID("21")
+        marker.userData = bingoBoard.tileWithID("21")
         
         facultyArray.append(marker)
         
@@ -385,9 +400,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         if marker.userData != nil{
         let tile:Tile? = marker.userData as! Tile
 //        if(tile != nil){
-        self.buildingNameLabel.text = tile!.thaiName// marker.title
-        self.buildingNameEngLabel.text = tile!.name// marker.description
-        self.facultyNameLabel.text = tile!.thaiName// marker.snippet
+            selectingTile = tile
+            self.buildingNameLabel.text = tile!.thaiName // marker.title
+        self.buildingNameEngLabel.text = tile!.name // marker.description
+//        self.facultyNameLabel.text = tile!.thaiName // marker.snippet
         self.detailView!.frame = viewInitialPosition
             self.facultyButtonView.frame = CGRectMake(self.detailView!.frame.origin.x, self.detailView!.frame.origin.y + self.detailView!.frame.size.height, self.detailView!.frame.size.width, self.detailView!.frame.size.height)
             
@@ -437,8 +453,32 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         return UIStatusBarStyle.LightContent
     }
     @IBAction func  facultyInfoPress(sender: AnyObject) {
+        
     }
     @IBAction func facultyHighlightPress(sender: AnyObject) {
-        
+        if(selectingTile != nil){
+            
+            let hlJsonParser = HighLightJsonParser()
+            let arrayMain = hlJsonParser.serializeJSON()
+            for array in arrayMain{
+                if array[2] == "\(selectingTile!.id)"{
+                self.performSegueWithIdentifier("hightlight_m", sender: array)
+                }
+            }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "hightlight_m"){
+            let hDVC = segue.destinationViewController as! HighlightDetail
+            hDVC.delegate = self
+            hDVC.arrDetail = sender as! [String]
+        }
+    }
+    
+    func highlightViewClose(controller: HighlightDetail!) {
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            
+        }
     }
 }
