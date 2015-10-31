@@ -110,12 +110,40 @@ class Bingo: NSObject {
     }
     
     func gotTileWithQR(QR:String) -> Tile?{
+        var tile:Tile?
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                tile = tiles [column,row]
+                
+                if tile?.qr == QR {
+                    gotTile(tile!)
+                }
+            }
+        }
+        return tile
+    }
+    
+    func tileWithFaculty(fac:String) -> Tile?{
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
                 let tile = tiles [column,row]
                 
-                if tile?.qr == QR {
-                    gotTile(tile!)
+                if tile?.name == fac {
+
+                    return tile
+                }
+            }
+        }
+        return nil
+    }
+    
+    func tileWithID(inID:String) -> Tile?{
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                let tile = tiles [column,row]
+                print("\(tile!.id)")
+                if "\(tile!.id)" == inID {
+                    
                     return tile
                 }
             }

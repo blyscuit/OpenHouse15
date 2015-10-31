@@ -26,7 +26,6 @@
 		682677261BD531CA00B3D6D5 /* Level_5.json in Resources */ = {isa = PBXBuildFile; fileRef = 682677251BD531CA00B3D6D5 /* Level_5.json */; };
 		682677281BD5344E00B3D6D5 /* BingoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682677271BD5344E00B3D6D5 /* BingoCollectionViewCell.swift */; };
 		68431C281BE109D5004DC850 /* cuOpenHouseRouteData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68431C271BE109D5004DC850 /* cuOpenHouseRouteData.json */; };
-		6849449C1BE3A66E00622453 /* HighlightDetail.h in Sources */ = {isa = PBXBuildFile; fileRef = 75936D081BE361A3005642E5 /* HighlightDetail.h */; };
 		6849449D1BE3A67800622453 /* HighlightDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 75936D091BE361A3005642E5 /* HighlightDetail.m */; };
 		684944A01BE3A70A00622453 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6849449F1BE3A70A00622453 /* WebViewController.m */; };
 		685B0DE61BCBBB3F0062BC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */; };
@@ -477,7 +476,7 @@
 		685B0DD91BCBBB3F0062BC91 = {
 			isa = PBXGroup;
 			children = (
-				7507B6E21BE49E89001C83BD /* WebView */,
+				7507B6E21BE49E89001C83BD /* V2 */,
 				685B0DE41BCBBB3F0062BC91 /* OpenHouseOneFive */,
 				685B0DF91BCBBB400062BC91 /* OpenHouseOneFiveTests */,
 				685B0E041BCBBB400062BC91 /* OpenHouseOneFiveUITests */,
@@ -872,7 +871,7 @@
 				TargetAttributes = {
 					685B0DE11BCBBB3F0062BC91 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 5VSYW3XV2E;
+						DevelopmentTeam = 93QF44Z6JU;
 					};
 					685B0DF51BCBBB400062BC91 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -1142,7 +1141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6849449D1BE3A67800622453 /* HighlightDetail.m in Sources */,
-				6849449C1BE3A66E00622453 /* HighlightDetail.h in Sources */,
 				685B0E1B1BCBBB670062BC91 /* ReaderOverlayView.swift in Sources */,
 				684944A01BE3A70A00622453 /* WebViewController.m in Sources */,
 				6826771D1BD5286800B3D6D5 /* Array2D.swift in Sources */,

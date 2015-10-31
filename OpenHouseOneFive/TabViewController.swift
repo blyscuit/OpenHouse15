@@ -116,6 +116,11 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
     func mapControllerDidTabWeb(text: String, controller: MapViewController) {
         toWeb = text
         self.performSegueWithIdentifier("web_p", sender: self)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    func mapControllerDidAppear(controller: MapViewController) {
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

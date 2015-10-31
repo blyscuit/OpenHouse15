@@ -12,12 +12,14 @@ import SwiftyJSON
 
 @objc protocol MapControllerDelegate {
     func mapControllerDidTabWeb(text: String, controller: MapViewController)
+    func mapControllerDidAppear(controller: MapViewController)
 }
 
-class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
+class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate,HighlightViewDelegate {
     
     var delegate: MapControllerDelegate?
     
+    @IBOutlet weak var facultyButtonView: UIView!
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var cButton: UIButton!
@@ -33,6 +35,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     @IBOutlet weak var facInfoButton: UIView!
     @IBOutlet weak var facultyInfoButton: UIButton!
     @IBOutlet weak var locationButton: UIButton!
+    
+    var selectingTile:Tile!
     
     var landMarkArray = [GMSMarker]()
     var stationArray = [GMSMarker]()
@@ -61,8 +65,28 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     var bOn:Bool = false
     var cOn:Bool = false
     
+    @IBOutlet weak var lowButtonView: UIView!
+    @IBOutlet weak var topButtonView: UIView!
+    var bingoBoard:Bingo!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(self.view.frame.size.width<=320){
+//            self.topButtonView.layer.anchorPoint = CGPointMake(0.5, 0.0)
+            self.topButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
+            self.lowButtonView.layer.anchorPoint = CGPointMake(0.5, 0.7)
+            self.topButtonView.layer.borderWidth = 1.0
+            self.topButtonView.layer.borderColor = UIColor.lightGrayColor().CGColor
+            self.lowButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
+            self.facultyButtonView.layer.anchorPoint = CGPointMake(0.5, 0.7)
+            self.facultyButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
+//            self.detailView.layer.anchorPoint = CGPointMake(0.5, 0.0)
+            self.detailView.transform = CGAffineTransformMakeScale(0.85, 0.85);
+        }
+        
+        bingoBoard = Bingo(random: true)
+        
         var camera = GMSCameraPosition.cameraWithLatitude(13.7406223,
             longitude: 100.5307583, zoom: 15)
         mapView.camera = camera
@@ -85,10 +109,15 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         viewInitialPosition = CGRectMake(CGRectGetMidX(self.view.frame) - detailView.frame.size.width/2, self.view.frame.size.height - (detailView.frame.origin.y - 170),detailView.frame.size.width,detailView.frame.size.height)
         // detailView.frame
         detailView.frame.origin = CGPointMake(-1000,0)
+        facultyButtonView.frame.origin = CGPointMake(-1000,0)
         detailView.alpha=0.0
+        facultyButtonView.alpha=0.0
         detailView.layer.borderWidth = 1
+        facultyButtonView.layer.borderWidth = 1
         
         detailView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        facultyButtonView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        
         detailView.clipsToBounds = true
         
         positionButtonInitialPosition = CGPointMake(self.view.frame.size.width - locationButton.frame.size.width - 20,self.view.frame.size.height - locationButton.frame.size.width - 65)
@@ -96,7 +125,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         
     }
     
+    
     override func viewDidAppear(animated: Bool) {
+        delegate?.mapControllerDidAppear(self)
+        bingoBoard = Bingo(random: true)
+        
         if(detailView.alpha == 1.0){
             self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
         }else{
@@ -158,9 +191,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         }
         
         var marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
+        marker.position = CLLocationCoordinate2DMake(13.7406223,100.5307583)
         marker.title = "Sydney"
         marker.snippet = "Australia"
+        
+        marker.userData = bingoBoard.tileWithID("25")
         
         facultyArray.append(marker)
         
@@ -325,7 +360,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             
-            mapView.animateToZoom(12)
+            mapView.animateToZoom(16)
             // 7
             mapView.animateToLocation(location.coordinate)
             
@@ -352,9 +387,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     @IBAction func closeDetail(sender: AnyObject) {
         UIView.animateWithDuration(0.3, animations: {
             self.detailView.alpha = 0.0
-
+            self.facultyButtonView.alpha=0.0
             
-            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y)
+//            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y)
             
             }, completion: { (SUCCESS) -> Void in
                 self.detailView.frame.origin = CGPointMake(-1000, 0)
@@ -366,17 +401,38 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         if(detailView.alpha == 1){
             return
         }
-        self.buildingNameLabel.text = marker.title
-        self.buildingNameEngLabel.text = marker.description
-        self.facultyNameLabel.text = marker.snippet
-        self.detailView.frame = viewInitialPosition
+        
+        if marker.userData != nil{
+        let tile:Tile? = marker.userData as! Tile
+//        if(tile != nil){
+            selectingTile = tile
+            self.buildingNameLabel.text = tile!.thaiName // marker.title
+        self.buildingNameEngLabel.text = tile!.name // marker.description
+//        self.facultyNameLabel.text = tile!.thaiName // marker.snippet
+        self.detailView!.frame = viewInitialPosition
+            self.facultyButtonView.frame = CGRectMake(self.detailView!.frame.origin.x, self.detailView!.frame.origin.y + self.detailView!.frame.size.height, self.detailView!.frame.size.width, self.detailView!.frame.size.height)
+            
+            self.facultyButtonView.hidden = false
+            if(tile!.got == true){
+                self.facultyInfoButton.enabled = true
+                self.facultyInfoButton.imageView?.image = UIImage(named: "faculty_info_active_button")
+            }else{
+                self.facultyInfoButton.enabled = false
+                self.facultyInfoButton.imageView?.image = UIImage(named: "faculty_info_inactive_button")
+            }
+        }else{
+            self.facultyButtonView.hidden = true
+            self.buildingNameLabel.text = marker.title
+            self.buildingNameEngLabel.text = marker.description
+//            self.facultyNameLabel.text = marker.snippet
+        }
         
         self.locationButton.frame.origin = positionButtonInitialPosition
         
         UIView.animateWithDuration(0.3, animations: {
             self.detailView.alpha = 1.0
-            
-            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
+            self.facultyButtonView.alpha = 1.0
+//            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
             
             self.view.layoutIfNeeded()
             
@@ -402,8 +458,34 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         return UIStatusBarStyle.LightContent
     }
     @IBAction func  facultyInfoPress(sender: AnyObject) {
+        if(selectingTile != nil){
+            delegate?.mapControllerDidTabWeb("\(selectingTile!.id)", controller: self)
+        }
     }
     @IBAction func facultyHighlightPress(sender: AnyObject) {
-        
+        if(selectingTile != nil){
+            
+            let hlJsonParser = HighLightJsonParser()
+            let arrayMain = hlJsonParser.serializeJSON()
+            for array in arrayMain{
+                if array[2] == "\(selectingTile!.id)"{
+                self.performSegueWithIdentifier("hightlight_m", sender: array)
+                }
+            }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "hightlight_m"){
+            let hDVC = segue.destinationViewController as! HighlightDetail
+            hDVC.delegate = self
+            hDVC.arrDetail = sender as! [String]
+        }
+    }
+    
+    func highlightViewClose(controller: HighlightDetail!) {
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            
+        }
     }
 }
