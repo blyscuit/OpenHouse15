@@ -36,7 +36,7 @@
     _webView.scrollView.zoomScale = 1.0;
     _webView.scalesPageToFit = YES;*/
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"21" ofType:@"html" inDirectory:@"V2"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:_idNumber ofType:@"html" inDirectory:@"V2"];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
     //NSString* htmlString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"21" ofType:@"html"] encoding:NSUTF8StringEncoding error:nil];
     //[_webView loadHTMLString:htmlString baseURL:baseURL];

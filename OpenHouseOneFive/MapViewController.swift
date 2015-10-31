@@ -12,6 +12,7 @@ import SwiftyJSON
 
 @objc protocol MapControllerDelegate {
     func mapControllerDidTabWeb(text: String, controller: MapViewController)
+    func mapControllerDidAppear(controller: MapViewController)
 }
 
 class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate,HighlightViewDelegate {
@@ -75,6 +76,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
 //            self.topButtonView.layer.anchorPoint = CGPointMake(0.5, 0.0)
             self.topButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
             self.lowButtonView.layer.anchorPoint = CGPointMake(0.5, 0.7)
+            self.topButtonView.layer.borderWidth = 1.0
+            self.topButtonView.layer.borderColor = UIColor.lightGrayColor().CGColor
             self.lowButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
             self.facultyButtonView.layer.anchorPoint = CGPointMake(0.5, 0.7)
             self.facultyButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
@@ -113,6 +116,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         facultyButtonView.layer.borderWidth = 1
         
         detailView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        facultyButtonView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        
         detailView.clipsToBounds = true
         
         positionButtonInitialPosition = CGPointMake(self.view.frame.size.width - locationButton.frame.size.width - 20,self.view.frame.size.height - locationButton.frame.size.width - 65)
@@ -122,7 +127,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     
     
     override func viewDidAppear(animated: Bool) {
-        
+        delegate?.mapControllerDidAppear(self)
         bingoBoard = Bingo(random: true)
         
         if(detailView.alpha == 1.0){
@@ -190,7 +195,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         marker.title = "Sydney"
         marker.snippet = "Australia"
         
-        marker.userData = bingoBoard.tileWithID("21")
+        marker.userData = bingoBoard.tileWithID("25")
         
         facultyArray.append(marker)
         
@@ -453,7 +458,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         return UIStatusBarStyle.LightContent
     }
     @IBAction func  facultyInfoPress(sender: AnyObject) {
-        
+        if(selectingTile != nil){
+            delegate?.mapControllerDidTabWeb("\(selectingTile!.id)", controller: self)
+        }
     }
     @IBAction func facultyHighlightPress(sender: AnyObject) {
         if(selectingTile != nil){
