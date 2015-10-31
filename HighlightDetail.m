@@ -32,6 +32,15 @@
     
     screenHeight = self.view.frame.size.height;
     screenWidth = self.view.frame.size.width;
+    
+    for (NSString* family in [UIFont familyNames]) {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family]) {
+            NSLog(@"  %@", name);
+        }
+    }
+    
     [super viewDidLoad];
     
     float yPostion = 0.0;
@@ -82,7 +91,7 @@
     locationHeight = rectOfLocationText.size.height;
     
     self.location = [[UILabel alloc] initWithFrame:CGRectMake(25+45,yPostion-7,screenWidth-50-45,locationHeight+10)];
-    self.location.font = [UIFont fontWithName:@"ThaiSansNeue-Regular" size:18];
+    self.location.font = [UIFont fontWithName:@"ThaiSansNeue-Light" size:18];
     self.location.textColor = [UIColor blackColor];
     self.location.text = [[NSString alloc] initWithFormat:@"%@",self.arrDetail[4]];
     self.location.lineBreakMode = NSLineBreakByWordWrapping;
@@ -98,7 +107,7 @@
     self.highlight = [[UITextView alloc] initWithFrame:CGRectMake(25, yPostion, screenWidth-50, 10)];
     self.highlight.backgroundColor = [UIColor whiteColor];
     self.highlight.text = self.arrDetail[5];
-    self.highlight.font = [UIFont fontWithName:@"ThaiSansNeue-Regular" size:18];
+    self.highlight.font = [UIFont fontWithName:@"ThaiSansNeue-Light" size:18];
     self.highlight.textColor = [UIColor blackColor];
     self.highlight.scrollEnabled = NO;
     self.highlight.editable = NO;
