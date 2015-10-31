@@ -28,7 +28,11 @@
     UIVisualEffectView *bluredEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     [bluredEffectView setFrame:self.blurView.bounds];
     [self.view insertSubview:bluredEffectView belowSubview:self.blurView];
-//    [self.blurView addSubview:bluredEffectView];
+    //  [self.blurView addSubview:bluredEffectView];
+    
+    self.topicLabel.text = [NSString stringWithFormat:@"คณะ%@",arrDetail[1]];
+    NSString *stickerName = [NSString stringWithFormat:@"sticker_%@.png",self.arrDetail[2]];
+    self.topicImage.image = [UIImage imageNamed:stickerName];
     
     screenHeight = self.view.frame.size.height;
     screenWidth = self.view.frame.size.width;

@@ -12,7 +12,7 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
 
     var arrayMain = [[String]]()
     @IBOutlet weak var tableMain: UITableView!
-    var titleText = ["FACULTIES"]
+    var titleText = ["F A C U L T I E S"]
     var titleImage = ["faculty_icon"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +68,7 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
             
             let tagImageName = "tag_\(self.arrayMain[indexPath.row][2]).jpg"
             labelImage?.image = UIImage(named: tagImageName)
+            
             labelImage?.contentMode = UIViewContentMode.ScaleAspectFit
             
             if(indexPath.row % 2 == 1){
