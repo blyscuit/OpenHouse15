@@ -38,6 +38,10 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
         layout.minimumLineSpacing = 0
         bingoCOllection.collectionViewLayout = layout
         
+        dispatch_async(dispatch_get_main_queue()) {
+            self.bingoCOllection.reloadData()
+        }
+        
         self.gridOverlay.frame = bingoCOllection.frame
     }
     

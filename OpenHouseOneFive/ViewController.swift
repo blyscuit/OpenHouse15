@@ -114,6 +114,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             if let tile = self.bingoBoard.gotTileWithQR(result){
                  mess = "\(tile.name!) \(tile.thaiName)"
                 self.bingoBoard.saveDataToUser()
+                print("Scan success I'm going to unlock the tile")
             }else{
                 mess = "Incorrect QR code"
             }
@@ -154,13 +155,14 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath)
         -> UITableViewCell {
-            //            let user = self.sections[indexPath.section].users[indexPath.row]
+            //let user = self.sections[indexPath.section].users[indexPath.row]
+            var isActiveCell:Bool = false
             if(indexPath.section==0){
             let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
             
                 setNowEvent(cell.textLabel, detailLabel: cell.detailTextLabel)
                 
-                
+            
             return cell
             }else if(indexPath.section==1){
                 let cell = tableView.dequeueReusableCellWithIdentifier("bingoCell", forIndexPath: indexPath) as! BingoViewController
@@ -173,13 +175,25 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 let cell = tableView.dequeueReusableCellWithIdentifier("facultyStatusCell", forIndexPath: indexPath) as! TitleTableViewCell
                 let tile:Tile!
                 if(indexPath.section == 2){
+                    //tile in visited Faculty
                     tile = facultyVisitArray[indexPath.row]
+                    isActiveCell = true
                 }else{
+                    //tile for the rest faculty
                     tile = facultyArray[indexPath.row]
                 }
                 cell.titleLabel.text = tile.thaiName
                 cell.subTitleLabel.text = tile.name
-                cell.imageView?.image = UIImage(named: "\(tile.id)")
+                
+
+                if(isActiveCell) {
+                    cell.imageView?.image = UIImage(named: "activeTable_\(tile.id).png")
+                }
+                else {
+                    cell.imageView?.image = UIImage(named: "inactiveTable_\(tile.id).png")
+                }
+                
+                //print("this is tile.id \(tile.id)")
                 return cell
             }
     }
