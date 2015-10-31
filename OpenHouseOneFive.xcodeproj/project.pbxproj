@@ -26,7 +26,6 @@
 		682677261BD531CA00B3D6D5 /* Level_5.json in Resources */ = {isa = PBXBuildFile; fileRef = 682677251BD531CA00B3D6D5 /* Level_5.json */; };
 		682677281BD5344E00B3D6D5 /* BingoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682677271BD5344E00B3D6D5 /* BingoCollectionViewCell.swift */; };
 		68431C281BE109D5004DC850 /* cuOpenHouseRouteData.json in Resources */ = {isa = PBXBuildFile; fileRef = 68431C271BE109D5004DC850 /* cuOpenHouseRouteData.json */; };
-		6849449C1BE3A66E00622453 /* HighlightDetail.h in Sources */ = {isa = PBXBuildFile; fileRef = 75936D081BE361A3005642E5 /* HighlightDetail.h */; };
 		6849449D1BE3A67800622453 /* HighlightDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 75936D091BE361A3005642E5 /* HighlightDetail.m */; };
 		684944A01BE3A70A00622453 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6849449F1BE3A70A00622453 /* WebViewController.m */; };
 		685B0DE61BCBBB3F0062BC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B0DE51BCBBB3F0062BC91 /* AppDelegate.swift */; };
@@ -50,7 +49,7 @@
 		68EA4A911BDF8BF2005E44D8 /* ThaiSansNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68EA4A8D1BDF8BF2005E44D8 /* ThaiSansNeue-Regular.ttf */; };
 		68EA4A921BDF8BF2005E44D8 /* ThaiSansNeue-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68EA4A8E1BDF8BF2005E44D8 /* ThaiSansNeue-UltraLight.ttf */; };
 		68FF90251BD6906B006F96B0 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF90241BD6906B006F96B0 /* TitleTableViewCell.swift */; };
-		7507B6E31BE49E89001C83BD /* WebView in Resources */ = {isa = PBXBuildFile; fileRef = 7507B6E21BE49E89001C83BD /* WebView */; settings = {ASSET_TAGS = (); }; };
+		7507B6E31BE49E89001C83BD /* WebView in Resources */ = {isa = PBXBuildFile; fileRef = 7507B6E21BE49E89001C83BD /* WebView */; };
 		75936CD41BE283BC005642E5 /* HighlightBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75936CD31BE283BC005642E5 /* HighlightBaseViewController.swift */; };
 		75936CD61BE29E64005642E5 /* highlight.json in Resources */ = {isa = PBXBuildFile; fileRef = 75936CD51BE29E64005642E5 /* highlight.json */; };
 		75936CDB1BE2B363005642E5 /* HighLightJsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75936CDA1BE2B363005642E5 /* HighLightJsonParser.swift */; };
@@ -586,7 +585,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6849449D1BE3A67800622453 /* HighlightDetail.m in Sources */,
-				6849449C1BE3A66E00622453 /* HighlightDetail.h in Sources */,
 				685B0E1B1BCBBB670062BC91 /* ReaderOverlayView.swift in Sources */,
 				684944A01BE3A70A00622453 /* WebViewController.m in Sources */,
 				6826771D1BD5286800B3D6D5 /* Array2D.swift in Sources */,
