@@ -257,6 +257,9 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if facultyVisitArray[indexPath.row].id > 40{
+            return
+        }
         let str = "\(facultyVisitArray[indexPath.row].id)"
         delegate?.mainControllerDidTabWeb(str, controller: self)
     }

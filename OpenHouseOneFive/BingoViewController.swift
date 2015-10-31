@@ -88,8 +88,18 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
             let column = indexPath.row % 5
             var row = indexPath.row / 5
             row = 4 - row
-            cell.facultyImage.backgroundColor = bingoBoard.tileAtColumn(column, row: row)?.color
-            print(cell.facultyImage.backgroundColor)
+            //cell.facultyImage.backgroundColor = bingoBoard.tileAtColumn(column, row: row)?.color
+            //print(cell.facultyImage.backgroundColor)
+            
+            var imageName=""
+            if((bingoBoard.tileAtColumn(column, row: row)?.got) == true){
+                imageName = "active_\(bingoBoard.tileAtColumn(column, row: row)!.id)"
+            }else{
+                imageName = "inactive_\(bingoBoard.tileAtColumn(column, row: row)!.id)"
+            }
+            print(imageName)
+            cell.facultyImage.image = UIImage(named: imageName)
+            cell.facultyImage.contentMode = UIViewContentMode.ScaleAspectFit
             
             //             Customize cell height
             cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y,collectionView.frame.size.width/5, collectionView.frame.size.height/5)
