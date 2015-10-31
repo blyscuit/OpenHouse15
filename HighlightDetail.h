@@ -12,7 +12,7 @@
 
 @import GoogleMaps;
 
-@interface HighlightDetail : UIViewController
+@interface HighlightDetail : UIViewController<UIScrollViewDelegate>
 
 @property (weak,nonatomic) id<HighlightViewDelegate> delegate;
 

@@ -22,7 +22,6 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
 //        print(arrayMain)
         tableMain.delegate = self
         tableMain.dataSource = self
-        // Do any additional setup after loading the view.
         
         tableMain.separatorStyle = UITableViewCellSeparatorStyle.None
         
