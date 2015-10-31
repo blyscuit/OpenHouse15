@@ -8,18 +8,18 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="ThaiSansNeue-Regular.ttf">
-            <string>ThaiSansNeue-Regular</string>
-            <string>ThaiSansNeue-Regular</string>
+        <mutableArray key="ThaiSansNeue-Bold.ttf">
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
         </mutableArray>
-        <mutableArray key="thaisansneue-bold-webfont.ttf">
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
+        <mutableArray key="thaisansneue-regular-webfont.ttf">
+            <string>ThaiSansNeue-Regular</string>
+            <string>ThaiSansNeue-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -747,7 +747,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4b-Or-F7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2464" y="291"/>
+            <point key="canvasLocation" x="2473" y="273"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="aXa-xN-WDc">
