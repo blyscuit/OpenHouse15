@@ -2,33 +2,33 @@
 
 @font-face {
     font-family: 'ThaiSansNeue';
-    src: url('thaisansneue-bold-webfont.eot');
-    src: url('thaisansneue-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('thaisansneue-bold-webfont.woff2') format('woff2'),
-         url('thaisansneue-bold-webfont.woff') format('woff'),
-         url('thaisansneue-bold-webfont.ttf') format('truetype');
+    src: url('../fonts/thaisansneue-bold-webfont.eot');
+    src: url('../fonts/thaisansneue-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/thaisansneue-bold-webfont.woff2') format('woff2'),
+         url('../fonts/thaisansneue-bold-webfont.woff') format('woff'),
+         url('../fonts/thaisansneue-bold-webfont.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ThaiSansNeue';
-    src: url('thaisansneue-light-webfont.eot');
-    src: url('thaisansneue-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('thaisansneue-light-webfont.woff2') format('woff2'),
-         url('thaisansneue-light-webfont.woff') format('woff'),
-         url('thaisansneue-light-webfont.ttf') format('truetype');
+    src: url('../fonts/thaisansneue-light-webfont.eot');
+    src: url('../fonts/thaisansneue-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/thaisansneue-light-webfont.woff2') format('woff2'),
+         url('../fonts/thaisansneue-light-webfont.woff') format('woff'),
+         url('../fonts/thaisansneue-light-webfont.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ThaiSansNeue';
-    src: url('thaisansneue-regular-webfont.eot');
-    src: url('thaisansneue-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('thaisansneue-regular-webfont.woff2') format('woff2'),
-         url('thaisansneue-regular-webfont.woff') format('woff'),
-         url('thaisansneue-regular-webfont.ttf') format('truetype');
+    src: url('../fonts/thaisansneue-regular-webfont.eot');
+    src: url('../fonts/thaisansneue-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/thaisansneue-regular-webfont.woff2') format('woff2'),
+         url('../fonts/thaisansneue-regular-webfont.woff') format('woff'),
+         url('../fonts/thaisansneue-regular-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -39,11 +39,11 @@
 
 @font-face {
     font-family: 'CSPraJad';
-    src: url('csprajad-webfont.eot');
-    src: url('csprajad-webfont.eot?#iefix') format('embedded-opentype'),
-         url('csprajad-webfont.woff2') format('woff2'),
-         url('csprajad-webfont.woff') format('woff'),
-         url('csprajad-webfont.ttf') format('truetype');
+    src: url('../fonts/csprajad-webfont.eot');
+    src: url('../fonts/csprajad-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/csprajad-webfont.woff2') format('woff2'),
+         url('../fonts/csprajad-webfont.woff') format('woff'),
+         url('../fonts/csprajad-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -54,11 +54,11 @@
 
 @font-face {
     font-family: 'CSPraJad';
-    src: url('csprajad-bold-webfont.eot');
-    src: url('csprajad-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('csprajad-bold-webfont.woff2') format('woff2'),
-         url('csprajad-bold-webfont.woff') format('woff'),
-         url('csprajad-bold-webfont.ttf') format('truetype');
+    src: url('../fonts/csprajad-bold-webfont.eot');
+    src: url('../fonts/csprajad-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/csprajad-bold-webfont.woff2') format('woff2'),
+         url('../fonts/csprajad-bold-webfont.woff') format('woff'),
+         url('../fonts/csprajad-bold-webfont.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 
@@ -69,11 +69,11 @@
 
 @font-face {
     font-family: 'CSPraJad';
-    src: url('csprajad-bolditalic-webfont.eot');
-    src: url('csprajad-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('csprajad-bolditalic-webfont.woff2') format('woff2'),
-         url('csprajad-bolditalic-webfont.woff') format('woff'),
-         url('csprajad-bolditalic-webfont.ttf') format('truetype');
+    src: url('../fonts/csprajad-bolditalic-webfont.eot');
+    src: url('../fonts/csprajad-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/csprajad-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/csprajad-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/csprajad-bolditalic-webfont.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 
@@ -84,11 +84,11 @@
 
 @font-face {
     font-family: 'CSPraJad';
-    src: url('csprajad-italic-webfont.eot');
-    src: url('csprajad-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('csprajad-italic-webfont.woff2') format('woff2'),
-         url('csprajad-italic-webfont.woff') format('woff'),
-         url('csprajad-italic-webfont.ttf') format('truetype');
+    src: url('../fonts/csprajad-italic-webfont.eot');
+    src: url('../fonts/csprajad-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/csprajad-italic-webfont.woff2') format('woff2'),
+         url('../fonts/csprajad-italic-webfont.woff') format('woff'),
+         url('../fonts/csprajad-italic-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 
