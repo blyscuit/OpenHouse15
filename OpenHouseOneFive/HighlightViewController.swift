@@ -62,8 +62,16 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
             labelTitle!.text = arrayMain[indexPath.row][1]
             labelEng!.text = arrayMain[indexPath.row][0]
             let imageName = "\(self.arrayMain[indexPath.row][6]).jpg"
+            let labelImageName = "tag_\(self.arrayMain[indexPath.row][2]).png";
             titleImageView?.image = UIImage(named: imageName)
             titleImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+            labelImage?.image = UIImage(named: labelImageName)
+            if(self.arrayMain[indexPath.row][2] == "28") {
+                labelImage?.contentMode = UIViewContentMode.ScaleAspectFill
+            }
+            else {
+                labelImage?.contentMode = UIViewContentMode.ScaleAspectFit
+            }
 
             if(indexPath.row % 2 == 1){
                 cell.backgroundColor = UIColor(rgba: "#f9f9f9")
