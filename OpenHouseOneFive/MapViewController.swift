@@ -166,7 +166,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
                 let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
                 jsonFacObj = JSON(data: data)
                 if jsonFacObj != JSON.null {
-                    print("jsonData:\(jsonObj)")
+                    print("jsonData:\(jsonFacObj)")
                 } else {
                     print("invalid JSON file")
                 }
@@ -191,6 +191,17 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.userData = bingoBoard.tileWithID(subJson["faculty_id"].stringValue)
             
             facultyArray.append(marker)
+        }
+        
+        for (index,subJson):(String, JSON) in jsonFacObj["landmark"] {
+            //Do something you want
+            var marker = GMSMarker()
+            marker.position = CLLocationCoordinate2DMake(subJson["lat"].doubleValue,subJson["lng"].doubleValue)
+            marker.title = subJson["name"].stringValue
+            marker.snippet = " "
+        
+            
+            landMarkArray.append(marker)
         }
         
         aRoute = GMSPolyline()
@@ -423,9 +434,6 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     }
     
     func animateInDetail(marker:GMSMarker){
-        if(detailView.alpha == 1){
-            return
-        }
         
         if marker.userData != nil{
         let tile:Tile? = marker.userData as! Tile
@@ -448,8 +456,12 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         }else{
             self.facultyButtonView.hidden = true
             self.buildingNameLabel.text = marker.title
-            self.buildingNameEngLabel.text = marker.description
+            self.buildingNameEngLabel.text = marker.snippet
 //            self.facultyNameLabel.text = marker.snippet
+        }
+        
+        if(detailView.alpha == 1){
+            return
         }
         
         self.locationButton.frame.origin = positionButtonInitialPosition
