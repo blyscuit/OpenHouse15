@@ -45,6 +45,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     var aStationArray = [GMSMarker]()
     var bStationArray = [GMSMarker]()
     var cStationArray = [GMSMarker]()
+    var facultyAreaArray = [GMSPolygon]()
     
     var aRoute:GMSPolyline?
     var bRoute:GMSPolyline?
@@ -188,7 +189,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.title = subJson["name"].stringValue
             marker.snippet = "Faculty"
             
-            marker.icon = UIImage(named: "pin_\(subJson["faculty_id"].stringValue)")
+            let imageName = UIImage(named: "pin_\(subJson["faculty_id"].stringValue)")
+            let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
+            
+            marker.icon = image//UIImage(named: "pin_\(subJson["faculty_id"].stringValue)")
             
             marker.userData = bingoBoard.tileWithID(subJson["faculty_id"].stringValue)
             
@@ -207,6 +211,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
                 //        polygon.strokeColor = UIColor.blackColor()
                 polygon.strokeWidth = 0
                 polygon.map = self.mapView
+                self.facultyAreaArray.append(polygon)
             }
             
            
@@ -220,7 +225,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.position = CLLocationCoordinate2DMake(subJson["lat"].doubleValue,subJson["lng"].doubleValue)
             marker.title = subJson["name"].stringValue
             marker.snippet = " "
-            marker.icon = UIImage(named: "pin_landmark")
+            
+            let imageName = UIImage(named: "pin_landmark")
+            let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
+            
+            marker.icon = image
             
             
             landMarkArray.append(marker)
@@ -233,7 +242,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.position = CLLocationCoordinate2DMake(subJson["lat"].doubleValue,subJson["lng"].doubleValue)
             marker.title = subJson["name"].stringValue
             marker.snippet = " "
-            marker.icon = UIImage(named: "pin_cutour")
+            
+            let imageName = UIImage(named: "pin_cutour")
+            let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
+            
+            marker.icon = image
             
             
             stationArray.append(marker)
@@ -245,7 +258,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.position = CLLocationCoordinate2DMake(subJson["lat"].doubleValue,subJson["lng"].doubleValue)
             marker.title = subJson["name"].stringValue
             marker.snippet = " "
-            marker.icon = UIImage(named: "pin_information")
+            
+            let imageName = UIImage(named: "pin_information")
+            let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
+            
+            marker.icon = image
             
             
             infomationkArray.append(marker)
@@ -342,6 +359,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     func toggleFacButton(){
         facOn = !facOn
         toggleArray(facultyArray, on: facOn)
+        toggleAreaArray(facultyAreaArray, on: facOn)
         if(facOn == false){
             if let image = UIImage(named: "faculty-button-inactive.png") {
                 facultyButton.setImage(image, forState: .Normal)
@@ -456,9 +474,23 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     func toggleArray(array:[GMSMarker],on:Bool){
         print(array)
         if on{
-        for marker in array{
-            marker.map = mapView
+            for marker in array{
+                marker.map = mapView
+            }
+        }else{
+            
+            for marker in array{
+                marker.map = nil
+            }
         }
+    }
+    
+    func toggleAreaArray(array:[GMSPolygon],on:Bool){
+        print(array)
+        if on{
+            for marker in array{
+                marker.map = mapView
+            }
         }else{
             
             for marker in array{
