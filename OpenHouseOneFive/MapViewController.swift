@@ -188,7 +188,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.title = subJson["name"].stringValue
             marker.snippet = "Faculty"
             
-            marker.icon = UIImage(named: "pin_\(subJson["faculty_id"].stringValue)")
+            var faculty_id = subJson["faculty_id"].stringValue
+            
+            marker.icon = UIImage(named: "pin_\(faculty_id)")
             
             marker.userData = bingoBoard.tileWithID(subJson["faculty_id"].stringValue)
             

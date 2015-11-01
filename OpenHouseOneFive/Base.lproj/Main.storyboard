@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbK-tV-9sN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbK-tV-9sN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -10,20 +10,20 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="ThaiSansNeue-Bold.ttf">
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+            <string>ThaiSansNeue-Bold</string>
+        </mutableArray>
         <mutableArray key="ThaiSansNeue-Regular.ttf">
             <string>ThaiSansNeue-Regular</string>
             <string>ThaiSansNeue-Regular</string>
             <string>ThaiSansNeue-Regular</string>
-        </mutableArray>
-        <mutableArray key="thaisansneue-bold-webfont.ttf">
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
-            <string>ThaiSansNeue-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -535,7 +535,7 @@
                                                         <constraint firstAttribute="width" constant="463" id="cSX-js-k27"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="ThaiSansNeue-Bold" family="ThaiSans Neue" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -550,7 +550,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="fQz-f9-vn1"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -689,7 +689,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="1T2-x7-AKx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ThaiSansNeue-Bold" family="ThaiSans Neue" pointSize="22"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xo3-BJ-OQs">
@@ -1317,10 +1317,12 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FN-VM-UF6">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95M-Ff-qBy">
                                         <rect key="frame" x="556" y="15" width="44" height="44"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="0QY-tp-OlB"/>
                                             <constraint firstAttribute="height" constant="44" id="oyY-Jn-V0M"/>
@@ -1332,15 +1334,17 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tj-Ie-VGe">
                                         <rect key="frame" x="273" y="26" width="54" height="21"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="54" id="bAJ-GP-49g"/>
                                             <constraint firstAttribute="height" constant="21" id="usD-C1-A5t"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="8tj-Ie-VGe" firstAttribute="bottom" secondItem="6FN-VM-UF6" secondAttribute="bottom" constant="-27" id="1I2-Cq-hmm"/>
@@ -1364,6 +1368,7 @@
                                 </variation>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sBU-Dh-WnG" firstAttribute="centerX" secondItem="p7K-Y2-2rn" secondAttribute="centerX" id="CWC-Tf-234"/>
@@ -1464,7 +1469,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" scrollEnabled="NO" editable="NO" text="Question:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-u1-hUc">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" scrollEnabled="NO" editable="NO" text="Question:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-u1-hUc">
                                                     <rect key="frame" x="18" y="8" width="564" height="48"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="ThaiSansNeue-Bold" family="ThaiSans Neue" pointSize="24"/>
