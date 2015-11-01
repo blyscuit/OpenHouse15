@@ -1313,14 +1313,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBU-Dh-WnG" userLabel="Blur View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
+                                <rect key="frame" x="0.0" y="10" width="600" height="64"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FN-VM-UF6">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95M-Ff-qBy">
-                                        <rect key="frame" x="556" y="15" width="44" height="44"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95M-Ff-qBy">
+                                        <rect key="frame" x="556" y="12" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="0QY-tp-OlB"/>
                                             <constraint firstAttribute="height" constant="44" id="oyY-Jn-V0M"/>
@@ -1330,18 +1329,17 @@
                                             <action selector="closePress:" destination="44c-Dj-dxk" eventType="touchUpInside" id="r1w-FV-77j"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tj-Ie-VGe">
-                                        <rect key="frame" x="273" y="26" width="54" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tj-Ie-VGe">
+                                        <rect key="frame" x="265" y="23" width="70" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="54" id="bAJ-GP-49g"/>
+                                            <constraint firstAttribute="width" constant="70" id="bAJ-GP-49g"/>
                                             <constraint firstAttribute="height" constant="21" id="usD-C1-A5t"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.98431372549019602" green="0.34901960784313724" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="8tj-Ie-VGe" firstAttribute="bottom" secondItem="6FN-VM-UF6" secondAttribute="bottom" constant="-27" id="1I2-Cq-hmm"/>
                                     <constraint firstItem="95M-Ff-qBy" firstAttribute="baseline" secondItem="8tj-Ie-VGe" secondAttribute="firstBaseline" constant="-11" id="6Ww-es-Wux"/>
@@ -1352,7 +1350,7 @@
                                     <constraint firstItem="95M-Ff-qBy" firstAttribute="firstBaseline" secondItem="8tj-Ie-VGe" secondAttribute="firstBaseline" constant="11" id="R3f-Sa-rIL"/>
                                     <constraint firstItem="8tj-Ie-VGe" firstAttribute="trailing" secondItem="sBU-Dh-WnG" secondAttribute="leading" id="Xhz-ij-dM6"/>
                                     <constraint firstItem="8tj-Ie-VGe" firstAttribute="bottom" secondItem="6FN-VM-UF6" secondAttribute="bottom" constant="-27" id="aUh-Pr-ZQK"/>
-                                    <constraint firstAttribute="height" constant="67" id="bsz-wY-6pg"/>
+                                    <constraint firstAttribute="height" constant="64" id="bsz-wY-6pg"/>
                                     <constraint firstItem="6FN-VM-UF6" firstAttribute="width" secondItem="sBU-Dh-WnG" secondAttribute="width" id="eI9-FU-F1r"/>
                                     <constraint firstItem="6FN-VM-UF6" firstAttribute="leading" secondItem="sBU-Dh-WnG" secondAttribute="leading" id="g1V-L3-8zU"/>
                                     <constraint firstItem="95M-Ff-qBy" firstAttribute="centerY" secondItem="8tj-Ie-VGe" secondAttribute="centerY" id="oGd-qY-74E"/>
@@ -1360,25 +1358,26 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Xhz-ij-dM6"/>
+                                        <exclude reference="6Ww-es-Wux"/>
+                                        <exclude reference="R3f-Sa-rIL"/>
                                     </mask>
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sBU-Dh-WnG" firstAttribute="centerX" secondItem="p7K-Y2-2rn" secondAttribute="centerX" id="CWC-Tf-234"/>
-                            <constraint firstItem="sBU-Dh-WnG" firstAttribute="top" secondItem="xom-47-dGf" secondAttribute="bottom" constant="-20" id="fHJ-lz-ut8"/>
+                            <constraint firstItem="sBU-Dh-WnG" firstAttribute="top" secondItem="xom-47-dGf" secondAttribute="bottom" constant="-10" id="fHJ-lz-ut8"/>
                             <constraint firstItem="sBU-Dh-WnG" firstAttribute="width" secondItem="p7K-Y2-2rn" secondAttribute="width" id="pVd-tT-KeI"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blurView" destination="sBU-Dh-WnG" id="Op2-lM-ula"/>
+                        <outlet property="blurView" destination="sBU-Dh-WnG" id="AUK-29-S5T"/>
                         <outlet property="topicLabel" destination="8tj-Ie-VGe" id="n71-Tj-tZw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ar-FB-pAJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="-1"/>
+            <point key="canvasLocation" x="370" y="26"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="YgT-39-lKA">
