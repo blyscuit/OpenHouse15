@@ -140,6 +140,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     
     func populateArray(){
         var jsonObj:JSON!
+        var jsonFacObj:JSON!
         if let path = NSBundle.mainBundle().pathForResource("cuOpenHouseRouteData", ofType: "json"){
             do {
                 let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
@@ -158,6 +159,38 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             
         } else {
             print("Invaild filename/path!")
+        }
+        
+        if let path = NSBundle.mainBundle().pathForResource("OpenHouseFacultyAreaDetail", ofType: "json"){
+            do {
+                let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                jsonFacObj = JSON(data: data)
+                if jsonFacObj != JSON.null {
+                    print("jsonData:\(jsonObj)")
+                } else {
+                    print("invalid JSON file")
+                }
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invaild filename/path!")
+        }
+        
+        //If json is .Array
+        //The `index` is 0..<json.count's string value
+        for (index,subJson):(String, JSON) in jsonFacObj["faculty"] {
+            //Do something you want
+            var marker = GMSMarker()
+            let center = subJson["centerPoint"] as! JSON
+            marker.position = CLLocationCoordinate2DMake(center["lat"].doubleValue,center["lng"].doubleValue)
+            marker.title = subJson["name"].stringValue
+            marker.snippet = "Faculty"
+            
+            marker.userData = bingoBoard.tileWithID(subJson["faculty_id"].stringValue)
+            
+            facultyArray.append(marker)
         }
         
         aRoute = GMSPolyline()
@@ -190,14 +223,6 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
 //            }
         }
         
-        var marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(13.7406223,100.5307583)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        
-        marker.userData = bingoBoard.tileWithID("25")
-        
-        facultyArray.append(marker)
         
     }
     
