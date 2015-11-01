@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbK-tV-9sN">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -1047,7 +1047,7 @@
                                                                     <attributes>
                                                                         <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>
@@ -1163,12 +1163,14 @@
                                                         <constraint firstItem="zF3-hf-28V" firstAttribute="top" secondItem="dw4-w0-sby" secondAttribute="top" constant="31" id="YD0-yS-9nS"/>
                                                         <constraint firstItem="zF3-hf-28V" firstAttribute="centerY" secondItem="MBi-KP-iGz" secondAttribute="centerY" id="Z2p-jx-jF4"/>
                                                         <constraint firstAttribute="bottom" secondItem="HtT-la-lt0" secondAttribute="bottom" constant="50" id="Zwh-6p-BPZ"/>
+                                                        <constraint firstItem="Jav-v1-KKV" firstAttribute="leading" secondItem="dw4-w0-sby" secondAttribute="leading" constant="73" id="b7l-5o-IEG"/>
                                                         <constraint firstItem="HN8-ZA-GFb" firstAttribute="width" secondItem="X2w-BT-HMl" secondAttribute="height" multiplier="277:340" id="hSU-Dw-qDq"/>
                                                         <constraint firstItem="MBi-KP-iGz" firstAttribute="leading" secondItem="zF3-hf-28V" secondAttribute="trailing" constant="21" id="jVB-n0-7Yn"/>
                                                         <constraint firstItem="HtT-la-lt0" firstAttribute="centerX" secondItem="bDo-k5-IRL" secondAttribute="centerX" id="kT2-R8-rxX"/>
                                                         <constraint firstItem="bDo-k5-IRL" firstAttribute="centerY" secondItem="dw4-w0-sby" secondAttribute="centerY" id="qJi-Zw-h0k"/>
                                                         <constraint firstItem="bDo-k5-IRL" firstAttribute="height" secondItem="dw4-w0-sby" secondAttribute="height" id="sw7-mW-7bC"/>
                                                         <constraint firstItem="X2w-BT-HMl" firstAttribute="centerY" secondItem="HtT-la-lt0" secondAttribute="centerY" id="uHI-HP-Ev9"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Jav-v1-KKV" secondAttribute="trailing" constant="72" id="uji-Ac-Vbr"/>
                                                         <constraint firstItem="X2w-BT-HMl" firstAttribute="centerX" secondItem="HtT-la-lt0" secondAttribute="centerX" id="yhU-jY-7ds"/>
                                                         <constraint firstAttribute="trailing" secondItem="HtT-la-lt0" secondAttribute="trailing" constant="30" id="zLb-fr-tbk"/>
                                                     </constraints>
@@ -1298,9 +1300,11 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FN-VM-UF6">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                        <animations/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95M-Ff-qBy">
                                         <rect key="frame" x="556" y="12" width="44" height="44"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="0QY-tp-OlB"/>
                                             <constraint firstAttribute="height" constant="44" id="oyY-Jn-V0M"/>
@@ -1312,6 +1316,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tj-Ie-VGe">
                                         <rect key="frame" x="265" y="23" width="70" height="21"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="bAJ-GP-49g"/>
                                             <constraint firstAttribute="height" constant="21" id="usD-C1-A5t"/>

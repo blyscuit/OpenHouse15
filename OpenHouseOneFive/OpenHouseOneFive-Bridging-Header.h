@@ -6,4 +6,4 @@
 #import "HighlightDetail.h"
 #import "WebViewController.h"
 #import "AboutUS.h"
-
+#import <Google/Analytics.h>

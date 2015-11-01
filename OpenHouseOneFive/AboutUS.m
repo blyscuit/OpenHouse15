@@ -88,6 +88,8 @@
     yPostion += self.content.frame.size.height + 10;
     UITableView *contactInfo = [[UITableView alloc] initWithFrame:CGRectMake(0, yPostion, screenWidth, 100 )];
     [scrollView addSubview:contactInfo];
+    contactInfo.delegate = self;
+    contactInfo.dataSource = self;
     
     yPostion += 100;
     if(yPostion > screenHeight){
@@ -136,11 +138,52 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    switch (indexPath.row) {
+        case 0:
+            [self linkToFB];
+            break;
+        case 1:
+            [self linkToIg];
+            break;
+        case 2:
+            [self linkToTwt];
+            break;
+            
+        default:
+            break;
+    }
     
     //perform segue
     
 }
 
+-(void)linkToFB{
+    
+    NSURL *instagramURL = [NSURL URLWithString:@"fb://profile/885080744852208"];
+    if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+        [[UIApplication sharedApplication] openURL:instagramURL];
+    }else{
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/cuopenhouse2015/"]];
+    }
+}
+-(void)linkToTwt{
+    
+    NSURL *instagramURL = [NSURL URLWithString:@"twitter://user?screen_name=cuopenhouse"];
+    if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+        [[UIApplication sharedApplication] openURL:instagramURL];
+    }else{
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/cuopenhouse"]];
+    }
+}
+
+-(void)linkToIg{
+    NSURL *instagramURL = [NSURL URLWithString:@"instagram://user?username=cuopenhouse2015"];
+    if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+        [[UIApplication sharedApplication] openURL:instagramURL];
+    }else{
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://instagram.com/cuopenhouse2015/"]];
+    }
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //prepare for segue
 }
@@ -149,6 +192,9 @@
     
     return 3;
     
+}
+-(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -29,8 +29,20 @@
 	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>googlechromes</string>
-		<string>comgooglemaps</string>
+        <string>fbapi</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+        <string>fb-messenger-api</string>
+        <string>twitter</string>
+        <string>whatsapp</string>
+        <string>wechat</string>
+        <string>line</string>
+        <string>instagram</string>
+        <string>kakaotalk</string>
+        <string>mqq</string>
+        <string>vk</string>
+        <string>googlechromes</string>
+        <string>comgooglemaps</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
