@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @protocol AboutUSViewDelegate;
 
-@interface AboutUS : UIViewController<UIScrollViewDelegate>
+@interface AboutUS : UIViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak,nonatomic) id<AboutUSViewDelegate> delegate;
 
