@@ -61,8 +61,8 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
             //            titleImageView?.image = UIImage()
             labelTitle!.text = arrayMain[indexPath.row][1]
             labelEng!.text = arrayMain[indexPath.row][0]
-            let imageName = "\(self.arrayMain[indexPath.row][6]).jpg"
-            let labelImageName = "tag_\(self.arrayMain[indexPath.row][2]).png";
+            let imageName = "\(self.arrayMain[indexPath.row][2])_Art_re.jpg"
+            //let labelImageName = "tag_\(self.arrayMain[indexPath.row][2]).png";
             titleImageView?.image = UIImage(named: imageName)
             titleImageView?.contentMode = UIViewContentMode.ScaleAspectFit
             

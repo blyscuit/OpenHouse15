@@ -24,7 +24,7 @@ class HighLightJsonParser: NSObject {
             var row = [String]()
             var artPic = jsonDetail["Artwork_name"].stringValue
             var lat = jsonDetail["Latitude"].stringValue
-            var long = jsonDetail["Logitude"].stringValue
+            var long = jsonDetail["Longitude"].stringValue
             var fac = jsonDetail["Faculty"].stringValue
             var location = jsonDetail["Location"].stringValue
             var external = jsonDetail["ExternalLink"].stringValue
