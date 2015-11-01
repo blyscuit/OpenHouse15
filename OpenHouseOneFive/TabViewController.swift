@@ -136,7 +136,7 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
         }
     }
     
-    func AboutUSViewClose(controller: AboutUS!) {
+    func aboutUsViewClose(controller: AboutUS!) {
         self.dismissViewControllerAnimated(true) { () -> Void in
             
         }

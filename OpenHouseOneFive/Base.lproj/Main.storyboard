@@ -10,7 +10,12 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="ThaiSansNeue-Bold.ttf">
+        <mutableArray key="ThaiSansNeue-Regular.ttf">
+            <string>ThaiSansNeue-Regular</string>
+            <string>ThaiSansNeue-Regular</string>
+            <string>ThaiSansNeue-Regular</string>
+        </mutableArray>
+        <mutableArray key="thaisansneue-bold-webfont.ttf">
             <string>ThaiSansNeue-Bold</string>
             <string>ThaiSansNeue-Bold</string>
             <string>ThaiSansNeue-Bold</string>
