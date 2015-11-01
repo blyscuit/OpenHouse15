@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "inactive_reward.png",
+      "filename" : "active_reward.png",
       "scale" : "1x"
     },
     {

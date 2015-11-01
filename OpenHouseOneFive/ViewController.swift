@@ -28,7 +28,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     
     var bingoCell:BingoViewController!
     
-    let titleText = ["NOW EVENT","CHECK IN","Visited faculties","Locked faculties - Please check in to unlock "]
+    let titleText = ["N O W  E V E N T","C H E C K  I N","Visited faculties","Locked faculties - Please check in to unlock "]
     let titleImage = ["now-event-icon.png","check-in-icon.png"]
     
     var bingoBoard:Bingo!
@@ -178,9 +178,20 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                     //tile in visited Faculty
                     tile = facultyVisitArray[indexPath.row]
                     isActiveCell = true
+                    tableMain.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+                    tableMain.separatorInset = UIEdgeInsetsZero
+                    cell.backgroundColor = UIColor.whiteColor()
+                    cell.titleLabel.textColor = UIColor.blackColor()
+                    cell.subTitleLabel.textColor = UIColor.blackColor()
+                    
                 }else{
-                    //tile for the rest faculty
+                    //tile for unvisited faculty
                     tile = facultyArray[indexPath.row]
+                    tableMain.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+                    tableMain.separatorInset = UIEdgeInsetsZero
+                    cell.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
+                    cell.titleLabel.textColor = UIColor(red: 168/255, green: 168/255, blue: 168/255, alpha: 1)
+                    cell.subTitleLabel.textColor = UIColor(red: 168/255, green: 168/255, blue: 168/255, alpha: 1)
                 }
                 cell.titleLabel.text = tile.thaiName
                 cell.subTitleLabel.text = tile.name
@@ -193,10 +204,14 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                     cell.imageView?.image = UIImage(named: "inactiveTable_\(tile.id).png")
                 }
                 
+                if(tile.id == 41 || tile.id == 42 || tile.id == 43) {
+                    
+                }
                 //print("this is tile.id \(tile.id)")
                 return cell
             }
     }
+
     
     /* section headers
     appear above each `UITableView` section */
@@ -262,9 +277,18 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             return 22;
         }else if(indexPath.section==1){
             return self.view.frame.size.width + 150;
-        }else{
-            return 58
+        }else if(indexPath.section == 2){
+            //hide those row whose
+            if(facultyVisitArray[indexPath.row].id >= 41) {
+                return 0
+            }
+            
+        } else if(indexPath.section == 3) {
+            if(facultyArray[indexPath.row].id >= 41) {
+                return 0
+            }
         }
+        return 58
     }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 58
