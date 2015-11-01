@@ -38,6 +38,7 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
         layout.minimumLineSpacing = 0
         bingoCOllection.collectionViewLayout = layout
         
+        //force collection view to reload on main thread
         dispatch_async(dispatch_get_main_queue()) {
             self.bingoCOllection.reloadData()
         }

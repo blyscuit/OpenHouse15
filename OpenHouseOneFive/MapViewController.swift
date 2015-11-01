@@ -205,7 +205,53 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
                 
                 // Create the polygon, and assign it to the map.
                 var polygon = GMSPolygon(path: rect)
-                polygon.fillColor = UIColor(red:0.25, green:0, blue:0, alpha:1.05);
+                let fac_id = subJson["faculty_id"].intValue
+    
+            switch fac_id {
+                case 21:
+                    polygon.fillColor = UIColor(red:155/255.0 , green:0/255.0, blue:0/255.0, alpha:0.5);
+                case 22:
+                    polygon.fillColor = UIColor(red:132/255.0 , green:130/255.0, blue:133/255.0, alpha:0.5);
+                case 23:
+                    polygon.fillColor = UIColor(red:255/255.0 , green:199/255.0, blue:21/255.0, alpha:0.5);
+                case 24:
+                    polygon.fillColor = UIColor(red:0/255.0 , green:0/255.0, blue:0/255.0, alpha:0.5);
+                case 25:
+                    polygon.fillColor = UIColor(red:108/255.0 , green:69/255.0, blue:30/255.0, alpha:0.5);
+                case 26:
+                    polygon.fillColor = UIColor(red:112/255.0 , green:144/255.0, blue:200/255.0, alpha:0.5);
+                case 27:
+                    polygon.fillColor = UIColor(red:242/255.0 , green:101/255.0, blue:34/255.0, alpha:0.5);
+                case 28:
+                    polygon.fillColor = UIColor(red:34/255.0 , green:35/255.0, blue:111/255.0, alpha:0.5);
+                case 29:
+                    polygon.fillColor = UIColor(red:204/255.0 , green:174/255.0, blue:93/255.0, alpha:0.5);
+                case 30:
+                    polygon.fillColor = UIColor(red:0/255.0 , green:102/255.0, blue:0/255.0, alpha:0.5);
+                case 31:
+                    polygon.fillColor = UIColor(red:51/255.0 , green:153/255.0, blue:204/255.0, alpha:0.5);
+                case 32:
+                    polygon.fillColor = UIColor(red:124/255.0 , green:78/255.0, blue:150/255.0, alpha:0.5);
+                case 33:
+                    polygon.fillColor = UIColor(red:96/255.0 , green:100/255.0, blue:39/255.0, alpha:0.5);
+                case 34:
+                    polygon.fillColor = UIColor(red:255/255.0 , green:255/255.0, blue:255/255.0, alpha:0.7);
+                case 35:
+                    polygon.fillColor = UIColor(red:142/255.0 , green:4/255.0, blue:1/255.0, alpha:0.5);
+                case 37:
+                    polygon.fillColor = UIColor(red:72/255.0 , green:49/255.0, blue:136/255.0, alpha:0.5);
+                case 38:
+                    polygon.fillColor = UIColor(red:72/255.0 , green:49/255.0, blue:136/255.0, alpha:0.5);
+                case 39:
+                    polygon.fillColor = UIColor(red:255/255.0 , green:165/255.0, blue:0/255.0, alpha:0.5);
+                case 40:
+                    polygon.fillColor = UIColor(red:153/255.0 , green:28/255.0, blue:26/255.0, alpha:0.5);
+                
+                default:
+                    
+                    polygon.fillColor = UIColor(red:251/255.0 , green:90/255.0, blue:134/255.0, alpha:0.5);
+                }
+                
                 //        polygon.strokeColor = UIColor.blackColor()
                 polygon.strokeWidth = 0
                 polygon.map = self.mapView

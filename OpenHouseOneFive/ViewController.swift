@@ -397,7 +397,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             let dateObj = parseDateFromJSON(date!)
             
             var timeText = "N/A"
-            var detailText = "Not Available"
+            var detailText = "No Event Available\n"
             print("now \(now) compared to dateObj \(dateObj)")
             if(dateObj.isBeforeDate(now)){
                 
@@ -424,6 +424,8 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 
                 print("event time = \(timeText)\ndetail = \(detailText)")
                 
+                
+               
                 timeLabel?.text = timeText
                 detailLabel?.text = detailText
                 
@@ -432,6 +434,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             
             timeLabel?.text = timeText
             detailLabel?.text = detailText
+            
             
         }
     }
