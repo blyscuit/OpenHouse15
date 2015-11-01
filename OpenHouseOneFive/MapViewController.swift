@@ -190,9 +190,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.snippet = "Faculty"
             
             let imageName = UIImage(named: "pin_\(subJson["faculty_id"].stringValue)")
-            let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
+            //let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
             
-            marker.icon = image//UIImage(named: "pin_\(subJson["faculty_id"].stringValue)")
+            marker.icon = imageName//UIImage(named: "pin_\(subJson["faculty_id"].stringValue)")
             
             marker.userData = bingoBoard.tileWithID(subJson["faculty_id"].stringValue)
             
@@ -227,9 +227,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.snippet = " "
             
             let imageName = UIImage(named: "pin_landmark")
-            let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
+            //let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
             
-            marker.icon = image
+            marker.icon = imageName
             
             
             landMarkArray.append(marker)
@@ -244,9 +244,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.snippet = " "
             
             let imageName = UIImage(named: "pin_cutour")
-            let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
+            //let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
             
-            marker.icon = image
+            marker.icon = imageName
             
             
             stationArray.append(marker)
@@ -260,9 +260,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.snippet = " "
             
             let imageName = UIImage(named: "pin_information")
-            let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
+            //let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
             
-            marker.icon = image
+            marker.icon = imageName
             
             
             infomationkArray.append(marker)

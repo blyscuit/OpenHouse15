@@ -5,3 +5,4 @@ use_frameworks!
 
     pod 'GoogleMaps'
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+    pod 'Google/Analytics', '~> 1.0.0'
