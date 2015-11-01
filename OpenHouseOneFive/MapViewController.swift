@@ -188,7 +188,30 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.title = subJson["name"].stringValue
             marker.snippet = "Faculty"
             
+            var faculty_id = subJson["faculty_id"].stringValue
+            
+            marker.icon = UIImage(named: "pin_\(faculty_id)")
+            
             marker.userData = bingoBoard.tileWithID(subJson["faculty_id"].stringValue)
+            
+            if let poly:JSON? = subJson["pathway"] {
+                // Create a rectangular path
+                var rect = GMSMutablePath()
+                for (index,subJson):(String, JSON) in poly! {
+                    
+                rect.addCoordinate(CLLocationCoordinate2DMake(subJson["lat"].doubleValue,subJson["lng"].doubleValue));
+                
+            }
+                
+                // Create the polygon, and assign it to the map.
+                var polygon = GMSPolygon(path: rect)
+                polygon.fillColor = UIColor(red:0.25, green:0, blue:0, alpha:1.05);
+                //        polygon.strokeColor = UIColor.blackColor()
+                polygon.strokeWidth = 0
+                polygon.map = self.mapView
+            }
+            
+           
             
             facultyArray.append(marker)
         }
@@ -199,9 +222,35 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.position = CLLocationCoordinate2DMake(subJson["lat"].doubleValue,subJson["lng"].doubleValue)
             marker.title = subJson["name"].stringValue
             marker.snippet = " "
-        
+            marker.icon = UIImage(named: "pin_landmark")
+            
             
             landMarkArray.append(marker)
+        }
+        
+        
+        for (index,subJson):(String, JSON) in jsonFacObj["station"] {
+            //Do something you want
+            var marker = GMSMarker()
+            marker.position = CLLocationCoordinate2DMake(subJson["lat"].doubleValue,subJson["lng"].doubleValue)
+            marker.title = subJson["name"].stringValue
+            marker.snippet = " "
+            marker.icon = UIImage(named: "pin_cutour")
+            
+            
+            stationArray.append(marker)
+        }
+        
+        for (index,subJson):(String, JSON) in jsonFacObj["information"] {
+            //Do something you want
+            var marker = GMSMarker()
+            marker.position = CLLocationCoordinate2DMake(subJson["lat"].doubleValue,subJson["lng"].doubleValue)
+            marker.title = subJson["name"].stringValue
+            marker.snippet = " "
+            marker.icon = UIImage(named: "pin_information")
+            
+            
+            infomationkArray.append(marker)
         }
         
         aRoute = GMSPolyline()
@@ -320,6 +369,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     }
     func toggleStationButton(){
         stationOn = !stationOn
+        toggleArray(stationArray, on: stationOn)
         if(stationOn == false){
             if let image = UIImage(named: "popbus-station-inactive.png") {
                 stationButton.image = image

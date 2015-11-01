@@ -340,11 +340,40 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         jsonObj = JSON(data: data)
         if jsonObj != JSON.null {
             print("jsonData:\(jsonObj)")
+            
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
+            for var subJSON:JSON in jsonObj["open_house"].array!{
+                for var scheduleJSON:JSON in subJSON["schedule"].array!{
+                    let dateObj = parseDateFromJSON(scheduleJSON["time"].string!)
+                    setNotification(scheduleJSON["title"].string!, dateToFire: dateObj)
+                }
+            }
+            
+            
+            
+            
         } else {
             print("invalid JSON file")
         }
         
     }
+    
+    //====================
+    
+    func setNotification(notiTitle:String, dateToFire:NSDate){
+        
+        let localNotification = UILocalNotification();
+        localNotification.fireDate = dateToFire.dateByAddingTimeInterval(-900)
+        localNotification.alertBody = "Event - \"\(notiTitle)\" starting in 15 minutes"
+        localNotification.timeZone = NSTimeZone.localTimeZone()
+        localNotification.soundName = UILocalNotificationDefaultSoundName
+        //        localNotification.timeZone = NSTimeZone(name: "UTC")
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        
+    }
+    
+    //====================
     
     func parseDateFromJSON(date:String) -> NSDate {
         let dateFor: NSDateFormatter = NSDateFormatter()
