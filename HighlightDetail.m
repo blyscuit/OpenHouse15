@@ -37,14 +37,6 @@
     screenHeight = self.view.frame.size.height;
     screenWidth = self.view.frame.size.width;
     
-    for (NSString* family in [UIFont familyNames]) {
-        NSLog(@"%@", family);
-        
-        for (NSString* name in [UIFont fontNamesForFamilyName: family]) {
-            NSLog(@"  %@", name);
-        }
-    }
-    
     [super viewDidLoad];
     
     float yPostion = 0.0;
@@ -125,16 +117,18 @@
     double lat = [latString doubleValue];
     double lgn = [lgnString doubleValue];
     
-    //GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lgn zoom:12 ];
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:13.73548 longitude:100.53147 zoom:12 ];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lgn zoom:14];
+    //GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:13.73548 longitude:100.53147 zoom:12 ];
     GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectMake(25, yPostion, screenWidth-50, (screenWidth-50)*2/3) camera:camera];
     mapView.myLocationEnabled = YES;
-    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(13.73548 , 100.53147);
+    mapView.indoorEnabled = NO;
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(lat , lgn);
     GMSMarker *marker = [GMSMarker markerWithPosition:position];
     marker.position = camera.target;
     marker.snippet = [NSString stringWithFormat:@"คณะ%@",arrDetail[1]];
     marker.title = [NSString stringWithFormat:@"%@",arrDetail[0]];
     marker.map = mapView;
+    //marker.icon =[UIImage imageNamed:@"sticker_21.png"];
     marker.appearAnimation = kGMSMarkerAnimationPop;
     //[scrollView setScrollIndicatorInsets:UIEdgeInsetsMake(-64, 0, 0, 0)];
     
@@ -160,7 +154,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     CGFloat yOffset = scrollView.contentOffset.y;
-    NSLog(@"yOffset = %f",yOffset);
+    //NSLog(@"yOffset = %f",yOffset);
     if(yOffset<0) {
         self.image.frame = CGRectMake(0,yOffset+44,screenWidth-yOffset,(screenWidth)-yOffset);
         self.image.center = CGPointMake(screenWidth/2,self.image.center.y);

@@ -92,6 +92,7 @@
 		75936D041BE2F6CF005642E5 /* 39_Art.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75936CF01BE2F6CF005642E5 /* 39_Art.jpg */; };
 		75936D061BE35910005642E5 /* 26_Art.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75936D051BE3590F005642E5 /* 26_Art.jpg */; };
 		75A41D721BE5C30400FE50A0 /* OpenHouseFacultyAreaDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 75A41D711BE5C30400FE50A0 /* OpenHouseFacultyAreaDetail.json */; settings = {ASSET_TAGS = (); }; };
+		75A41D751BE5F6AC00FE50A0 /* AboutUS.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A41D741BE5F6AC00FE50A0 /* AboutUS.m */; settings = {ASSET_TAGS = (); }; };
 		E998AA896A8DD8F8B779A28C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999D8BB554E2A2914AD3A01C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -207,6 +208,8 @@
 		75936D081BE361A3005642E5 /* HighlightDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighlightDetail.h; sourceTree = "<group>"; };
 		75936D091BE361A3005642E5 /* HighlightDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighlightDetail.m; sourceTree = "<group>"; };
 		75A41D711BE5C30400FE50A0 /* OpenHouseFacultyAreaDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OpenHouseFacultyAreaDetail.json; sourceTree = "<group>"; };
+		75A41D731BE5F6AC00FE50A0 /* AboutUS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUS.h; sourceTree = "<group>"; };
+		75A41D741BE5F6AC00FE50A0 /* AboutUS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUS.m; sourceTree = "<group>"; };
 		7B9403EFE43B1F5F5FB922BE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		999D8BB554E2A2914AD3A01C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A57062083E122CEDF46AD1 /* Pods_OpenHouseOneFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenHouseOneFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,6 +311,8 @@
 				6826771E1BD5288300B3D6D5 /* Bingo.swift */,
 				689BCC7B1BD790200065EC02 /* BingoViewController.swift */,
 				685B0DE91BCBBB3F0062BC91 /* Main.storyboard */,
+				75A41D731BE5F6AC00FE50A0 /* AboutUS.h */,
+				75A41D741BE5F6AC00FE50A0 /* AboutUS.m */,
 				6849449E1BE3A70A00622453 /* WebViewController.h */,
 				6849449F1BE3A70A00622453 /* WebViewController.m */,
 				68BF18AB1BE3460800FECDD6 /* HighlightViewController.swift */,
@@ -731,6 +736,7 @@
 				4F72561B1BDF90F000852F8C /* CAPSPageMenu.swift in Sources */,
 				685B0E1C1BCBBB670062BC91 /* SwitchCameraButton.swift in Sources */,
 				4F8BCC701BD731AE0012BA88 /* FAQViewController.swift in Sources */,
+				75A41D751BE5F6AC00FE50A0 /* AboutUS.m in Sources */,
 				682677231BD5297400B3D6D5 /* Extensions.swift in Sources */,
 				6826771F1BD5288300B3D6D5 /* Bingo.swift in Sources */,
 				685B0E1D1BCBBB670062BC91 /* ToggleTorchButton.swift in Sources */,

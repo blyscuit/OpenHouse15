@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbK-tV-9sN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TbK-tV-9sN">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -17,11 +19,6 @@
             <string>ThaiSansNeue-Bold</string>
             <string>ThaiSansNeue-Bold</string>
             <string>ThaiSansNeue-Bold</string>
-        </mutableArray>
-        <mutableArray key="thaisansneue-regular-webfont.ttf">
-            <string>ThaiSansNeue-Regular</string>
-            <string>ThaiSansNeue-Regular</string>
-            <string>ThaiSansNeue-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -697,17 +694,17 @@
                                                     <constraint firstAttribute="height" constant="14" id="LH1-sw-kQv"/>
                                                     <constraint firstAttribute="width" constant="14" id="qD9-cz-BjH"/>
                                                 </constraints>
-                                                <state key="normal" image="close-icon"/>
+                                                <state key="normal" image="close_button"/>
                                                 <connections>
                                                     <action selector="closePress:" destination="9Rw-gN-ybG" eventType="touchUpInside" id="7Ia-sr-UPZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPn-eJ-pn6">
-                                                <rect key="frame" x="552" y="26" width="34" height="34"/>
+                                                <rect key="frame" x="552" y="16" width="44" height="44"/>
                                                 <animations/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="34" id="6bh-jf-je7"/>
-                                                    <constraint firstAttribute="width" constant="34" id="cTJ-YK-AaD"/>
+                                                    <constraint firstAttribute="height" constant="44" id="6bh-jf-je7"/>
+                                                    <constraint firstAttribute="width" constant="44" id="cTJ-YK-AaD"/>
                                                 </constraints>
                                                 <connections>
                                                     <action selector="closePress:" destination="9Rw-gN-ybG" eventType="touchUpInside" id="tyn-9A-1CX"/>
@@ -1298,6 +1295,86 @@
             </objects>
             <point key="canvasLocation" x="-160" y="-690"/>
         </scene>
+        <!--AboutUS-->
+        <scene sceneID="Dlc-ep-hKB">
+            <objects>
+                <viewController id="44c-Dj-dxk" customClass="AboutUS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xom-47-dGf"/>
+                        <viewControllerLayoutGuide type="bottom" id="62p-Hd-s3U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p7K-Y2-2rn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBU-Dh-WnG" userLabel="Blur View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FN-VM-UF6">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95M-Ff-qBy">
+                                        <rect key="frame" x="556" y="15" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="0QY-tp-OlB"/>
+                                            <constraint firstAttribute="height" constant="44" id="oyY-Jn-V0M"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="close_pink_button"/>
+                                        <connections>
+                                            <action selector="closePress:" destination="44c-Dj-dxk" eventType="touchUpInside" id="r1w-FV-77j"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tj-Ie-VGe">
+                                        <rect key="frame" x="273" y="26" width="54" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="bAJ-GP-49g"/>
+                                            <constraint firstAttribute="height" constant="21" id="usD-C1-A5t"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="8tj-Ie-VGe" firstAttribute="bottom" secondItem="6FN-VM-UF6" secondAttribute="bottom" constant="-27" id="1I2-Cq-hmm"/>
+                                    <constraint firstItem="95M-Ff-qBy" firstAttribute="baseline" secondItem="8tj-Ie-VGe" secondAttribute="firstBaseline" constant="-11" id="6Ww-es-Wux"/>
+                                    <constraint firstItem="6FN-VM-UF6" firstAttribute="centerY" secondItem="sBU-Dh-WnG" secondAttribute="centerY" constant="3.5" id="7S9-5D-0f1"/>
+                                    <constraint firstItem="8tj-Ie-VGe" firstAttribute="centerX" secondItem="6FN-VM-UF6" secondAttribute="centerX" id="8jb-PV-p5F"/>
+                                    <constraint firstItem="6FN-VM-UF6" firstAttribute="height" secondItem="sBU-Dh-WnG" secondAttribute="height" constant="7" id="LPF-kR-u0s"/>
+                                    <constraint firstAttribute="trailing" secondItem="95M-Ff-qBy" secondAttribute="trailing" id="OPO-vg-Zdv"/>
+                                    <constraint firstItem="95M-Ff-qBy" firstAttribute="firstBaseline" secondItem="8tj-Ie-VGe" secondAttribute="firstBaseline" constant="11" id="R3f-Sa-rIL"/>
+                                    <constraint firstItem="8tj-Ie-VGe" firstAttribute="trailing" secondItem="sBU-Dh-WnG" secondAttribute="leading" id="Xhz-ij-dM6"/>
+                                    <constraint firstItem="8tj-Ie-VGe" firstAttribute="bottom" secondItem="6FN-VM-UF6" secondAttribute="bottom" constant="-27" id="aUh-Pr-ZQK"/>
+                                    <constraint firstAttribute="height" constant="67" id="bsz-wY-6pg"/>
+                                    <constraint firstItem="6FN-VM-UF6" firstAttribute="width" secondItem="sBU-Dh-WnG" secondAttribute="width" id="eI9-FU-F1r"/>
+                                    <constraint firstItem="6FN-VM-UF6" firstAttribute="leading" secondItem="sBU-Dh-WnG" secondAttribute="leading" id="g1V-L3-8zU"/>
+                                    <constraint firstItem="95M-Ff-qBy" firstAttribute="centerY" secondItem="8tj-Ie-VGe" secondAttribute="centerY" id="oGd-qY-74E"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Xhz-ij-dM6"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sBU-Dh-WnG" firstAttribute="centerX" secondItem="p7K-Y2-2rn" secondAttribute="centerX" id="CWC-Tf-234"/>
+                            <constraint firstItem="sBU-Dh-WnG" firstAttribute="top" secondItem="xom-47-dGf" secondAttribute="bottom" constant="-20" id="fHJ-lz-ut8"/>
+                            <constraint firstItem="sBU-Dh-WnG" firstAttribute="width" secondItem="p7K-Y2-2rn" secondAttribute="width" id="pVd-tT-KeI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blurView" destination="sBU-Dh-WnG" id="Op2-lM-ula"/>
+                        <outlet property="topicLabel" destination="8tj-Ie-VGe" id="n71-Tj-tZw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ar-FB-pAJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="262" y="-1"/>
+        </scene>
         <!--Web View Controller-->
         <scene sceneID="YgT-39-lKA">
             <objects>
@@ -1351,11 +1428,12 @@
                         <segue destination="Nad-KY-gcF" kind="relationship" relationship="viewControllers" id="bMY-Ij-vPw"/>
                         <segue destination="OhL-3L-b9h" kind="relationship" relationship="viewControllers" id="1iV-KD-zIC"/>
                         <segue destination="Ins-Zd-Cp7" kind="relationship" relationship="viewControllers" id="4E8-Wf-hFM"/>
+                        <segue destination="44c-Dj-dxk" kind="presentation" identifier="toAboutUs" id="ekj-vm-aKj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgf-7l-qal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="533" y="-614"/>
+            <point key="canvasLocation" x="699" y="-638"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="K1U-vr-pNN">
@@ -1458,7 +1536,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3P3-80-aen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1347" y="1101"/>
+            <point key="canvasLocation" x="1277" y="1058"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="FcJ-qU-tlX">
@@ -1899,6 +1977,8 @@
     <resources>
         <image name="check-in-button" width="336" height="48"/>
         <image name="close-icon" width="35" height="35"/>
+        <image name="close_button" width="16" height="16"/>
+        <image name="close_pink_button" width="145" height="145"/>
         <image name="dashed_line" width="1052" height="2"/>
         <image name="faculty-button-active" width="123" height="49"/>
         <image name="faculty_highlight_button" width="581" height="148"/>
@@ -1930,6 +2010,6 @@
         <image name="user-icon" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oes-zV-abu"/>
+        <segue reference="cy7-Xm-aia"/>
     </inferredMetricsTieBreakers>
 </document>

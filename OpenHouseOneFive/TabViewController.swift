@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabViewController: UITabBarController,MainMenuControllerDelegate,MapControllerDelegate {
+class TabViewController: UITabBarController,MainMenuControllerDelegate,MapControllerDelegate,AboutUSViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,7 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
     
     func toAbout(){
         print("about")
+        performSegueWithIdentifier("toAboutUs", sender: self)
     }
     func toUser(){
         print("user")
@@ -127,6 +128,17 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
         if(segue.identifier == "web_p"){
             let wVC = segue.destinationViewController as! WebViewController
             wVC.idNumber = toWeb
+        }
+        else if(segue.identifier == "toAboutUs") {
+            let abVC = segue.destinationViewController as! AboutUS
+            abVC.delegate = self;
+            
+        }
+    }
+    
+    func AboutUSViewClose(controller: AboutUS!) {
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            
         }
     }
     
