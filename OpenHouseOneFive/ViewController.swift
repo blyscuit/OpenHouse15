@@ -114,23 +114,30 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         self.dismissViewControllerAnimated(true, completion: { [unowned self] () -> Void in
             
             var mess:String?
+            var alertMsg:String?
             
             if let tile = self.bingoBoard.gotTileWithQR(result){
-                 mess = "\(tile.name!) \(tile.thaiName!)"
+                 mess = "\(tile.name!) \n\(tile.thaiName!)"
                 self.bingoBoard.saveDataToUser()
                 print("Scan success I'm going to unlock the tile")
                 
                 var tracker = GAI.sharedInstance().defaultTracker
                 
                 tracker.send(GAIDictionaryBuilder.createEventWithCategory("QR", action: "Scanned", label: "mess", value: nil).build() as [NSObject : AnyObject])
-                
+                alertMsg = "Faculty is Unlocked"
             }else{
-                mess = "Incorrect QR code"
+                mess = "Please try again"
+                alertMsg = "Incorrect QR code"
                 
             }
             
-            let alert = UIAlertController(title: "Faculty unlock", message: mess!, preferredStyle: .Alert)
+            let alert = UIAlertController(title:  alertMsg, message: mess!, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+            
+            //add image to alertView
+//            let imageView : UIImageView = UIImageView(image:UIImage(named: "activeTable_21.png"))
+//            imageView.frameForAlignmentRect(CGRectMake(100, 0, 30 , 30))
+//            alert.view.addSubview(imageView)
             
             self.presentViewController(alert, animated: true, completion: nil)
             

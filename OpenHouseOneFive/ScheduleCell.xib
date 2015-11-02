@@ -9,7 +9,7 @@
         <mutableArray key="ThaiSansNeue-Bold.ttf">
             <string>ThaiSansNeue-Bold</string>
         </mutableArray>
-        <mutableArray key="thaisansneue-regular-webfont.ttf">
+        <mutableArray key="ThaiSansNeue-Regular.ttf">
             <string>ThaiSansNeue-Regular</string>
             <string>ThaiSansNeue-Regular</string>
         </mutableArray>
@@ -24,7 +24,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="505" height="141"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11:00 AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UB3-Y7-tXT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00 AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UB3-Y7-tXT">
                         <rect key="frame" x="20" y="20" width="85" height="28"/>
                         <animations/>
                         <constraints>
