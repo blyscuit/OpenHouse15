@@ -55,6 +55,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     
     var positionButtonInitialPosition:CGPoint!
     
+    @IBOutlet var pinInfo: UIImageView!
     @IBOutlet weak var facultyNameLabel: UILabel!
     @IBOutlet weak var buildingNameEngLabel: UILabel!
     @IBOutlet weak var buildingNameLabel: UILabel!
