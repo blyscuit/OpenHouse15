@@ -116,7 +116,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             let mess:String?
             
             if let tile = self.bingoBoard.gotTileWithQR(result){
-                 mess = "\(tile.name!) \(tile.thaiName)"
+                 mess = "\(tile.name!) \(tile.thaiName!)"
                 self.bingoBoard.saveDataToUser()
                 print("Scan success I'm going to unlock the tile")
                 
@@ -130,7 +130,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 var tracker = GAI.sharedInstance().defaultTracker
             }
             
-            let alert = UIAlertController(title: "Faculty unlock", message: mess, preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Faculty unlock", message: mess!, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             
             self.presentViewController(alert, animated: true, completion: nil)

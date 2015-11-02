@@ -111,16 +111,18 @@ class Bingo: NSObject {
     
     func gotTileWithQR(QR:String) -> Tile?{
         var tile:Tile?
+        var correctile:Tile?
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
                 tile = tiles [column,row]
                 
                 if tile?.qr == QR {
                     gotTile(tile!)
+                    correctile=tile
                 }
             }
         }
-        return tile
+        return correctile
     }
     
     func tileWithFaculty(fac:String) -> Tile?{
