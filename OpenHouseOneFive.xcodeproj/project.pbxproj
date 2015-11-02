@@ -72,7 +72,6 @@
 		750A24A51BE551FE00C06A37 /* sticker_38.png in Resources */ = {isa = PBXBuildFile; fileRef = 750A24911BE551FE00C06A37 /* sticker_38.png */; };
 		750A24A61BE551FE00C06A37 /* sticker_39.png in Resources */ = {isa = PBXBuildFile; fileRef = 750A24921BE551FE00C06A37 /* sticker_39.png */; };
 		750A24A71BE551FE00C06A37 /* sticker_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 750A24931BE551FE00C06A37 /* sticker_40.png */; };
-		75936CD41BE283BC005642E5 /* HighlightBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75936CD31BE283BC005642E5 /* HighlightBaseViewController.swift */; };
 		75936CD61BE29E64005642E5 /* highlight.json in Resources */ = {isa = PBXBuildFile; fileRef = 75936CD51BE29E64005642E5 /* highlight.json */; };
 		75936CDB1BE2B363005642E5 /* HighLightJsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75936CDA1BE2B363005642E5 /* HighLightJsonParser.swift */; };
 		75936CF11BE2F6CF005642E5 /* 21_Art.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75936CDD1BE2F6CF005642E5 /* 21_Art.jpg */; };
@@ -188,7 +187,6 @@
 		750A24911BE551FE00C06A37 /* sticker_38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker_38.png; sourceTree = "<group>"; };
 		750A24921BE551FE00C06A37 /* sticker_39.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker_39.png; sourceTree = "<group>"; };
 		750A24931BE551FE00C06A37 /* sticker_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker_40.png; sourceTree = "<group>"; };
-		75936CD31BE283BC005642E5 /* HighlightBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HighlightBaseViewController.swift; path = OpenHouseOneFive/HighlightBaseViewController.swift; sourceTree = "<group>"; };
 		75936CD51BE29E64005642E5 /* highlight.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = highlight.json; sourceTree = "<group>"; };
 		75936CDA1BE2B363005642E5 /* HighLightJsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighLightJsonParser.swift; sourceTree = "<group>"; };
 		75936CDD1BE2F6CF005642E5 /* 21_Art.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 21_Art.jpg; sourceTree = "<group>"; };
@@ -448,7 +446,6 @@
 			isa = PBXGroup;
 			children = (
 				750A247F1BE551FE00C06A37 /* highlight-detail-assets */,
-				75936CD31BE283BC005642E5 /* HighlightBaseViewController.swift */,
 				75936CDC1BE2F6CF005642E5 /* ArtWork */,
 				75936CDA1BE2B363005642E5 /* HighLightJsonParser.swift */,
 				75936D081BE361A3005642E5 /* HighlightDetail.h */,
@@ -733,7 +730,6 @@
 				684944A01BE3A70A00622453 /* WebViewController.m in Sources */,
 				6826771D1BD5286800B3D6D5 /* Array2D.swift in Sources */,
 				68D4FA391BE634A500166097 /* RBResizer.swift in Sources */,
-				75936CD41BE283BC005642E5 /* HighlightBaseViewController.swift in Sources */,
 				689BCC7C1BD790200065EC02 /* BingoViewController.swift in Sources */,
 				682405551BD1623900B95C99 /* NavigationController.swift in Sources */,
 				4F82DA121BE064E600FED6B3 /* NSDateExtension.swift in Sources */,
