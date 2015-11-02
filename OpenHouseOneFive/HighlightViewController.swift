@@ -66,6 +66,12 @@ class HighlightViewController: UIViewController, UITableViewDataSource,UITableVi
             titleImageView?.image = UIImage(named: imageName)
             titleImageView?.contentMode = UIViewContentMode.ScaleAspectFit
             
+            if(self.arrayMain[indexPath.row][2] == "28") {
+                labelImage?.frame = CGRectMake((labelImage?.frame.origin.x)!, (labelImage?.frame.origin.y)!,49,16)
+            }
+            else {
+                labelImage?.frame = CGRectMake((labelImage?.frame.origin.x)!, (labelImage?.frame.origin.y)!,30,16)
+            }
             let tagImageName = "tag_\(self.arrayMain[indexPath.row][2]).jpg"
             labelImage?.image = UIImage(named: tagImageName)
             

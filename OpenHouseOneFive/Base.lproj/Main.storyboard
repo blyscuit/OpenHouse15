@@ -499,19 +499,21 @@
                                                         <constraint firstAttribute="height" constant="58" id="wvf-nE-hcP"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AJa-gw-STt">
-                                                    <rect key="frame" x="98" y="10" width="30" height="16"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AJa-gw-STt">
+                                                    <rect key="frame" x="98" y="10" width="49" height="16"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="49" id="At6-WT-IMJ"/>
                                                         <constraint firstAttribute="width" constant="30" id="Gdl-JY-a1g"/>
-                                                        <constraint firstAttribute="height" constant="16" id="Xkg-cr-SXs"/>
+                                                        <constraint firstAttribute="width" constant="49" id="T4R-my-Xea"/>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="49" id="Zsp-oS-ef2"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="kU7-JJ-PtO"/>
+                                                        <constraint firstAttribute="height" constant="16" id="xcx-Bz-iS9"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="At6-WT-IMJ"/>
+                                                            <exclude reference="Gdl-JY-a1g"/>
                                                             <exclude reference="Zsp-oS-ef2"/>
                                                             <exclude reference="kU7-JJ-PtO"/>
                                                         </mask>
@@ -547,13 +549,13 @@
                                             <animations/>
                                             <constraints>
                                                 <constraint firstItem="1or-nl-ibC" firstAttribute="leading" secondItem="ACu-Kz-fPE" secondAttribute="trailing" constant="20" id="7NJ-ob-x1d"/>
+                                                <constraint firstItem="1or-nl-ibC" firstAttribute="top" secondItem="AJa-gw-STt" secondAttribute="bottom" constant="1" id="7O1-QP-JtV"/>
                                                 <constraint firstItem="8Xs-sR-B7o" firstAttribute="top" secondItem="1or-nl-ibC" secondAttribute="bottom" constant="-5" id="H2w-In-XRL"/>
-                                                <constraint firstItem="ACu-Kz-fPE" firstAttribute="top" secondItem="AJa-gw-STt" secondAttribute="bottom" constant="-20" id="PZp-BM-e0P"/>
                                                 <constraint firstItem="ACu-Kz-fPE" firstAttribute="top" secondItem="tlW-FH-d1x" secondAttribute="topMargin" constant="-2" id="Qqg-k0-cMY"/>
                                                 <constraint firstItem="1or-nl-ibC" firstAttribute="leading" secondItem="AJa-gw-STt" secondAttribute="trailing" constant="-20" id="XYY-za-4ce"/>
-                                                <constraint firstItem="1or-nl-ibC" firstAttribute="top" secondItem="AJa-gw-STt" secondAttribute="bottom" constant="1" id="YsW-uP-1VL"/>
-                                                <constraint firstItem="AJa-gw-STt" firstAttribute="leading" secondItem="ACu-Kz-fPE" secondAttribute="trailing" constant="20" id="pEI-nh-8dc"/>
+                                                <constraint firstItem="AJa-gw-STt" firstAttribute="leading" secondItem="ACu-Kz-fPE" secondAttribute="trailing" constant="20" id="g0x-Vl-HKo"/>
                                                 <constraint firstItem="8Xs-sR-B7o" firstAttribute="leading" secondItem="ACu-Kz-fPE" secondAttribute="trailing" constant="20" id="pWi-4f-d9L"/>
+                                                <constraint firstItem="AJa-gw-STt" firstAttribute="top" secondItem="ACu-Kz-fPE" secondAttribute="top" constant="4" id="tkC-z6-jh5"/>
                                                 <constraint firstItem="ACu-Kz-fPE" firstAttribute="leading" secondItem="tlW-FH-d1x" secondAttribute="leadingMargin" constant="12" id="ufO-q8-tDK"/>
                                             </constraints>
                                             <variation key="default">
@@ -2064,6 +2066,6 @@
         <image name="user-icon" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oes-zV-abu"/>
+        <segue reference="cy7-Xm-aia"/>
     </inferredMetricsTieBreakers>
 </document>

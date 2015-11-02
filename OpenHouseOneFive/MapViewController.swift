@@ -133,11 +133,12 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         delegate?.mapControllerDidAppear(self)
         bingoBoard = Bingo(random: true)
         
-        if(detailView.alpha == 1.0){
-            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
-        }else{
-            self.locationButton.frame.origin = positionButtonInitialPosition
-        }
+//        if(detailView.alpha == 1.0){
+//           // self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
+//            
+//        }else{
+//            self.locationButton.frame.origin = positionButtonInitialPosition
+//        }
         self.view.layoutIfNeeded()
     }
     
