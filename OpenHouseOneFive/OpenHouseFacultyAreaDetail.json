@@ -233,18 +233,18 @@
      ],
     "information":
     [
-     {"name":"จุดปฏิคม (information)","lat":13.7396,"lng":100.5308},
-     {"name":"จุดปฏิคม (information)","lat":13.73796,"lng":100.52993},
-     {"name":"จุดปฏิคม (information)","lat":13.73739,"lng":100.53195},
-     {"name":"จุดปฏิคม (information)","lat":13.73892,"lng":100.53415},
-     {"name":"จุดปฏิคม (information)","lat":13.73636,"lng":100.52979},
-     {"name":"จุดปฏิคม (information)","lat":13.73483,"lng":100.53079},
-     {"name":"จุดปฏิคม (information)","lat":13.73813,"lng":100.52908},
-     {"name":"จุดปฏิคม (information)","lat":13.74384,"lng":100.53246},
-     {"name":"จุดปฏิคม (information)","lat":13.74329,"lng":100.52817}
+     {"name":"จุดปฏิคม (Information)","lat":13.7396,"lng":100.5308},
+     {"name":"จุดปฏิคม (Information)","lat":13.73796,"lng":100.52993},
+     {"name":"จุดปฏิคม (Information)","lat":13.73739,"lng":100.53195},
+     {"name":"จุดปฏิคม (Information)","lat":13.73892,"lng":100.53415},
+     {"name":"จุดปฏิคม (Information)","lat":13.73636,"lng":100.52979},
+     {"name":"จุดปฏิคม (Information)","lat":13.73483,"lng":100.53079},
+     {"name":"จุดปฏิคม (Information)","lat":13.73813,"lng":100.52908},
+     {"name":"จุดปฏิคม (Information)","lat":13.74384,"lng":100.53246},
+     {"name":"จุดปฏิคม (Information)","lat":13.74329,"lng":100.52817}
      ],
     "station":
     [
-     { "name": "ศาลาพระเกี้ยว", "lat": 13.73591, "lng": 100.53173 },
+     { "name": "CU Tour", "lat": 13.73591, "lng": 100.53173 },
      ],
 }

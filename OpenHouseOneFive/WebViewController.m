@@ -23,7 +23,9 @@
     NSURL *baseURL = [NSURL fileURLWithPath:path];
     //NSString* htmlString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"21" ofType:@"html"] encoding:NSUTF8StringEncoding error:nil];
     //[_webView loadHTMLString:htmlString baseURL:baseURL];
-    
+    NSArray *facultyNameArr = [NSArray arrayWithObjects:@"วิศวกรรมศาสตร์",@"อักษรศาสตร์",@"วิทยาศาสตร์",@"รัฐศาสตร์",@"สถาปัตยกรรมศาสตร์",@"พาณิชยศาสตร์ และการบัญชี",@"ครุศาสตร์",@"นิเทศศาสตร์",@"เศรษฐศาสตร์",@"แพทยศาสตร์",@"สัตวแพทยศาสตร์",@"ทันตแพทยศาสตร์",@"เภสัชศาสตร์",@"นิติศาสตร์",@"ศิลปกรรมศาสตร์",@"พยาบาลไม่มีนะจ้า",@"สหเวชศาสตร์",@"จิตวิทยา",@"วิทยาศาสตร์การกีฬา",@"สำนักวิชาทรัพยากรการเกษตร", nil];
+    int i = [_idNumber intValue] - 21;
+    self.navigationItem.title = facultyNameArr[i];
     [_webView loadRequest:[NSURLRequest requestWithURL:baseURL]];
 }
 

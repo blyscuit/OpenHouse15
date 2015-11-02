@@ -94,8 +94,9 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
         
         if(tabBar.selectedItem == tabBar.items?[0]){
             setTopBar(0)
+            navigationItem.title = nil
         }else if(tabBar.selectedItem == tabBar.items?[1]){
-            setTopBar(1)
+            navigationItem.title = nil
         }else if(tabBar.selectedItem == tabBar.items?[2]){
             setTopBar(2)
             navigationItem.title="Main Stage Schedule"
@@ -113,11 +114,13 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
     func mainControllerDidTabWeb(text: String, controller: ViewController) {
         toWeb = text
         self.performSegueWithIdentifier("web_p", sender: self)
+        
     }
     func mapControllerDidTabWeb(text: String, controller: MapViewController) {
         toWeb = text
         self.performSegueWithIdentifier("web_p", sender: self)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
     }
     func mapControllerDidAppear(controller: MapViewController) {
         

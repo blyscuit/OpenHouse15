@@ -571,6 +571,12 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             selectingTile = tile
             self.buildingNameLabel.text = tile!.thaiName // marker.title
         self.buildingNameEngLabel.text = tile!.name // marker.description
+            print("\(tile!.id)")
+            if tile!.id >= 21 && tile!.id <= 40  {
+                self.pinInfo.image = UIImage(named: "pin_\(tile!.id).jpg")
+            } else {
+                self.pinInfo.image = UIImage(named: "pin-info-icon.png")
+            }
 //        self.facultyNameLabel.text = tile!.thaiName // marker.snippet
         self.detailView!.frame = viewInitialPosition
             self.facultyButtonView.frame = CGRectMake(self.detailView!.frame.origin.x, self.detailView!.frame.origin.y + self.detailView!.frame.size.height, self.detailView!.frame.size.width, self.detailView!.frame.size.height)
@@ -587,6 +593,14 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             self.facultyButtonView.hidden = true
             self.buildingNameLabel.text = marker.title
             self.buildingNameEngLabel.text = marker.snippet
+            self.pinInfo.image = UIImage(named: "pin-info-icon")
+            if(marker.title == "จุดปฏิคม (Information)") {
+                self.pinInfo.image = UIImage(named: "pin_information")
+            } else if (marker.title == "CU Tour") {
+                self.pinInfo.image = UIImage(named: "pin_cutour")
+            } else {
+                self.pinInfo.image = UIImage(named:"pin_landmark")
+            }
 //            self.facultyNameLabel.text = marker.snippet
         }
         

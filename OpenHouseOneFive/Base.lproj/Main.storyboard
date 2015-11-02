@@ -444,7 +444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nW-ja-R12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1484" y="-789"/>
+            <point key="canvasLocation" x="2240" y="-1665"/>
         </scene>
         <!--Schedule Base View-->
         <scene sceneID="Wfa-NJ-fRp">
@@ -1424,14 +1424,14 @@
                         <segue destination="44c-Dj-dxk" kind="presentation" identifier="toAboutUs" id="ekj-vm-aKj"/>
                         <segue destination="hCK-nN-Drd" kind="relationship" relationship="viewControllers" id="LtN-qR-dRi"/>
                         <segue destination="eMU-Kd-X9a" kind="relationship" relationship="viewControllers" id="e6J-bf-qdq"/>
-                        <segue destination="OhL-3L-b9h" kind="relationship" relationship="viewControllers" id="1iV-KD-zIC"/>
                         <segue destination="Nad-KY-gcF" kind="relationship" relationship="viewControllers" id="bMY-Ij-vPw"/>
+                        <segue destination="OhL-3L-b9h" kind="relationship" relationship="viewControllers" id="1iV-KD-zIC"/>
                         <segue destination="Ins-Zd-Cp7" kind="relationship" relationship="viewControllers" id="4E8-Wf-hFM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgf-7l-qal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="835" y="-666"/>
+            <point key="canvasLocation" x="659" y="-762"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="K1U-vr-pNN">
@@ -1982,7 +1982,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFW-10-PBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2155" y="-814"/>
+            <point key="canvasLocation" x="2151" y="-934"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pKx-pJ-gBx">
