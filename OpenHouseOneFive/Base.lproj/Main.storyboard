@@ -21,7 +21,7 @@
             <string>ThaiSansNeue-Bold</string>
             <string>ThaiSansNeue-Bold</string>
         </mutableArray>
-        <mutableArray key="thaisansneue-regular-webfont.ttf">
+        <mutableArray key="ThaiSansNeue-Regular.ttf">
             <string>ThaiSansNeue-Regular</string>
             <string>ThaiSansNeue-Regular</string>
             <string>ThaiSansNeue-Regular</string>
@@ -443,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nW-ja-R12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1496" y="-820"/>
+            <point key="canvasLocation" x="1484" y="-789"/>
         </scene>
         <!--Schedule Base View-->
         <scene sceneID="Wfa-NJ-fRp">
@@ -1459,6 +1459,7 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" scrollEnabled="NO" editable="NO" text="Question:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-u1-hUc">
                                                     <rect key="frame" x="18" y="8" width="564" height="48"/>
                                                     <animations/>
+                                                    <color key="textColor" red="0.98431372549999996" green="0.34901960780000002" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="ThaiSansNeue-Bold" family="ThaiSans Neue" pointSize="24"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -1533,7 +1534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3P3-80-aen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1277" y="1058"/>
+            <point key="canvasLocation" x="1357" y="1095"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="FcJ-qU-tlX">
