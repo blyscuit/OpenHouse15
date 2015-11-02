@@ -12,25 +12,25 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let logo = UIImage(named: "app-icon-nav.png")
+        let logo = UIImage(named: "app_icon_nav_white.png")
         let imageView = UIImageView(image:logo)
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
 
         navigationItem.titleView = imageView
 
         
-        var image = UIImage(named: "info-icon.png")
+        var image = UIImage(named: "info_icon_nav_white.png")
         
         //                image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         
         var homeButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toAbout")
         
         
-        image = UIImage(named: "user-icon.png")
-        var userButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toUser")
+        //image = UIImage(named: "user-icon.png")
+        //var userButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toUser")
         
         navigationItem.rightBarButtonItem=homeButton
-        navigationItem.leftBarButtonItem=userButton
+        //navigationItem.leftBarButtonItem=userButton
         
         for var _tabBarItem in self.tabBar.items!{
             _tabBarItem.title = nil
@@ -56,25 +56,25 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
     func setTopBar(numb:Int){
         switch(numb){
         case 0:
-            let logo = UIImage(named: "app-icon-nav.png")
+            let logo = UIImage(named: "app_icon_nav_white.png")
             let imageView = UIImageView(image:logo)
             imageView.contentMode = UIViewContentMode.ScaleAspectFit
             
             navigationItem.titleView = imageView
             
             
-            var image = UIImage(named: "info-icon.png")
+            var image = UIImage(named: "info_icon_nav_white.png")
             
             //                image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
             
             var homeButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toAbout")
             
             
-            image = UIImage(named: "user-icon.png")
-            var userButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toUser")
+            //image = UIImage(named: "user-icon.png")
+            //var userButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toUser")
             
             navigationItem.rightBarButtonItem=homeButton
-            navigationItem.leftBarButtonItem=userButton
+            //navigationItem.leftBarButtonItem=userButton
         default:
             navigationItem.rightBarButtonItem=nil
             navigationItem.leftBarButtonItem=nil

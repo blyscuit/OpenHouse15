@@ -50,11 +50,11 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
 //        bingoTable.reloadData()
         
         //JSON
-        var tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: "MainMenu")
-        
-        var builder = GAIDictionaryBuilder.createScreenView()
-        tracker.send(builder.build() as [NSObject : AnyObject])
+//        var tracker = GAI.sharedInstance().defaultTracker
+//        tracker.set(kGAIScreenName, value: "MainMenu")
+//        
+//        var builder = GAIDictionaryBuilder.createScreenView()
+//        tracker.send(builder.build() as [NSObject : AnyObject])
         
         
     }
@@ -113,21 +113,21 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     func reader(reader: QRCodeReaderViewController, didScanResult result: String) {
         self.dismissViewControllerAnimated(true, completion: { [unowned self] () -> Void in
             
-            let mess:String?
+            var mess:String?
             
             if let tile = self.bingoBoard.gotTileWithQR(result){
                  mess = "\(tile.name!) \(tile.thaiName!)"
                 self.bingoBoard.saveDataToUser()
                 print("Scan success I'm going to unlock the tile")
                 
-                var tracker = GAI.sharedInstance().defaultTracker
+                //var tracker = GAI.sharedInstance().defaultTracker
                 
-                tracker.send(GAIDictionaryBuilder.createEventWithCategory("QR", action: "Scanned", label: "mess", value: nil).build() as [NSObject : AnyObject])
+               // tracker.send(GAIDictionaryBuilder.createEventWithCategory("QR", action: "Scanned", label: "mess", value: nil).build() as [NSObject : AnyObject])
                 
             }else{
                 mess = "Incorrect QR code"
                 
-                var tracker = GAI.sharedInstance().defaultTracker
+                //var tracker = GAI.sharedInstance().defaultTracker
             }
             
             let alert = UIAlertController(title: "Faculty unlock", message: mess!, preferredStyle: .Alert)
@@ -285,9 +285,9 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if(indexPath.section==0){
-            return 22;
+            return 70;
         }else if(indexPath.section==1){
-            return self.view.frame.size.width + 150;
+            return self.view.frame.size.width + 105;
         }else if(indexPath.section == 2){
             //hide those row whose
             if(facultyVisitArray[indexPath.row].id >= 41) {
@@ -338,6 +338,8 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 
             } catch let error as NSError {
                 print(error.localizedDescription)
+            } catch {
+                print("other error")
             }
             
             
@@ -408,7 +410,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             let dateObj = parseDateFromJSON(date!)
             
             var timeText = "N/A"
-            var detailText = "Not Available"
+            var detailText = "No Event Available\n"
             print("now \(now) compared to dateObj \(dateObj)")
             if(dateObj.isBeforeDate(now)){
                 
@@ -435,6 +437,8 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 
                 print("event time = \(timeText)\ndetail = \(detailText)")
                 
+                
+               
                 timeLabel?.text = timeText
                 detailLabel?.text = detailText
                 
@@ -443,6 +447,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             
             timeLabel?.text = timeText
             detailLabel?.text = detailText
+            
             
         }
     }
