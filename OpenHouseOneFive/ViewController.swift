@@ -28,7 +28,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     
     var bingoCell:BingoViewController!
     
-    let titleText = ["N O W  E V E N T","C H E C K  I N","Visited faculties","Locked faculties - Please check in to unlock "]
+    let titleText = ["N O W  E V E N T","C H E C K  I N","Visited faculties","Locked faculties — Check in to unlock "]
     let titleImage = ["now-event-icon.png","check-in-icon.png"]
     
     var bingoBoard:Bingo!
@@ -270,11 +270,11 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                         value: UIFont.systemFontOfSize(13, weight: 0.05),
                         range: NSRange(
                             location: 16,
-                            length: 29))
+                            length: 22))
                 } else {
                     // Fallback on earlier versions
                 }
-                myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(16, 29))
+                myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor(), range: NSMakeRange(16, 22))
                 headerCell?.titleLabel.attributedText = myMutableString
             }else{
                 headerCell?.titleLabel?.text = titleText[section]
@@ -291,7 +291,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if(indexPath.section==0){
-            return 70;
+            return 65;
         }else if(indexPath.section==1){
             return self.view.frame.size.width + 105;
         }else if(indexPath.section == 2){
@@ -308,7 +308,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         return 58
     }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 58
+        return 46
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

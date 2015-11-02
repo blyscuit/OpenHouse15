@@ -840,7 +840,7 @@
                                                     <animations/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="now-event-icon" translatesAutoresizingMaskIntoConstraints="NO" id="4zi-eE-VG3">
-                                                    <rect key="frame" x="20" y="30" width="16" height="16"/>
+                                                    <rect key="frame" x="20" y="18" width="16" height="16"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="QWe-Ww-4MC"/>
@@ -848,7 +848,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wak-tp-Zkm">
-                                                    <rect key="frame" x="44" y="28" width="238" height="21"/>
+                                                    <rect key="frame" x="44" y="16" width="238" height="21"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="vhF-6G-DlR"/>
@@ -870,7 +870,7 @@
                                                 <constraint firstItem="wak-tp-Zkm" firstAttribute="top" secondItem="4zi-eE-VG3" secondAttribute="bottom" constant="-18" id="Lov-nT-Ydz"/>
                                                 <constraint firstItem="wak-tp-Zkm" firstAttribute="leading" secondItem="4zi-eE-VG3" secondAttribute="trailing" constant="8" id="SOY-ly-JNh"/>
                                                 <constraint firstItem="hRI-RV-kKX" firstAttribute="centerY" secondItem="tbh-rq-Kmc" secondAttribute="centerY" id="o5x-Wt-0Ug"/>
-                                                <constraint firstItem="4zi-eE-VG3" firstAttribute="top" secondItem="tbh-rq-Kmc" secondAttribute="topMargin" constant="22" id="v2n-uc-a7G"/>
+                                                <constraint firstItem="4zi-eE-VG3" firstAttribute="top" secondItem="tbh-rq-Kmc" secondAttribute="topMargin" constant="10" id="v2n-uc-a7G"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -915,7 +915,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJy-Wu-mkU">
-                                                    <rect key="frame" x="20" y="29" width="551" height="21"/>
+                                                    <rect key="frame" x="20" y="19" width="551" height="21"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="XEP-ON-4tP"/>
@@ -927,7 +927,7 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="aJy-Wu-mkU" firstAttribute="top" secondItem="1gr-fd-MBp" secondAttribute="topMargin" constant="21" id="94J-gb-Sxg"/>
+                                                <constraint firstItem="aJy-Wu-mkU" firstAttribute="top" secondItem="1gr-fd-MBp" secondAttribute="topMargin" constant="11" id="94J-gb-Sxg"/>
                                                 <constraint firstItem="aJy-Wu-mkU" firstAttribute="leading" secondItem="1gr-fd-MBp" secondAttribute="leadingMargin" constant="12" id="Yzd-Ky-B2Q"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aJy-Wu-mkU" secondAttribute="trailing" constant="21" id="ukM-uT-lGW"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aJy-Wu-mkU" secondAttribute="trailing" constant="310" id="zhc-pe-xWx">

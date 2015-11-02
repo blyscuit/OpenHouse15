@@ -29,8 +29,12 @@
     [bluredEffectView setFrame:self.blurView.bounds];
     [self.view insertSubview:bluredEffectView belowSubview:self.blurView];
     //  [self.blurView addSubview:bluredEffectView];
+    if ([self.arrDetail[2] intValue] == 40) {
+        self.topicLabel.text = [NSString stringWithFormat:@"%@",arrDetail[1]];
+    }
+    else
+        self.topicLabel.text = [NSString stringWithFormat:@"คณะ%@",arrDetail[1]];
     
-    self.topicLabel.text = [NSString stringWithFormat:@"คณะ%@",arrDetail[1]];
     NSString *stickerName = [NSString stringWithFormat:@"sticker_%@.png",self.arrDetail[2]];
     self.topicImage.image = [UIImage imageNamed:stickerName];
     
@@ -125,7 +129,12 @@
     CLLocationCoordinate2D position = CLLocationCoordinate2DMake(lat , lgn);
     GMSMarker *marker = [GMSMarker markerWithPosition:position];
     marker.position = camera.target;
-    marker.snippet = [NSString stringWithFormat:@"คณะ%@",arrDetail[1]];
+    if([arrDetail[2] intValue] == 40) {
+         marker.snippet = [NSString stringWithFormat:@"%@",arrDetail[1]];
+    }
+    else
+        marker.snippet = [NSString stringWithFormat:@"คณะ%@",arrDetail[1]];
+    
     marker.title = [NSString stringWithFormat:@"%@",arrDetail[0]];
     marker.map = mapView;
     //marker.icon =[UIImage imageNamed:@"sticker_21.png"];
