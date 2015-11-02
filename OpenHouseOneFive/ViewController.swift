@@ -50,11 +50,11 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
 //        bingoTable.reloadData()
         
         //JSON
-//        var tracker = GAI.sharedInstance().defaultTracker
-//        tracker.set(kGAIScreenName, value: "MainMenu")
-//        
-//        var builder = GAIDictionaryBuilder.createScreenView()
-//        tracker.send(builder.build() as [NSObject : AnyObject])
+        var tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: "MainMenu")
+        
+        var builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
         
         
     }
@@ -120,14 +120,13 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 self.bingoBoard.saveDataToUser()
                 print("Scan success I'm going to unlock the tile")
                 
-                //var tracker = GAI.sharedInstance().defaultTracker
+                var tracker = GAI.sharedInstance().defaultTracker
                 
-               // tracker.send(GAIDictionaryBuilder.createEventWithCategory("QR", action: "Scanned", label: "mess", value: nil).build() as [NSObject : AnyObject])
+                tracker.send(GAIDictionaryBuilder.createEventWithCategory("QR", action: "Scanned", label: "mess", value: nil).build() as [NSObject : AnyObject])
                 
             }else{
                 mess = "Incorrect QR code"
                 
-                //var tracker = GAI.sharedInstance().defaultTracker
             }
             
             let alert = UIAlertController(title: "Faculty unlock", message: mess!, preferredStyle: .Alert)

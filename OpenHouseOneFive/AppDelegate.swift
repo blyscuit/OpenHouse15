@@ -20,14 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyAN4DL8X3NMFRxFRcnmEsqgN_5vKPIxTjM")
         
         //Configure tracker from GoogleService-Info.plist.
-        //var configureError:NSError?
-        //GGLContext.sharedInstance().configureWithError(&configureError)
-        //assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        var configureError:NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
         
-        // Optional: configure GAI options.
-        //var gai = GAI.sharedInstance()
-        //gai.trackUncaughtExceptions = true  // report uncaught exceptions
-        //gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
+//         Optional: configure GAI options.
+        var gai = GAI.sharedInstance()
+        gai.trackUncaughtExceptions = true  // report uncaught exceptions
+        gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
         
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound, UIUserNotificationType.Alert, UIUserNotificationType.Badge], categories: nil))

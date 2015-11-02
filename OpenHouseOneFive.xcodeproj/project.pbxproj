@@ -43,6 +43,7 @@
 		688664671BD5F7DA004CD6B5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688664661BD5F7DA004CD6B5 /* MapViewController.swift */; };
 		689BCC771BD77FC40065EC02 /* faculty.json in Resources */ = {isa = PBXBuildFile; fileRef = 689BCC761BD77FC40065EC02 /* faculty.json */; };
 		689BCC7C1BD790200065EC02 /* BingoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689BCC7B1BD790200065EC02 /* BingoViewController.swift */; };
+		68B8BD3B1BE712D3007DFD36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68B8BD3A1BE712D3007DFD36 /* GoogleService-Info.plist */; };
 		68BF18AC1BE3460800FECDD6 /* HighlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BF18AB1BE3460800FECDD6 /* HighlightViewController.swift */; };
 		68D4FA391BE634A500166097 /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D4FA381BE634A500166097 /* RBResizer.swift */; };
 		68EA4A8F1BDF8BF2005E44D8 /* ThaiSansNeue-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68EA4A8B1BDF8BF2005E44D8 /* ThaiSansNeue-Bold.ttf */; };
@@ -158,6 +159,7 @@
 		688664661BD5F7DA004CD6B5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		689BCC761BD77FC40065EC02 /* faculty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faculty.json; sourceTree = "<group>"; };
 		689BCC7B1BD790200065EC02 /* BingoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingoViewController.swift; sourceTree = "<group>"; };
+		68B8BD3A1BE712D3007DFD36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		68BF18AB1BE3460800FECDD6 /* HighlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightViewController.swift; sourceTree = "<group>"; };
 		68D4FA381BE634A500166097 /* RBResizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBResizer.swift; sourceTree = "<group>"; };
 		68EA4A8B1BDF8BF2005E44D8 /* ThaiSansNeue-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ThaiSansNeue-Bold.ttf"; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				685B0DF91BCBBB400062BC91 /* OpenHouseOneFiveTests */,
 				685B0E041BCBBB400062BC91 /* OpenHouseOneFiveUITests */,
 				685B0DE31BCBBB3F0062BC91 /* Products */,
+				68B8BD3A1BE712D3007DFD36 /* GoogleService-Info.plist */,
 				68431C271BE109D5004DC850 /* cuOpenHouseRouteData.json */,
 				682677251BD531CA00B3D6D5 /* Level_5.json */,
 				689BCC761BD77FC40065EC02 /* faculty.json */,
@@ -638,6 +641,7 @@
 				75936CF31BE2F6CF005642E5 /* 23_Art.jpg in Resources */,
 				7507B6E31BE49E89001C83BD /* V2 in Resources */,
 				75936CF81BE2F6CF005642E5 /* 28_Art.jpg in Resources */,
+				68B8BD3B1BE712D3007DFD36 /* GoogleService-Info.plist in Resources */,
 				68EA4A921BDF8BF2005E44D8 /* ThaiSansNeue-UltraLight.ttf in Resources */,
 				75936CFA1BE2F6CF005642E5 /* 29_Art.jpg in Resources */,
 				750A24981BE551FE00C06A37 /* sticker_24.png in Resources */,
