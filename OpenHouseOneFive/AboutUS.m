@@ -20,7 +20,7 @@
 @end
 
 @implementation AboutUS
-@synthesize closeButton,image,aboutUsTitle,location, content;
+@synthesize closeButton,image,aboutUsTitle,location, content,contactTableView;
 
 - (void)viewDidLoad {
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
@@ -86,12 +86,12 @@
     [scrollView addSubview:self.content];
     
     yPostion += self.content.frame.size.height + 10;
-    UITableView *contactInfo = [[UITableView alloc] initWithFrame:CGRectMake(0, yPostion, screenWidth, 100 )];
-    [scrollView addSubview:contactInfo];
-    contactInfo.delegate = self;
-    contactInfo.dataSource = self;
+    self.contactTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, yPostion+10+20+10+5, screenWidth, 44*3 )];
+    [scrollView addSubview:contactTableView];
+    contactTableView.delegate = self;
+    contactTableView.dataSource = self;
     
-    yPostion += 100;
+    yPostion += 44*3+10 + 20+21;
     if(yPostion > screenHeight){
         scrollView.contentSize = CGSizeMake(screenWidth,yPostion+25);
     } else {
@@ -104,8 +104,10 @@
     
     [self.view insertSubview:scrollView belowSubview:bluredEffectView];// = scrollView;
 
-    //implement Contact List Here
-    
+    UILabel *styConnect = [[UILabel alloc] initWithFrame:CGRectMake(18, yPostion-44*3-10-21, screenWidth, 21)];
+    styConnect.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
+    styConnect.text = @"Stay Connected";
+    [scrollView addSubview:styConnect];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -123,7 +125,74 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    
+    
+    static NSString *cellReuseIdentifier = @"ReuseCell";
+    
+    UITableViewCell *cell = [self.contactTableView dequeueReusableCellWithIdentifier:cellReuseIdentifier];
+    UIImageView *contactImage;
+    UILabel *contactTitle,*contactSubTitle;
+    
+    if(cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellReuseIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+        cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        
+        if(indexPath.row == 0) {
+            contactImage = [[UIImageView alloc] initWithFrame:CGRectMake(18, 7, 30, 30)];
+            contactImage.image = [UIImage imageNamed:@"facebook_icon"];
+            [cell.contentView addSubview:contactImage];
+            
+            contactTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 8, cell.frame.size.width, 15)];
+            contactTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Bold" size:20.4];
+            contactTitle.textColor = [UIColor colorWithRed:59/255.0 green:89/255.0 blue:152/255.0 alpha:1];
+            contactTitle.text = @"Like us on Facebook";
+            [cell.contentView addSubview:contactTitle];
+            
+            contactSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 23, cell.frame.size.width, 15)];
+            contactSubTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Regular" size:16.8];
+            contactSubTitle.textColor = [UIColor colorWithRed:117/255.0 green:117/255.0 blue:117/255.0 alpha:1];
+            contactSubTitle.text = @"/cuopenhouse2015";
+            [cell.contentView addSubview:contactSubTitle];
+            
+        } else if (indexPath.row == 1) {
+            contactImage = [[UIImageView alloc] initWithFrame:CGRectMake(18, 7, 30, 30)];
+            contactImage.image = [UIImage imageNamed:@"instagram_icon"];
+            [cell.contentView addSubview:contactImage];
+            
+            contactTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 8, cell.frame.size.width, 15)];
+            contactTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Bold" size:20.4];
+            contactTitle.textColor = [UIColor colorWithRed:63/255.0 green:114/255.0 blue:155/255.0 alpha:1];
+            contactTitle.text = @"View us on Instagram";
+            [cell.contentView addSubview:contactTitle];
+            
+            contactSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 23, cell.frame.size.width, 15)];
+            contactSubTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Regular" size:16.8];
+            contactSubTitle.textColor = [UIColor colorWithRed:117/255.0 green:117/255.0 blue:117/255.0 alpha:1];
+            contactSubTitle.text = @"@cuopenhouse2015";
+            [cell.contentView addSubview:contactSubTitle];
+            
+        } else if (indexPath.row == 2){
+            contactImage = [[UIImageView alloc] initWithFrame:CGRectMake(18, 7, 30, 30)];
+            contactImage.image = [UIImage imageNamed:@"twitter_icon"];
+            [cell.contentView addSubview:contactImage];
+            
+            contactTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 8, cell.frame.size.width, 15)];
+            contactTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Bold" size:20.4];
+            contactTitle.textColor = [UIColor colorWithRed:85/255.0 green:172/255.0 blue:238/255.0 alpha:1];
+            contactTitle.text = @"Follow us on Twitter";
+            [cell.contentView addSubview:contactTitle];
+            
+            contactSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 23, cell.frame.size.width, 15)];
+            contactSubTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Regular" size:16.8];
+            contactSubTitle.textColor = [UIColor colorWithRed:117/255.0 green:117/255.0 blue:117/255.0 alpha:1];
+            contactSubTitle.text = @"@cuopenhouse";
+            [cell.contentView addSubview:contactSubTitle];
+        }
+    }
+    
+    
     return cell;
 }
 
@@ -152,8 +221,6 @@
         default:
             break;
     }
-    
-    //perform segue
     
 }
 

@@ -33,7 +33,7 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: (self.frame.size.width-60)/5, height:(self.frame.size.width-60)/5)
+        layout.itemSize = CGSize(width: (self.frame.size.width-72)/5, height:(self.frame.size.width-72)/5)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         bingoCOllection.collectionViewLayout = layout
@@ -111,7 +111,7 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
             return cell
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: (self.frame.size.width-60)/5, height:(self.frame.size.width-60)/5)
+        return CGSize(width: (self.frame.size.width-72)/5, height:(self.frame.size.width-72)/5)
     }
     func collectionView(collectionView: UICollectionView,
         shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {

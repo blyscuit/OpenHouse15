@@ -23,6 +23,8 @@
 
 @property (strong, nonatomic) UITextView *content;
 
+@property (strong,nonatomic) UITableView *contactTableView;
+
 @end
 
 @protocol AboutUSViewDelegate <NSObject>

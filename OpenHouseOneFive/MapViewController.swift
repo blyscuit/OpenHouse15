@@ -94,6 +94,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         mapView.myLocationEnabled = true
         mapView.settings.myLocationButton = false
         mapView.delegate = self
+        mapView.indoorEnabled = false
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -189,7 +190,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.title = subJson["name"].stringValue
             marker.snippet = "Faculty"
             
-            let imageName = UIImage(named: "pin_\(subJson["faculty_id"].stringValue)")
+            let pinFac = subJson["faculty_id"].stringValue
+            let imageName = UIImage(named: "pin_\(pinFac)")
+            
             //let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
             
             marker.icon = imageName//UIImage(named: "pin_\(subJson["faculty_id"].stringValue)")
@@ -393,11 +396,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         landOn = !landOn
         toggleArray(landMarkArray, on: landOn)
         if(landOn == false){
-            if let image = UIImage(named: "landmark-button-inactive.png") {
+            if let image = UIImage(named: "landmark_button_inactive.png") {
                 landmarkButton.setImage(image, forState: .Normal)
             }
         }else{
-            if let image = UIImage(named: "landmark-button-active.png") {
+            if let image = UIImage(named: "landmark_button_active.png") {
                 landmarkButton.setImage(image, forState: .Normal)
             }
         }
@@ -407,11 +410,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         toggleArray(facultyArray, on: facOn)
         toggleAreaArray(facultyAreaArray, on: facOn)
         if(facOn == false){
-            if let image = UIImage(named: "faculty-button-inactive.png") {
+            if let image = UIImage(named: "faculty_button_inactive.png") {
                 facultyButton.setImage(image, forState: .Normal)
             }
         }else{
-            if let image = UIImage(named: "faculty-button-active.png") {
+            if let image = UIImage(named: "faculty_button_active.png") {
                 facultyButton.setImage(image, forState: .Normal)
             }
         }
@@ -420,11 +423,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         infoOn = !infoOn
         toggleArray(infomationkArray, on: infoOn)
         if(infoOn == false){
-            if let image = UIImage(named: "information-button-inactive.png") {
+            if let image = UIImage(named: "information_button_inactive.png") {
                 inforButton.setImage(image, forState: .Normal)
             }
         }else{
-            if let image = UIImage(named: "information-button-active.png") {
+            if let image = UIImage(named: "information_button_active.png") {
                 inforButton.setImage(image, forState: .Normal)
             }
         }
@@ -574,10 +577,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             self.facultyButtonView.hidden = false
             if(tile!.got == true){
                 self.facultyInfoButton.enabled = true
-                self.facultyInfoButton.imageView?.image = UIImage(named: "faculty_info_active_button")
+                self.facultyInfoButton.imageView?.image = UIImage(named: "faculty-info-active-button")
             }else{
                 self.facultyInfoButton.enabled = false
-                self.facultyInfoButton.imageView?.image = UIImage(named: "faculty_info_inactive_button")
+                self.facultyInfoButton.imageView?.image = UIImage(named: "faculty-info-inactive-button")
             }
         }else{
             self.facultyButtonView.hidden = true
