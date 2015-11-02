@@ -78,20 +78,20 @@
     [scrollView addSubview:self.eventTitle];
     
     yPostion += titleHeight+10;
-    UILabel *lblLocation = [[UILabel alloc] initWithFrame:CGRectMake(25,yPostion, screenWidth-50, 20)];
-    lblLocation.font = [UIFont fontWithName:@"ThaiSansNeue-Bold" size:18];
+    UILabel *lblLocation = [[UILabel alloc] initWithFrame:CGRectMake(25,yPostion+1, screenWidth-50, 20)];
+    lblLocation.font = [UIFont fontWithName:@"ThaiSansNeue-Bold" size:20];
     lblLocation.textColor = [UIColor blackColor];
     lblLocation.text = @"สถานที่";
     [scrollView addSubview:lblLocation];
     
     float locationHeight;
-    CGFloat locationWidth = screenWidth-25-45-25;
-    UIFont *locationFont = [UIFont fontWithName:@"ThaiSansNeue-Bold" size:18];
+    CGFloat locationWidth = screenWidth-25-50-25;
+    UIFont *locationFont = [UIFont fontWithName:@"ThaiSansNeue-Light" size:20];
     CGRect rectOfLocationText = [self.arrDetail[4] boundingRectWithSize:CGSizeMake(locationWidth, 10000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:locationFont} context:nil];
     locationHeight = rectOfLocationText.size.height;
     
-    self.location = [[UILabel alloc] initWithFrame:CGRectMake(25+45,yPostion-7,screenWidth-50-45,locationHeight+10)];
-    self.location.font = [UIFont fontWithName:@"ThaiSansNeue-Light" size:18];
+    self.location = [[UILabel alloc] initWithFrame:CGRectMake(25+50,yPostion-7,screenWidth-50-50,locationHeight+10)];
+    self.location.font = [UIFont fontWithName:@"ThaiSansNeue-Light" size:20];
     self.location.textColor = [UIColor blackColor];
     self.location.text = [[NSString alloc] initWithFormat:@"%@",self.arrDetail[4]];
     self.location.lineBreakMode = NSLineBreakByWordWrapping;
@@ -107,11 +107,13 @@
     self.highlight = [[UITextView alloc] initWithFrame:CGRectMake(25, yPostion, screenWidth-50, 10)];
     self.highlight.backgroundColor = [UIColor whiteColor];
     self.highlight.text = self.arrDetail[5];
-    self.highlight.font = [UIFont fontWithName:@"ThaiSansNeue-Light" size:18];
+    self.highlight.font = [UIFont fontWithName:@"ThaiSansNeue-Light" size:20];
+    self.highlight.textColor = [UIColor colorWithRed:33/255.f green:33/255.f blue:33/255.f alpha:1 ];
     self.highlight.textColor = [UIColor blackColor];
     self.highlight.scrollEnabled = NO;
     self.highlight.editable = NO;
     self.highlight.textAlignment = NSTextAlignmentNatural;
+    self.highlight.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.highlight sizeToFit];
     [scrollView addSubview:self.highlight];
     
