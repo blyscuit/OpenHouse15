@@ -609,7 +609,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             return
         }
         
-        self.locationButton.frame.origin = positionButtonInitialPosition
+        //self.locationButton.frame.origin = positionButtonInitialPosition
         
         UIView.animateWithDuration(0.3, animations: {
             self.detailView.alpha = 1.0
