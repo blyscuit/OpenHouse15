@@ -837,7 +837,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topic_texture_with_line" translatesAutoresizingMaskIntoConstraints="NO" id="hRI-RV-kKX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topic_texture_with_line_2" translatesAutoresizingMaskIntoConstraints="NO" id="hRI-RV-kKX">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
                                                     <animations/>
                                                 </imageView>
@@ -2073,7 +2073,7 @@
         <image name="tab-5-selected" width="39" height="39"/>
         <image name="tip-icon" width="36" height="36"/>
         <image name="topic-texture" width="413" height="52"/>
-        <image name="topic_texture_with_line" width="413" height="53"/>
+        <image name="topic_texture_with_line_2" width="1240" height="159"/>
         <image name="user-icon" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
