@@ -109,11 +109,14 @@
     styConnect.text = @"Stay Connected";
     [scrollView addSubview:styConnect];
     
-    UILabel *copyRight = [[UILabel alloc] initWithFrame:CGRectMake(18, yPostion+5, screenWidth, 21)];
+    UILabel *copyRight = [[UILabel alloc] initWithFrame:CGRectMake(18, yPostion+5, screenWidth-36, 21)];
     copyRight.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
     copyRight.text = @"COPYRIGHT 2015 © CU OPEN HOUSE. ALL RIGHTS RESERVED";
     copyRight.font = [UIFont fontWithName:@"ThaiSansNeue-Regular" size:16.8];
     copyRight.textColor = [UIColor colorWithRed:117/255.0 green:117/255.0 blue:117/255.0 alpha:0.75];
+    copyRight.numberOfLines = 0;
+    copyRight.adjustsFontSizeToFitWidth = YES;
+    copyRight.minimumScaleFactor = 0.7;
     [scrollView addSubview:copyRight];
 }
 
