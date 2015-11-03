@@ -308,7 +308,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         return 58
     }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 46
+        return 55
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

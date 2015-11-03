@@ -111,7 +111,7 @@ public final class QRCodeReaderViewController: UIViewController {
     codeReader           = reader
     showSwitchCameraButton = showSwitch
     showTorchButton = showTorch
-    view.backgroundColor = UIColor.blackColor()
+    view.backgroundColor = UIColor(red: 251/255.0, green: 89/255.0, blue: 134/255.0, alpha: 1.0)
 
     codeReader?.completionBlock = { [unowned self] (resultAsString) in
       if let _completionBlock = self.completionBlock {

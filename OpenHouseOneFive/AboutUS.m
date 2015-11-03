@@ -27,7 +27,6 @@
     UIVisualEffectView *bluredEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     [bluredEffectView setFrame:self.blurView.bounds];
     [self.view insertSubview:bluredEffectView belowSubview:self.blurView];
-    //  [self.blurView addSubview:bluredEffectView];
     
     self.topicLabel.text = [NSString stringWithFormat:@"About"];
    
@@ -82,6 +81,7 @@
     self.content.scrollEnabled = NO;
     self.content.editable = NO;
     self.content.textAlignment = NSTextAlignmentNatural;
+    self.content.contentInset  = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.content sizeToFit];
     [scrollView addSubview:self.content];
     
@@ -93,7 +93,7 @@
     
     yPostion += 44*3+10 + 20+21;
     if(yPostion > screenHeight){
-        scrollView.contentSize = CGSizeMake(screenWidth,yPostion+25);
+        scrollView.contentSize = CGSizeMake(screenWidth,yPostion+25+5+5);
     } else {
         scrollView.contentSize = CGSizeMake(screenWidth, screenHeight+10);
     }
@@ -108,6 +108,13 @@
     styConnect.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
     styConnect.text = @"Stay Connected";
     [scrollView addSubview:styConnect];
+    
+    UILabel *copyRight = [[UILabel alloc] initWithFrame:CGRectMake(18, yPostion+5, screenWidth, 21)];
+    copyRight.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
+    copyRight.text = @"COPYRIGHT 2015 © CU OPEN HOUSE. ALL RIGHTS RESERVED";
+    copyRight.font = [UIFont fontWithName:@"ThaiSansNeue-Regular" size:16.8];
+    copyRight.textColor = [UIColor colorWithRed:117/255.0 green:117/255.0 blue:117/255.0 alpha:0.75];
+    [scrollView addSubview:copyRight];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -140,51 +147,51 @@
         cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
         
         if(indexPath.row == 0) {
-            contactImage = [[UIImageView alloc] initWithFrame:CGRectMake(18, 7, 30, 30)];
+            contactImage = [[UIImageView alloc] initWithFrame:CGRectMake(27, 7, 30, 30)];
             contactImage.image = [UIImage imageNamed:@"facebook_icon"];
             [cell.contentView addSubview:contactImage];
             
-            contactTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 8, cell.frame.size.width, 15)];
+            contactTitle = [[UILabel alloc] initWithFrame:CGRectMake(71, 8, cell.frame.size.width, 15)];
             contactTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Bold" size:20.4];
             contactTitle.textColor = [UIColor colorWithRed:59/255.0 green:89/255.0 blue:152/255.0 alpha:1];
             contactTitle.text = @"Like us on Facebook";
             [cell.contentView addSubview:contactTitle];
             
-            contactSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 23, cell.frame.size.width, 15)];
+            contactSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(71, 23, cell.frame.size.width, 15)];
             contactSubTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Regular" size:16.8];
             contactSubTitle.textColor = [UIColor colorWithRed:117/255.0 green:117/255.0 blue:117/255.0 alpha:1];
             contactSubTitle.text = @"/cuopenhouse2015";
             [cell.contentView addSubview:contactSubTitle];
             
         } else if (indexPath.row == 1) {
-            contactImage = [[UIImageView alloc] initWithFrame:CGRectMake(18, 7, 30, 30)];
+            contactImage = [[UIImageView alloc] initWithFrame:CGRectMake(27, 7, 30, 30)];
             contactImage.image = [UIImage imageNamed:@"instagram_icon"];
             [cell.contentView addSubview:contactImage];
             
-            contactTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 8, cell.frame.size.width, 15)];
+            contactTitle = [[UILabel alloc] initWithFrame:CGRectMake(71, 8, cell.frame.size.width, 15)];
             contactTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Bold" size:20.4];
             contactTitle.textColor = [UIColor colorWithRed:63/255.0 green:114/255.0 blue:155/255.0 alpha:1];
             contactTitle.text = @"View us on Instagram";
             [cell.contentView addSubview:contactTitle];
             
-            contactSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 23, cell.frame.size.width, 15)];
+            contactSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(71, 23, cell.frame.size.width, 15)];
             contactSubTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Regular" size:16.8];
             contactSubTitle.textColor = [UIColor colorWithRed:117/255.0 green:117/255.0 blue:117/255.0 alpha:1];
             contactSubTitle.text = @"@cuopenhouse2015";
             [cell.contentView addSubview:contactSubTitle];
             
         } else if (indexPath.row == 2){
-            contactImage = [[UIImageView alloc] initWithFrame:CGRectMake(18, 7, 30, 30)];
+            contactImage = [[UIImageView alloc] initWithFrame:CGRectMake(27, 7, 30, 30)];
             contactImage.image = [UIImage imageNamed:@"twitter_icon"];
             [cell.contentView addSubview:contactImage];
             
-            contactTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 8, cell.frame.size.width, 15)];
+            contactTitle = [[UILabel alloc] initWithFrame:CGRectMake(71, 8, cell.frame.size.width, 15)];
             contactTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Bold" size:20.4];
             contactTitle.textColor = [UIColor colorWithRed:85/255.0 green:172/255.0 blue:238/255.0 alpha:1];
             contactTitle.text = @"Follow us on Twitter";
             [cell.contentView addSubview:contactTitle];
             
-            contactSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(63, 23, cell.frame.size.width, 15)];
+            contactSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(71, 23, cell.frame.size.width, 15)];
             contactSubTitle.font = [UIFont fontWithName:@"ThaiSansNeue-Regular" size:16.8];
             contactSubTitle.textColor = [UIColor colorWithRed:117/255.0 green:117/255.0 blue:117/255.0 alpha:1];
             contactSubTitle.text = @"@cuopenhouse";
