@@ -407,11 +407,17 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     }
     
     func setNowEvent(timeLabel:UILabel?, detailLabel:UILabel?){
+        
+        timeLabel?.text = "N/A"
+        detailLabel?.text = "No Event Available\n"
+        
         for var jsonDateSch:JSON in jsonObj["open_house"].array!{
-//            let now = parseDateFromJSON("2015-11-15T14:23:00+07:00")
+//            let now = parseDateFromJSON("2015-11-16T09:43:00+07:00")
             let now = NSDate()
             
             let date = jsonDateSch["date"].string
+            
+            print("Date 56643 : \(date)")
             
             let dateObj = parseDateFromJSON(date!)
             
@@ -421,6 +427,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             if(dateObj.isBeforeDate(now)){
                 
                 timeText = getDateString(parseDateFromJSON(jsonDateSch["schedule"][0]["time"].string!))
+//                timeText = "wtf"
                 detailText = jsonDateSch["schedule"][0]["title"].string!
                 
                 
@@ -448,11 +455,12 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 timeLabel?.text = timeText
                 detailLabel?.text = detailText
                 
-                break
+                
+                
             }
             
-            timeLabel?.text = timeText
-            detailLabel?.text = detailText
+//            timeLabel?.text = timeText
+//            detailLabel?.text = detailText
             
             
         }

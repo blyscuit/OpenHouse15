@@ -131,6 +131,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     
     override func viewDidAppear(animated: Bool) {
         delegate?.mapControllerDidAppear(self)
+        
+        print("asdfsdf")
+        
         bingoBoard = Bingo(random: true)
         
 //        if(detailView.alpha == 1.0){
