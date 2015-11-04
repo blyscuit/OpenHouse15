@@ -17,6 +17,8 @@ import SwiftyJSON
 
 class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate,HighlightViewDelegate {
     
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     var delegate: MapControllerDelegate?
     
     @IBOutlet weak var facultyButtonView: UIView!
@@ -69,7 +71,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     
     @IBOutlet weak var lowButtonView: UIView!
     @IBOutlet weak var topButtonView: UIView!
-    var bingoBoard:Bingo!
+//    var bingoBoard:Bingo!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +89,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             self.detailView.transform = CGAffineTransformMakeScale(0.85, 0.85);
         }
         
-        bingoBoard = Bingo(random: true)
+//        bingoBoard = Bingo(random: true)
         
         var camera = GMSCameraPosition.cameraWithLatitude(13.7406223,
             longitude: 100.5307583, zoom: 15)
@@ -131,7 +133,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     
     override func viewDidAppear(animated: Bool) {
         delegate?.mapControllerDidAppear(self)
-        bingoBoard = Bingo(random: true)
+        
+        print("asdfsdf")
+//        bingoBoard = nil
+//        bingoBoard = Bingo(random: true)
         
 //        if(detailView.alpha == 1.0){
 //           // self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y - self.detailView.frame.size.height - 30)
@@ -199,7 +204,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             
             marker.icon = imageName//UIImage(named: "pin_\(subJson["faculty_id"].stringValue)")
             
-            marker.userData = bingoBoard.tileWithID(subJson["faculty_id"].stringValue)
+            marker.userData = appDelegate.bingo.tileWithID(subJson["faculty_id"].stringValue)
             
             if let poly:JSON? = subJson["pathway"] {
                 // Create a rectangular path

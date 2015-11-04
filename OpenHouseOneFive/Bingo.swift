@@ -166,7 +166,7 @@ class Bingo: NSObject {
         var data : NSData = NSKeyedArchiver.archivedDataWithRootObject(array)
         
         NSUserDefaults.standardUserDefaults().setObject(data, forKey: "bingoArray")
-        
+    
         // Create a new object of Class B from the data
     }
     

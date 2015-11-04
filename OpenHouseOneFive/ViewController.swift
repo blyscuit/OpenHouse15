@@ -31,7 +31,8 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     let titleText = ["N O W  E V E N T","C H E C K  I N","Visited faculties","Locked faculties — Check in to unlock "]
     let titleImage = ["now-event-icon.png","check-in-icon.png"]
     
-    var bingoBoard:Bingo!
+//    var bingoBoard:Bingo!
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         tableMain.delegate = self
         tableMain.dataSource = self
         
-        bingoBoard = Bingo(random: true)
+//        bingoBoard = Bingo(random: true)
         genFacArray()
 //        bingoTable.frame.size = CGSizeMake(bingoTable.frame.size.width, bingoTable.frame.size.width)
         
@@ -65,7 +66,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         facultyVisitArray = [Tile]()
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
-                if let tile = bingoBoard.tileAtColumn(column, row: row){
+                if let tile = appDelegate.bingo.tileAtColumn(column, row: row){
                     if((tile.got) == true){
                         facultyVisitArray.append(tile)
                     }else{
@@ -75,7 +76,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             }
         }
 //        bingoBoard.gotTile(bingoBoard.tileAtColumn(0, row: 4)!)
-        bingoBoard.saveDataToUser()
+        appDelegate.bingo.saveDataToUser()
 
         tableMain.reloadData()
     }
@@ -116,9 +117,9 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             var mess:String?
             var alertMsg:String?
             
-            if let tile = self.bingoBoard.gotTileWithQR(result){
+            if let tile = self.appDelegate.bingo.gotTileWithQR(result){
                  mess = "\(tile.name!) \n\(tile.thaiName!)"
-                self.bingoBoard.saveDataToUser()
+                self.appDelegate.bingo.saveDataToUser()
                 print("Scan success I'm going to unlock the tile")
                 
                 var tracker = GAI.sharedInstance().defaultTracker
@@ -183,7 +184,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             return cell
             }else if(indexPath.section==1){
                 let cell = tableView.dequeueReusableCellWithIdentifier("bingoCell", forIndexPath: indexPath) as! BingoViewController
-                cell.bingoBoard = self.bingoBoard
+//                cell.bingoBoard = self.appDelegate.bingo
                 bingoCell = cell
                 cell.delegate = self
                 cell.start()
@@ -319,13 +320,18 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         delegate?.mainControllerDidTabWeb(str, controller: self)
     }
     
-    
     // MARK: - bingo view data source
     func bingoControllerDidCheckIn(controller: BingoViewController) {
         self.scanAction(self)
     }
-    func bingoControllerDidTapCell(controller: BingoViewController) {
-        
+    func bingoControllerDidTapCell(tile: Tile, controller: BingoViewController) {
+        if tile.id > 40{
+            return
+        }
+        if tile.got{
+            let str = "\(tile.id)"
+            delegate?.mainControllerDidTabWeb(str, controller: self)
+        }
     }
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         tableMain.reloadData()
@@ -407,11 +413,17 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
     }
     
     func setNowEvent(timeLabel:UILabel?, detailLabel:UILabel?){
+        
+        timeLabel?.text = "N/A"
+        detailLabel?.text = "No Event Available\n"
+        
         for var jsonDateSch:JSON in jsonObj["open_house"].array!{
-//            let now = parseDateFromJSON("2015-11-15T14:23:00+07:00")
+//            let now = parseDateFromJSON("2015-11-16T09:43:00+07:00")
             let now = NSDate()
             
             let date = jsonDateSch["date"].string
+            
+            print("Date 56643 : \(date)")
             
             let dateObj = parseDateFromJSON(date!)
             
@@ -421,6 +433,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
             if(dateObj.isBeforeDate(now)){
                 
                 timeText = getDateString(parseDateFromJSON(jsonDateSch["schedule"][0]["time"].string!))
+//                timeText = "wtf"
                 detailText = jsonDateSch["schedule"][0]["title"].string!
                 
                 
@@ -448,11 +461,12 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
                 timeLabel?.text = timeText
                 detailLabel?.text = detailText
                 
-                break
+                
+                
             }
             
-            timeLabel?.text = timeText
-            detailLabel?.text = detailText
+//            timeLabel?.text = timeText
+//            detailLabel?.text = detailText
             
             
         }
