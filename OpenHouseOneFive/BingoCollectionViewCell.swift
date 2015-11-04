@@ -11,5 +11,7 @@ import UIKit
 class BingoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var facultyImage: UIImageView!
+    
+    var tile:Tile?
 //    @IBOutlet weak var button: UIButton!
 }

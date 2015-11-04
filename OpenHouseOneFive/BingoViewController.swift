@@ -9,7 +9,7 @@
 import UIKit
 @objc protocol BingoViewControllerDelegate {
     func bingoControllerDidCheckIn(controller: BingoViewController)
-    func bingoControllerDidTapCell(controller: BingoViewController)
+    func bingoControllerDidTapCell(tile:Tile,controller: BingoViewController)
 }
 class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollectionViewDelegate {
 
@@ -17,7 +17,7 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
     @IBOutlet weak var bingoCOllection: UICollectionView!
     @IBOutlet weak var gridOverlay: UIImageView!
     
-    var bingoBoard:Bingo!
+//    var bingoBoard:Bingo!
     
     var delegate: BingoViewControllerDelegate?
     @IBAction func checkInPress(sender: AnyObject) {
@@ -97,19 +97,23 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
             //print(cell.facultyImage.backgroundColor)
             
             var imageName=""
-            if((bingoBoard.tileAtColumn(column, row: row)?.got) == true){
-                imageName = "active_\(bingoBoard.tileAtColumn(column, row: row)!.id)"
+            if((appDelegate.bingo.tileAtColumn(column, row: row)?.got) == true){
+                imageName = "active_\(appDelegate.bingo.tileAtColumn(column, row: row)!.id)"
             }else{
-                imageName = "inactive_\(bingoBoard.tileAtColumn(column, row: row)!.id)"
+                imageName = "inactive_\(appDelegate.bingo.tileAtColumn(column, row: row)!.id)"
             }
             print(imageName)
             cell.facultyImage.image = UIImage(named: imageName)
             cell.facultyImage.contentMode = UIViewContentMode.ScaleAspectFit
+            cell.tile = appDelegate.bingo.tileAtColumn(column, row: row)!
             
             //             Customize cell height
             cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y,collectionView.frame.size.width/5, collectionView.frame.size.height/5)
             return cell
     }
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: (self.frame.size.width-72)/5, height:(self.frame.size.width-72)/5)
     }
@@ -119,6 +123,8 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
-        print((collectionView.cellForItemAtIndexPath(indexPath) as! BingoCollectionViewCell).facultyImage.backgroundColor)
+        let bCC = collectionView.cellForItemAtIndexPath(indexPath) as! BingoCollectionViewCell
+        delegate?.bingoControllerDidTapCell(bCC.tile!, controller: self)
+        print(bCC.facultyImage.backgroundColor)
     }
 }
