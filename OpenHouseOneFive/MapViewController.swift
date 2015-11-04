@@ -253,7 +253,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
                 case 37:
                     polygon.fillColor = UIColor(red:118/255.0 , green:35/255.0, blue:118/255.0, alpha:0.5);
                 case 38:
-                    polygon.fillColor = UIColor(red:41/255.0 , green:44/255.0, blue:125 /255.0, alpha:0.5);
+                    polygon.fillColor = UIColor(red:41/255.0 , green:44/255.0, blue:125/255.0, alpha:0.5);
                 case 39:
                     polygon.fillColor = UIColor(red:255/255.0 , green:165/255.0, blue:0/255.0, alpha:0.5);
                 case 40:
