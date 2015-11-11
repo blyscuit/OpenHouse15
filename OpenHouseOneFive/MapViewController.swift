@@ -77,16 +77,17 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         super.viewDidLoad()
         
         if(self.view.frame.size.width<=320){
-//            self.topButtonView.layer.anchorPoint = CGPointMake(0.5, 0.0)
+            //self.topButtonView.layer.anchorPoint = CGPointMake(0.5, 0.0)
             self.topButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
             self.lowButtonView.layer.anchorPoint = CGPointMake(0.5, 0.7)
             self.topButtonView.layer.borderWidth = 1.0
             self.topButtonView.layer.borderColor = UIColor.lightGrayColor().CGColor
             self.lowButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
-            self.facultyButtonView.layer.anchorPoint = CGPointMake(0.5, 0.7)
-            self.facultyButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
-//            self.detailView.layer.anchorPoint = CGPointMake(0.5, 0.0)
+            
+            self.detailView.layer.anchorPoint = CGPointMake(0.5, 0.9)
             self.detailView.transform = CGAffineTransformMakeScale(0.85, 0.85);
+            self.facultyButtonView.layer.anchorPoint = CGPointMake(0.5, 1.3825)
+            self.facultyButtonView.transform = CGAffineTransformMakeScale(0.85, 0.85);
         }
         
 //        bingoBoard = Bingo(random: true)
@@ -280,7 +281,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             var marker = GMSMarker()
             marker.position = CLLocationCoordinate2DMake(subJson["lat"].doubleValue,subJson["lng"].doubleValue)
             marker.title = subJson["name"].stringValue
-            marker.snippet = " "
+            marker.snippet = subJson["engName"].stringValue
             
             let imageName = UIImage(named: "pin_landmark")
             //let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
@@ -297,7 +298,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             var marker = GMSMarker()
             marker.position = CLLocationCoordinate2DMake(subJson["lat"].doubleValue,subJson["lng"].doubleValue)
             marker.title = subJson["name"].stringValue
-            marker.snippet = " "
+            marker.snippet = "CU Tour Bus Stop"
             
             let imageName = UIImage(named: "pin_cutour")
             //let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
@@ -313,7 +314,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             var marker = GMSMarker()
             marker.position = CLLocationCoordinate2DMake(subJson["lat"].doubleValue,subJson["lng"].doubleValue)
             marker.title = subJson["name"].stringValue
-            marker.snippet = " "
+            marker.snippet = "Information"
             
             let imageName = UIImage(named: "pin_information")
             //let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
@@ -571,7 +572,21 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     
     func animateInDetail(marker:GMSMarker){
         
+        //Animation when user taps a marker
+        
+        let options = UIViewAnimationOptions.CurveEaseInOut
+        UIView.animateWithDuration(0.5, delay: 0.0, options: options, animations: {
+            
+            //mapView.animateToLocation(marker.position)
+            let cameraPosition = GMSCameraPosition.cameraWithTarget(marker.position, zoom: 17, bearing: 40, viewingAngle: 175)
+            self.mapView.animateToCameraPosition(cameraPosition)
+            
+            }, completion: { (SUCCESS) -> Void in
+                
+        })
+        
         if marker.userData != nil{
+            
         let tile:Tile? = marker.userData as! Tile
 //        if(tile != nil){
             selectingTile = tile
@@ -600,9 +615,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             self.buildingNameLabel.text = marker.title
             self.buildingNameEngLabel.text = marker.snippet
             self.pinInfo.image = UIImage(named: "pin-info-icon")
-            if(marker.title == "จุดปฏิคม (Information)") {
+            if(marker.title == "จุดปฏิคม") {
                 self.pinInfo.image = UIImage(named: "pin_information")
-            } else if (marker.title == "CU Tour") {
+            } else if (marker.title == "ป้ายรถ CU Tour") {
                 self.pinInfo.image = UIImage(named: "pin_cutour")
             } else {
                 self.pinInfo.image = UIImage(named:"pin_landmark")

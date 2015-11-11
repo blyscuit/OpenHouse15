@@ -294,7 +294,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate,UITab
         if(indexPath.section==0){
             return 65;
         }else if(indexPath.section==1){
-            return self.view.frame.size.width + 105;
+            return self.view.frame.size.width + 125;
         }else if(indexPath.section == 2){
             //hide those row whose
             if(facultyVisitArray[indexPath.row].id >= 41) {

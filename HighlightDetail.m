@@ -139,6 +139,7 @@
     
     marker.title = [NSString stringWithFormat:@"%@",arrDetail[0]];
     marker.map = mapView;
+    marker.icon = [UIImage imageNamed:[NSString stringWithFormat:@"pin_%@",arrDetail[2]]];
     //marker.icon =[UIImage imageNamed:@"sticker_21.png"];
     marker.appearAnimation = kGMSMarkerAnimationPop;
     //[scrollView setScrollIndicatorInsets:UIEdgeInsetsMake(-64, 0, 0, 0)];
