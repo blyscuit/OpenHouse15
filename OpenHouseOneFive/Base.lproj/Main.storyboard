@@ -10,7 +10,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="ThaiSansNeue-Bold.ttf">
+        <mutableArray key="thaisansneue-bold-webfont.ttf">
             <string>ThaiSansNeue-Bold</string>
             <string>ThaiSansNeue-Bold</string>
             <string>ThaiSansNeue-Bold</string>
@@ -21,7 +21,7 @@
             <string>ThaiSansNeue-Bold</string>
             <string>ThaiSansNeue-Bold</string>
         </mutableArray>
-        <mutableArray key="ThaiSansNeue-Regular.ttf">
+        <mutableArray key="thaisansneue-regular-webfont.ttf">
             <string>ThaiSansNeue-Regular</string>
             <string>ThaiSansNeue-Regular</string>
             <string>ThaiSansNeue-Regular</string>
@@ -1307,7 +1307,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvh-Ka-FxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-160" y="-690"/>
+            <point key="canvasLocation" x="-408" y="-734"/>
         </scene>
         <!--AboutUS-->
         <scene sceneID="Dlc-ep-hKB">
@@ -1407,6 +1407,80 @@
             </objects>
             <point key="canvasLocation" x="370" y="26"/>
         </scene>
+        <!--TutorialV Iew Controller-->
+        <scene sceneID="phN-sZ-1BC">
+            <objects>
+                <viewController id="2Nd-pm-jvW" customClass="TutorialVIewController" customModule="OpenHouseOneFive" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PoH-py-FqI"/>
+                        <viewControllerLayoutGuide type="bottom" id="4V2-9G-not"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bvf-kE-mSd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone" translatesAutoresizingMaskIntoConstraints="NO" id="5U3-7G-W2h">
+                                <rect key="frame" x="120" y="220" width="360" height="404"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5U3-7G-W2h" secondAttribute="height" multiplier="837:1702" constant="161.16392479435956" id="Og7-wH-Tuq"/>
+                                    <constraint firstAttribute="width" constant="440" id="adh-wV-IDk"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="adh-wV-IDk"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3p-zX-g5B">
+                                <rect key="frame" x="0.0" y="120" width="600" height="480"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="context_bingo-2" translatesAutoresizingMaskIntoConstraints="NO" id="E66-Cw-YmM">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nab-cA-aeN" userLabel="GetStart">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
+                                        <connections>
+                                            <action selector="startPress:" destination="2Nd-pm-jvW" eventType="touchUpInside" id="q09-Pu-c7u"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.3529411764705882" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="E66-Cw-YmM" firstAttribute="centerX" secondItem="Q3p-zX-g5B" secondAttribute="centerX" id="3vo-e0-oPP"/>
+                                    <constraint firstItem="Nab-cA-aeN" firstAttribute="height" secondItem="Q3p-zX-g5B" secondAttribute="height" id="MkL-Ax-0Vc"/>
+                                    <constraint firstItem="E66-Cw-YmM" firstAttribute="top" secondItem="Q3p-zX-g5B" secondAttribute="top" id="Mt9-DT-F7V"/>
+                                    <constraint firstItem="E66-Cw-YmM" firstAttribute="width" secondItem="Q3p-zX-g5B" secondAttribute="width" id="Q9E-R9-cYY"/>
+                                    <constraint firstItem="Nab-cA-aeN" firstAttribute="width" secondItem="Q3p-zX-g5B" secondAttribute="width" id="XrJ-F6-Uuf"/>
+                                    <constraint firstItem="E66-Cw-YmM" firstAttribute="height" secondItem="Q3p-zX-g5B" secondAttribute="height" id="ifg-jk-5my"/>
+                                    <constraint firstItem="Nab-cA-aeN" firstAttribute="top" secondItem="Q3p-zX-g5B" secondAttribute="top" id="pQK-go-H74"/>
+                                    <constraint firstAttribute="width" secondItem="Q3p-zX-g5B" secondAttribute="height" multiplier="375:300" id="tjl-b3-a3n"/>
+                                    <constraint firstItem="Nab-cA-aeN" firstAttribute="leading" secondItem="Q3p-zX-g5B" secondAttribute="leading" id="uHG-Df-yuN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5U3-7G-W2h" firstAttribute="centerX" secondItem="bvf-kE-mSd" secondAttribute="centerX" id="6Pb-qi-SJZ"/>
+                            <constraint firstItem="Q3p-zX-g5B" firstAttribute="width" secondItem="bvf-kE-mSd" secondAttribute="width" id="Elv-V4-e0L"/>
+                            <constraint firstItem="5U3-7G-W2h" firstAttribute="top" secondItem="PoH-py-FqI" secondAttribute="bottom" constant="200" id="KxX-Pj-FyO"/>
+                            <constraint firstItem="5U3-7G-W2h" firstAttribute="width" secondItem="bvf-kE-mSd" secondAttribute="width" multiplier="0.6" id="QRi-hG-qUw"/>
+                            <constraint firstAttribute="bottom" secondItem="Q3p-zX-g5B" secondAttribute="bottom" id="d2A-PP-Of0"/>
+                            <constraint firstItem="5U3-7G-W2h" firstAttribute="leading" secondItem="bvf-kE-mSd" secondAttribute="leadingMargin" constant="60" id="ddA-vu-QC8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5U3-7G-W2h" secondAttribute="trailing" constant="60" id="emy-Bm-bf7"/>
+                            <constraint firstItem="Q3p-zX-g5B" firstAttribute="leading" secondItem="bvf-kE-mSd" secondAttribute="leading" id="l1V-Vq-YwO"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ddA-vu-QC8"/>
+                                <exclude reference="emy-Bm-bf7"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OAJ-ft-Wfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-190" y="-1852"/>
+        </scene>
         <!--Web View Controller-->
         <scene sceneID="YgT-39-lKA">
             <objects>
@@ -1461,11 +1535,12 @@
                         <segue destination="Nad-KY-gcF" kind="relationship" relationship="viewControllers" id="bMY-Ij-vPw"/>
                         <segue destination="OhL-3L-b9h" kind="relationship" relationship="viewControllers" id="1iV-KD-zIC"/>
                         <segue destination="Ins-Zd-Cp7" kind="relationship" relationship="viewControllers" id="4E8-Wf-hFM"/>
+                        <segue destination="2Nd-pm-jvW" kind="presentation" identifier="toTutorial" id="iD6-jQ-5Ou"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgf-7l-qal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="659" y="-762"/>
+            <point key="canvasLocation" x="417" y="-1060"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="K1U-vr-pNN">
@@ -1491,14 +1566,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" scrollEnabled="NO" editable="NO" text="Question:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-u1-hUc">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" scrollEnabled="NO" editable="NO" text="Question:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-u1-hUc">
                                                     <rect key="frame" x="53" y="8" width="529" height="48"/>
                                                     <animations/>
                                                     <color key="textColor" red="0.98431372549999996" green="0.34901960780000002" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="ThaiSansNeue-Bold" family="ThaiSans Neue" pointSize="24"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dmy-L9-TuT">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dmy-L9-TuT">
                                                     <rect key="frame" x="18" y="53" width="564" height="135"/>
                                                     <animations/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -2062,6 +2137,7 @@
         <image name="close-icon" width="145" height="145"/>
         <image name="close_button" width="16" height="16"/>
         <image name="close_pink_button" width="145" height="145"/>
+        <image name="context_bingo-2" width="1240" height="999"/>
         <image name="cu_tour_box" width="1161" height="146"/>
         <image name="dashed_line" width="1052" height="2"/>
         <image name="faculty-button-active" width="123" height="49"/>
@@ -2075,6 +2151,7 @@
         <image name="grid5x5" width="928" height="928"/>
         <image name="information-button-active" width="123" height="49"/>
         <image name="information_button_active" width="388" height="148"/>
+        <image name="iphone" width="279" height="567"/>
         <image name="landmark-button-active" width="123" height="49"/>
         <image name="landmark_button_active" width="388" height="148"/>
         <image name="my-location-button" width="148" height="148"/>

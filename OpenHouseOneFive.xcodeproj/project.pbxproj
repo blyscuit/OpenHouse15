@@ -70,7 +70,6 @@
 		750A24A71BE551FE00C06A37 /* sticker_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 750A24931BE551FE00C06A37 /* sticker_40.png */; };
 		754C41371BE7A16F0039F5DB /* 24_Art.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 754C41361BE7A16F0039F5DB /* 24_Art.jpg */; };
 		754C41391BE7A3830039F5DB /* V2 in Resources */ = {isa = PBXBuildFile; fileRef = 754C41381BE7A3830039F5DB /* V2 */; };
-		754C413D1BE7CBD90039F5DB /* 40_Art.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 754C413C1BE7CBD90039F5DB /* 40_Art.jpg */; };
 		754C414A1BE9FCD50039F5DB /* sticker_38.png in Resources */ = {isa = PBXBuildFile; fileRef = 754C41471BE9FCD50039F5DB /* sticker_38.png */; settings = {ASSET_TAGS = (); }; };
 		754C414B1BE9FCD50039F5DB /* sticker_37.png in Resources */ = {isa = PBXBuildFile; fileRef = 754C41481BE9FCD50039F5DB /* sticker_37.png */; settings = {ASSET_TAGS = (); }; };
 		754C414C1BE9FCD50039F5DB /* sticker_23.png in Resources */ = {isa = PBXBuildFile; fileRef = 754C41491BE9FCD50039F5DB /* sticker_23.png */; settings = {ASSET_TAGS = (); }; };
@@ -95,6 +94,8 @@
 		75936D061BE35910005642E5 /* 26_Art.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75936D051BE3590F005642E5 /* 26_Art.jpg */; };
 		75A41D721BE5C30400FE50A0 /* OpenHouseFacultyAreaDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 75A41D711BE5C30400FE50A0 /* OpenHouseFacultyAreaDetail.json */; };
 		75A41D751BE5F6AC00FE50A0 /* AboutUS.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A41D741BE5F6AC00FE50A0 /* AboutUS.m */; };
+		75A6F0361BF3493A00A2180E /* TutorialVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A6F0351BF3493A00A2180E /* TutorialVIewController.swift */; settings = {ASSET_TAGS = (); }; };
+		75A6F0381BF38EAD00A2180E /* 40_Art.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75A6F0371BF38EAD00A2180E /* 40_Art.jpg */; settings = {ASSET_TAGS = (); }; };
 		E998AA896A8DD8F8B779A28C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999D8BB554E2A2914AD3A01C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -186,7 +187,6 @@
 		750A24931BE551FE00C06A37 /* sticker_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker_40.png; sourceTree = "<group>"; };
 		754C41361BE7A16F0039F5DB /* 24_Art.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 24_Art.jpg; sourceTree = "<group>"; };
 		754C41381BE7A3830039F5DB /* V2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = V2; sourceTree = "<group>"; };
-		754C413C1BE7CBD90039F5DB /* 40_Art.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 40_Art.jpg; sourceTree = "<group>"; };
 		754C41471BE9FCD50039F5DB /* sticker_38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker_38.png; sourceTree = "<group>"; };
 		754C41481BE9FCD50039F5DB /* sticker_37.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker_37.png; sourceTree = "<group>"; };
 		754C41491BE9FCD50039F5DB /* sticker_23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker_23.png; sourceTree = "<group>"; };
@@ -214,6 +214,8 @@
 		75A41D711BE5C30400FE50A0 /* OpenHouseFacultyAreaDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OpenHouseFacultyAreaDetail.json; sourceTree = "<group>"; };
 		75A41D731BE5F6AC00FE50A0 /* AboutUS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUS.h; sourceTree = "<group>"; };
 		75A41D741BE5F6AC00FE50A0 /* AboutUS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUS.m; sourceTree = "<group>"; };
+		75A6F0351BF3493A00A2180E /* TutorialVIewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVIewController.swift; sourceTree = "<group>"; };
+		75A6F0371BF38EAD00A2180E /* 40_Art.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 40_Art.jpg; sourceTree = "<group>"; };
 		7B9403EFE43B1F5F5FB922BE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		999D8BB554E2A2914AD3A01C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A57062083E122CEDF46AD1 /* Pods_OpenHouseOneFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenHouseOneFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +318,7 @@
 				6826771E1BD5288300B3D6D5 /* Bingo.swift */,
 				689BCC7B1BD790200065EC02 /* BingoViewController.swift */,
 				685B0DE91BCBBB3F0062BC91 /* Main.storyboard */,
+				75A6F0351BF3493A00A2180E /* TutorialVIewController.swift */,
 				75A41D731BE5F6AC00FE50A0 /* AboutUS.h */,
 				75A41D741BE5F6AC00FE50A0 /* AboutUS.m */,
 				6849449E1BE3A70A00622453 /* WebViewController.h */,
@@ -467,8 +470,8 @@
 				75936D051BE3590F005642E5 /* 26_Art.jpg */,
 				75936CE31BE2F6CF005642E5 /* 27_Art.jpg */,
 				75936CE41BE2F6CF005642E5 /* 28_Art.jpg */,
-				754C413C1BE7CBD90039F5DB /* 40_Art.jpg */,
 				75936CE61BE2F6CF005642E5 /* 29_Art.jpg */,
+				75A6F0371BF38EAD00A2180E /* 40_Art.jpg */,
 				75936CE81BE2F6CF005642E5 /* 30_Art.jpg */,
 				75936CE91BE2F6CF005642E5 /* 31_Art.jpg */,
 				754C41361BE7A16F0039F5DB /* 24_Art.jpg */,
@@ -617,7 +620,7 @@
 				75936CF21BE2F6CF005642E5 /* 22_Art.jpg in Resources */,
 				4F82DA0C1BDFE2EE00FED6B3 /* ScheduleCell.xib in Resources */,
 				754C414A1BE9FCD50039F5DB /* sticker_38.png in Resources */,
-				754C413D1BE7CBD90039F5DB /* 40_Art.jpg in Resources */,
+				75A6F0381BF38EAD00A2180E /* 40_Art.jpg in Resources */,
 				750A249F1BE551FE00C06A37 /* sticker_31.png in Resources */,
 				754C41391BE7A3830039F5DB /* V2 in Resources */,
 				685B0DF01BCBBB400062BC91 /* LaunchScreen.storyboard in Resources */,
@@ -743,6 +746,7 @@
 				685B0E1A1BCBBB670062BC91 /* QRCodeViewController.swift in Sources */,
 				4F72561B1BDF90F000852F8C /* CAPSPageMenu.swift in Sources */,
 				685B0E1C1BCBBB670062BC91 /* SwitchCameraButton.swift in Sources */,
+				75A6F0361BF3493A00A2180E /* TutorialVIewController.swift in Sources */,
 				4F8BCC701BD731AE0012BA88 /* FAQViewController.swift in Sources */,
 				75A41D751BE5F6AC00FE50A0 /* AboutUS.m in Sources */,
 				682677231BD5297400B3D6D5 /* Extensions.swift in Sources */,

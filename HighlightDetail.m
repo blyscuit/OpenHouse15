@@ -122,11 +122,11 @@
     NSString *lgnString = [NSString stringWithFormat:@"%@",arrDetail[8]];
     double lat = [latString doubleValue];
     double lgn = [lgnString doubleValue];
-    
+    NSLog(@"%f %f",lat,lgn);
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lgn zoom:14];
     //GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:13.73548 longitude:100.53147 zoom:12 ];
     GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectMake(25, yPostion, screenWidth-50, (screenWidth-50)*2/3) camera:camera];
-    mapView.myLocationEnabled = YES;
+    mapView.myLocationEnabled = NO;
     mapView.indoorEnabled = NO;
     CLLocationCoordinate2D position = CLLocationCoordinate2DMake(lat , lgn);
     GMSMarker *marker = [GMSMarker markerWithPosition:position];

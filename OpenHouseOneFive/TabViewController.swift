@@ -12,6 +12,16 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        //toTutorial()
+        if let name = defaults.objectForKey("firstUse")
+        {
+        }else{
+            toTutorial()
+            defaults.setBool(true, forKey: "firstUse")
+        }
+
         let logo = UIImage(named: "app_icon_nav_white.png")
         let imageView = UIImageView(image:logo)
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
@@ -145,5 +155,9 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
         }
     }
     
+    func toTutorial(){
+        self.performSegueWithIdentifier("toTutorial", sender: self)
+    }
+
     
 }
