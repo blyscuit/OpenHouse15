@@ -284,9 +284,16 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.snippet = subJson["engName"].stringValue
             
             let imageName = UIImage(named: "pin_landmark")
-            //let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
             
-            marker.icon = imageName
+            //let image = RBResizeImage(imageName!, targetSize: CGSizeMake(24.25,34))
+            if(marker.title == "เวทีกลาง") {
+                marker.icon = UIImage(named: "pin_mainstage_resize")
+            } else {
+                marker.icon = imageName    
+            }
+            
+            
+        
             
             
             landMarkArray.append(marker)
@@ -565,7 +572,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
 //            self.locationButton.frame.origin = CGPointMake(self.positionButtonInitialPosition.x, self.positionButtonInitialPosition.y)
             
             }, completion: { (SUCCESS) -> Void in
-                self.detailView.frame.origin = CGPointMake(-1000, 0)
+                //self.detailView.frame.origin = CGPointMake(-1000, 0)
+                
                 self.view.layoutIfNeeded()
         })
     }
@@ -599,9 +607,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
                 self.pinInfo.image = UIImage(named: "pin-info-icon.png")
             }
 //        self.facultyNameLabel.text = tile!.thaiName // marker.snippet
-        self.detailView!.frame = viewInitialPosition
-            self.facultyButtonView.frame = CGRectMake(self.detailView!.frame.origin.x, self.detailView!.frame.origin.y + self.detailView!.frame.size.height, self.detailView!.frame.size.width, self.detailView!.frame.size.height)
-            
+            //self.detailView!.frame = viewInitialPosition
+            //self.facultyButtonView.frame = CGRectMake(self.detailView!.frame.origin.x, self.detailView!.frame.origin.y + self.detailView!.frame.size.height, self.detailView!.frame.size.width, self.detailView!.frame.size.height)
+            //print("\(self.detailView!.frame.origin.x)")
             self.facultyButtonView.hidden = false
             if(tile!.got == true){
                 self.facultyInfoButton.enabled = true
@@ -619,6 +627,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
                 self.pinInfo.image = UIImage(named: "pin_information")
             } else if (marker.title == "ป้ายรถ CU Tour") {
                 self.pinInfo.image = UIImage(named: "pin_cutour")
+            } else if (marker.title == "เวทีกลาง") {
+                self.pinInfo.image = UIImage(named: "pin_mainstage_resize")
             } else {
                 self.pinInfo.image = UIImage(named:"pin_landmark")
             }

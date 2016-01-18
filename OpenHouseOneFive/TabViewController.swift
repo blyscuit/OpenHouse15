@@ -40,6 +40,11 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
         //var userButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toUser")
         
         navigationItem.rightBarButtonItem=homeButton
+        
+        var tutImage = UIImage(named: "tutorial_button.png")
+        var tutButton = UIBarButtonItem(image: tutImage, style: UIBarButtonItemStyle.Plain, target: self, action: "toTutorial")
+        
+        navigationItem.leftBarButtonItem = tutButton
         //navigationItem.leftBarButtonItem=userButton
         
         for var _tabBarItem in self.tabBar.items!{
@@ -79,12 +84,13 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
             
             var homeButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toAbout")
             
+            var tutImage = UIImage(named: "tutorial_button.png")
+            var tutButton = UIBarButtonItem(image: tutImage, style: UIBarButtonItemStyle.Plain, target: self, action: "toTutorial")
             
-            //image = UIImage(named: "user-icon.png")
-            //var userButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "toUser")
-            
+            navigationItem.leftBarButtonItem = tutButton
             navigationItem.rightBarButtonItem=homeButton
-            //navigationItem.leftBarButtonItem=userButton
+            
+            
         default:
             navigationItem.rightBarButtonItem=nil
             navigationItem.leftBarButtonItem=nil
@@ -146,7 +152,7 @@ class TabViewController: UITabBarController,MainMenuControllerDelegate,MapContro
             let abVC = segue.destinationViewController as! AboutUS
             abVC.delegate = self;
             
-        }
+        } 
     }
     
     func aboutUsViewClose(controller: AboutUS!) {

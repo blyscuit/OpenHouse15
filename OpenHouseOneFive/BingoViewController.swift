@@ -100,6 +100,7 @@ class BingoViewController: UITableViewCell,UICollectionViewDataSource,UICollecti
             if((appDelegate.bingo.tileAtColumn(column, row: row)?.got) == true){
                 imageName = "active_\(appDelegate.bingo.tileAtColumn(column, row: row)!.id)"
             }else{
+                
                 imageName = "inactive_\(appDelegate.bingo.tileAtColumn(column, row: row)!.id)"
             }
             print(imageName)

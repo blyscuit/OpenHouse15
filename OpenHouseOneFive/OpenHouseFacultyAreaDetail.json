@@ -229,6 +229,7 @@
      { "name": "หอสมุดกลาง","engName":"CU Library", "lat": 13.739, "lng": 100.52763 },
      { "name": "อาคารเฉลิมราชสุดากีฬาสถาน","engName":"CU Sport Complex", "lat": 13.73881, "lng": 100.52655 },
      { "name": "เทวาลัย","engName":"Maha Chulalongkorn Building", "lat": 13.73814, "lng": 100.53359 },
+     { "name": "เวทีกลาง","engName":"Main Stage", "lat": 13.73656 , "lng": 100.53170 },
      { "name": "หอประชุมจุฬาฯ","engName":"CU Auditorium", "lat": 13.73826, "lng": 100.53271 }
      ],
     "information":
